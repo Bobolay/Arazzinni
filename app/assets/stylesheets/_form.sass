@@ -1,0 +1,72 @@
+form
+	background-color: $blue-grey
+	margin: 3px
+	padding: 30px
+	.font30
+		color: $brown
+		position: relative
+		&:after
+			+after(100px, $brown)
+	.font18
+		margin-top: 20px
+		margin-bottom: 40px
+	.font16
+		margin-top: 20px
+	.group
+		position: relative
+		margin-top: 25px
+	input, textarea
+		font-size: 1em
+		display: block
+		color: $dark-grey
+		width: 100%
+		border: none
+		outline: none
+		background-color: $blue-grey
+		border-bottom: 1px solid $light-grey
+		&:focus
+			outline: none
+	label
+		color: $dark-grey
+		font-size: 1em
+		position: absolute
+		pointer-events: none
+		top: -5px
+		transition: all 0.2s ease
+	input:focus ~ label, input.used ~ label, textarea:focus ~ label, textarea.used ~ label
+		top: -20px
+		left: 0
+		transform: scale(0.75)
+		color: $dark-grey
+	.bar
+		position: relative
+		display: block
+		width: 100%
+		&:before, &:after
+			content: ''
+			height: 1px
+			width: 0
+			bottom: 1px
+			position: absolute
+			background: $dark-grey
+			transition: all 0.2s ease
+		&:before
+			left: 50%
+		&:after
+			right: 50%
+	input:focus ~ .bar, textarea:focus ~ .bar
+		&:before, &:after
+			width: 50%
+	.button
+		color: $dark-grey
+		text-transform: uppercase
+		font-size: 1.125em
+		width: 45px
+		margin-top: 20px
+		padding-bottom: 3px
+		background-color: transparent
+		outline: none
+		transition: 0.3s
+		border-bottom: 1px solid $dark-grey
+		&:hover
+			color: $brown

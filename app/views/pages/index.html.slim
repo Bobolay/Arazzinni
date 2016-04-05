@@ -14,7 +14,10 @@
 						= inline_svg "icons/price.svg"
 						span.font20 $955
 					p.font18 Wood frame is made of solid pine planks, connected on micro-studs. Lined with MDF and covered with African Black Apricot venner. Accented with silver stripe moldings. Frosted glass, used for door inlay is tempered and mounted using raised moldings, made of solid wood and veneered. Finished with three layers of varnish with interim grinding and polish. Semi-gloss.
-					a.font18.view href="" view
+					a.view href="" 
+						| view
+						.left-border
+						.right-border
 					.squares
 						a.number1 href=""
 						a.number2 href=""
@@ -261,28 +264,44 @@
 						| collections
 		.large-4.medium-4.columns
 			.square
-				.content style="background-image: url(#{asset_path('main/Smart-pro-1.jpg')})"
+				.photo-container style="background-image: url(#{asset_path('main/Smart-pro-1.jpg')})"
+				.animated-frame
+					.left-border
+					.right-border
+				.text-container
 					.number 1
 					.text-on-bottom
 						.name smart pro
 						.quantity-items 28 items
 		.large-4.medium-4.columns
 			.square
-				.content style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-133.jpg')})"
+				.photo-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-133.jpg')})"
+				.animated-frame
+					.left-border
+					.right-border
+				.text-container	
 					.number 2
 					.text-on-bottom
 						.name exotic wood veneer
 						.quantity-items 54 items
 		.large-4.medium-4.columns
 			.square
-				.content style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-136.jpg')})"
+				.photo-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-136.jpg')})"
+				.animated-frame
+					.left-border
+					.right-border
+				.text-container
 					.number 3
 					.text-on-bottom
 						.name high endurance
 						.quantity-items 42 items
 		.large-4.medium-4.columns
 			.square
-				.content style="background-image: url(#{asset_path('main/Wallapepr-1.jpg')})"
+				.photo-container style="background-image: url(#{asset_path('main/Wallapepr-1.jpg')})"
+				.animated-frame
+					.left-border
+					.right-border
+				.text-container
 					.number 4
 					.text-on-bottom
 						.name hardware
@@ -311,7 +330,7 @@
 						| publications
 		.large-4.medium-4.columns
 			.square
-				.content style="background-image: url(#{asset_path('main/chipboard.jpg')})"
+				.photo-container style="background-image: url(#{asset_path('main/chipboard.jpg')})"
 					.subtitle-bold foodpanda shows door to nearly 300 - times of india
 					.text-on-bottom
 						.date
@@ -322,7 +341,7 @@
 							span.font16 154
 		.large-4.medium-4.columns
 			.square
-				.content style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-136.jpg')})"
+				.photo-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-136.jpg')})"
 					.subtitle-bold window and door market
 					.text-on-bottom
 						.date
@@ -333,7 +352,7 @@
 							span.font16 15
 		.large-4.medium-4.columns
 			.square
-				.content style="background-image: url(#{asset_path('main/GFQvGsVvong.jpg')})"
+				.photo-container style="background-image: url(#{asset_path('main/GFQvGsVvong.jpg')})"
 					.subtitle-bold latest news
 					.text-on-bottom
 						.date
@@ -344,7 +363,7 @@
 							span.font16 52
 		.large-4.medium-4.columns
 			.square
-				.content style="background-image: url(#{asset_path('main/18_600x400p.jpg')})"
+				.photo-container style="background-image: url(#{asset_path('main/18_600x400p.jpg')})"
 					.subtitle-bold door and window market
 					.text-on-bottom
 						.date
@@ -355,7 +374,7 @@
 							span.font16 76
 		.large-4.medium-4.columns
 			.square
-				.content style="background-image: url(#{asset_path('main/790534-door.jpg')})"
+				.photo-container style="background-image: url(#{asset_path('main/790534-door.jpg')})"
 					.subtitle-bold door county dayly news
 					.text-on-bottom
 						.date
@@ -385,5 +404,4 @@
 						p.font16 Message
 						.group
 							textarea rows="7"
-							span.bar
 						.button.font19 Send

@@ -42,71 +42,11 @@ body
 		position: relative
 		vertical-align: middle
 		fill: $brown
-	.font18
+	.regular
 		color: $dark-grey
 		opacity: 0.7
 		padding: 20px 0
 		clear: both
-	.view
-		text-transform: uppercase
-		color: $light-brown
-		text-decoration: none
-		padding: 5px 10px
-		position: absolute
-		left: 30px
-		bottom: 30px
-		margin: 0
-		font-size: 1.125em
-		overflow: hidden
-		transition: .2s
-		.left-border
-			content: ''
-			position: absolute
-			height: 100%
-			left: 0
-			top: 0
-			border-left: 1px solid $brown
-			transform: translateY(100%)
-			transition: .3s
-		.right-border
-			content: ''
-			position: absolute
-			height: 100%
-			right: 0
-			top: 0
-			border-right: 1px solid $brown
-			transform: translateY(-100%)
-			transition: .4s
-		&:before
-			content: ''
-			position: absolute
-			width: 100%
-			top: 0
-			border-top: 1px solid $brown
-			left: 0
-			transform: translateX(-100%)
-			transition: .5s
-		&:after
-			content: ''
-			position: absolute
-			width: 100%
-			bottom: 0
-			border-bottom: 1px solid $brown
-			right: 0
-			transform: translateX(100%)
-			transition: .6s
-		
-		&:hover
-			color: $brown
-			.left-border
-				transform: translateY(0)
-			.right-border
-				transform: translateY(0)
-			&:before
-				transform: translateX(0)
-			&:after
-				transform: translateX(0)
-
 	.squares
 		position: absolute
 		right: 30px
@@ -118,9 +58,36 @@ body
 			height: 10px
 			border: 1px solid $light-brown
 			&:active
-				background-color: red
+				background-color: $brown
+.view
+	text-transform: uppercase
+	color: $light-brown
+	text-decoration: none
+	padding: 5px 10px
+	position: absolute
+	left: 30px
+	bottom: 30px
+	margin: 0
+	font-size: 1.125em
+	overflow: hidden
+	transition: .2s
+	.left-border
+		+left-border($brown)
+	.right-border
+		+right-border($brown)
+	&:before
+		+top-border($brown)
+	&:after
+		+bottom-border($brown)		
+	&:hover
+		color: $brown
+		.left-border, .right-border
+			transform: translateY(0)
+		&:before, &:after
+			transform: translateX(0)
 
 
+//                          U N D E R   B A N N E R
 
 .boxes-wrapper
 	margin-left: -2px
@@ -142,59 +109,36 @@ body
 .animated-frame
 	overflow: hidden
 	.left-border
-		content: ''
-		position: absolute
-		height: 100%
-		left: 0
-		top: 0
-		border-left: 1px solid #fff
-		transform: translateY(100%)
-		transition: .3s
+		+left-border($brown)
 	.right-border
-		content: ''
-		position: absolute
-		height: 100%
-		right: 0
-		top: 0
-		border-right: 1px solid #fff
-		transform: translateY(-100%)
-		transition: .4s
+		+right-border($brown)
 	&:before
-		content: ''
-		position: absolute
-		width: 100%
-		top: 0
-		border-top: 1px solid #fff
-		left: 0
-		transform: translateX(-100%)
-		transition: .5s
+		+top-border($brown)
 	&:after
-		content: ''
-		position: absolute
-		width: 100%
-		bottom: 0
-		border-bottom: 1px solid #fff
-		right: 0
-		transform: translateX(100%)
-		transition: .6s
+		+bottom-border($brown)		
+	&:hover
+		color: $brown
+		.left-border, .right-border
+			transform: translateY(0)
+		&:before, &:after
+			transform: translateX(0)
 
 .square
 	position: relative
 	margin: 2px
 	overflow: hidden
+	cursor: pointer
 	&:after
 		content: ''
 		display: block
 		padding-bottom: 100%
 	&:hover
 		.animated-frame
-			.left-border
+			.left-border, .right-border
+				opacity: 1
 				transform: translateY(0)
-			.right-border
-				transform: translateY(0)
-			&:before
-				transform: translateX(0)
-			&:after
+			&:before, &:after
+				opacity: 1
 				transform: translateX(0)
 		.photo-container
 			width: 105%
@@ -209,20 +153,26 @@ body
 	left: 0
 	top: 0
 	transition: 1s
-.text-container
+.shadow
 	position: absolute
 	width: 100%
-	height: 100%
-.text-on-bottom
-	position: relative
-	top: 70%
-	width: inherit
-	height: 30%
+	height: 50%
+	bottom: 0
 	background: linear-gradient(to bottom, transparent, rgba(65,65,65, .5))
-	padding: 30px
+
+//                          D O O R S
+
 .doors
 	background-color: $blue-grey
 	color: $dark-grey
+	&:hover
+		background-color: $brown
+		.text
+			display: none
+		.hover-text
+			opacity: 1
+		.frame-black
+			z-index: 0
 	.door-container
 		width: 45%
 		height: inherit
@@ -260,6 +210,41 @@ body
 			background-color: $brown
 			text-transform: uppercase
 			font-size: 0.625em
+	.hover-text
+		float: left
+		width: 55%
+		height: 65%
+		opacity: 0
+		transition: .25s
+		+transform
+		padding: 0 15px
+		color: #fff
+		.wood-type
+			&:after
+				border: 1px solid #fff
+		.regular
+			margin-top: 20px
+		.view
+			color: #fff
+			padding: 5px 10px
+			position: absolute
+			left: 5px
+			bottom: 0
+			margin: 0
+			transition: .2s
+			.left-border
+				+left-border(#fff)
+			.right-border
+				+right-border(#fff)
+			&:before
+				+top-border(#fff)
+			&:after
+				+bottom-border(#fff)		
+			&:hover
+				.left-border, .right-border
+					transform: translateY(0)
+				&:before, &:after
+					transform: translateX(0)
 	table
 		margin-top: 20px
 		tr
@@ -276,7 +261,7 @@ body
 		svg
 			fill: $dark-grey
 
-
+//                     A D V A N T A G E S
 
 .advantages
 	border: 1px solid $brown
@@ -323,7 +308,6 @@ body
 			margin-top: 20px
 			&:after
 				+after(100px,$brown)
-
 .advantages-icons-container
 	background-color: $blue-grey
 	width: 100%
@@ -353,6 +337,8 @@ body
 			font-size: 1.125em
 			color: $dark-grey
 
+//                                V I D E O
+
 .video-container
 	height: 500px
 	margin-top: 5px
@@ -375,6 +361,7 @@ body
 		.font22
 			color: white
 
+//                           C O L L E C T I O N S
 
 .arazzinni-colections
 	.number
@@ -389,24 +376,29 @@ body
 		text-transform: uppercase
 		font-weight: 600
 		color: #fff
+		position: absolute
+		left: 30px
+		bottom: 50px
 	.quantity-items
-		font-weight: 18px
 		color: $blue-grey
+		position: absolute
+		left: 30px
+		bottom: 30px
 	.sand
 		position: absolute
 		fill-opacity: 0.05
-		right: 125px
-		bottom: 50px
-		width: 120px
-		height: 100px
+		right: 120px
+		bottom: 35px
+		width: 40%
 	.font24
 		font: Georgia
 		font-style: italic
-		color: $light-grey
+		color: #fff
 		position: absolute
-		right: 25px
-		bottom: 20px
-
+		right: 30px
+		bottom: 30px
+		opacity: 0.5
+//                                   M A P
 
 .map-wrapper
 	overflow: hidden
@@ -429,34 +421,39 @@ body
 			left: -50%
 			max-width: 1400px
 
+//                        P U B L I C A T I O N S
 
 .arazzinni-publications
 	.subtitle-bold
 		position: absolute
-		bottom: 30%
+		bottom: 90px
 		left: 30px
-	.date, .views
-		display: inline-block
-		margin-right: 10px
-		span
-			margin-left: 5px
-		.svg-block
-			height: 35px
-			width: 35px
-			background-color: $brown
+	.under-subtitle-atributes
+		position: absolute
+		left: 30px
+		bottom: 30px
+		.date, .views
 			display: inline-block
-			vertical-align: middle
-		svg
-			position: relative
-			left: 50%
-			top: 50%
-			transform: translate(-50%, -50%)
-		.eye-svg
-			top: 40%
-		.font16
-			color: $blue-grey
+			margin-right: 10px
+			span
+				margin-left: 5px
+			.svg-block
+				height: 35px
+				width: 35px
+				background-color: $brown
+				display: inline-block
+				vertical-align: middle
+			svg
+				position: relative
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+			.eye-svg
+				top: 40%
+			.font16
+				color: $blue-grey
 
-
+//                                   F O R M
 
 .form-wrapper
 	position: relative

@@ -5,7 +5,7 @@ body
 .columns
 	height: inherit
 .banner-container
-	height: calc(100vh - 70px)
+	height: calc(100vh - 80px)
 	width: 100%
 	background-size: cover
 	background-position: center
@@ -20,6 +20,16 @@ body
 	border: 1px solid $brown
 	left: 10%
 	max-width: 550px
+	min-width: 400px
+	@media #{$small-only}
+		position: absolute
+		left: initial
+		height: 45%
+		bottom: 100px
+		min-width: initial
+		width: 90%
+		left: 50%
+		transform: translateX(-50%)
 	.font36
 		margin: 20px 0 60px
 		color: $brown
@@ -47,6 +57,8 @@ body
 		opacity: 0.7
 		padding: 20px 0
 		clear: both
+		@media #{$small-only}
+			display: none
 	.squares
 		position: absolute
 		right: 30px
@@ -109,13 +121,13 @@ body
 .animated-frame
 	overflow: hidden
 	.left-border
-		+left-border($brown)
+		+left-border(#fff)
 	.right-border
-		+right-border($brown)
+		+right-border(#fff)
 	&:before
-		+top-border($brown)
+		+top-border(#fff)
 	&:after
-		+bottom-border($brown)		
+		+bottom-border(#fff)
 	&:hover
 		color: $brown
 		.left-border, .right-border
@@ -144,6 +156,18 @@ body
 			width: 105%
 			height: 105%
 			left: -2.5%
+.square-section
+	position: relative
+	margin: 2px
+	overflow: hidden
+	cursor: pointer
+	&:after
+		content: ''
+		display: block
+		padding-bottom: 100%
+	@media #{$small-only}
+		&:after
+			padding-bottom: 50%
 .photo-container, .section-name, .doors
 	position: absolute
 	width: 100%
@@ -215,7 +239,6 @@ body
 		width: 55%
 		height: 65%
 		opacity: 0
-		transition: .25s
 		+transform
 		padding: 0 15px
 		color: #fff
@@ -224,6 +247,12 @@ body
 				border: 1px solid #fff
 		.regular
 			margin-top: 20px
+			@media only screen and (min-width: 0px) and (max-width: 480px)
+				display: none
+			@media only screen and (min-width: 640px) and (max-width: 1800px)
+				display: none
+			@media only screen and (min-width: 1024px) and (max-width: 1440px)
+				display: none
 		.view
 			color: #fff
 			padding: 5px 10px
@@ -245,17 +274,28 @@ body
 					transform: translateY(0)
 				&:before, &:after
 					transform: translateX(0)
+
 	table
 		margin-top: 20px
 		tr
 			&:nth-child(1)
-				@media only screen and (min-width: 640px) and (max-width: 1440px)
+				@media only screen and (min-width: 0) and (max-width: 400px)
+					display: none
+				@media only screen and (min-width: 1024px) and (max-width: 1440px)
+					display: none
+				@media only screen and (min-width: 640px) and (max-width: 760px)
 					display: none
 			&:nth-child(2)
-				@media only screen and (min-width: 640px) and (max-width: 1440px)
+				@media only screen and (min-width: 0) and (max-width: 400px)
+					display: none
+				@media only screen and (min-width: 1024px) and (max-width: 1440px)
+					display: none
+				@media only screen and (min-width: 640px) and (max-width: 760px)
 					display: none
 		td
 			padding-top: 10px
+			@media only screen and (min-width: 1024px) and (max-width: 1100px)
+				padding-top: 0
 			span
 				margin-left: 10px
 		svg
@@ -287,7 +327,6 @@ body
 			top: -9px
 	.why-arazzinni
 		margin: 70px 0
-		height: 300px
 		width: 70%
 		float: left
 		padding: 0 15px
@@ -302,12 +341,31 @@ body
 		.font18
 			color: $dark-grey
 			margin-top: 20px
-		.font16
-			color: $brown
+		.learn-more
+			text-transform: uppercase
+			color: $light-brown
+			text-decoration: none
 			position: relative
+			padding: 5px 10px
 			margin-top: 20px
+			font-size: 1em
+			overflow: hidden
+			display: inline-block
+			transition: .2s
+			.left-border
+				+left-border($brown)
+			.right-border
+				+right-border($brown)
+			&:before
+				+top-border($brown)
 			&:after
-				+after(100px,$brown)
+				+bottom-border($brown)		
+			&:hover
+				color: $brown
+				.left-border, .right-border
+					transform: translateY(0)
+				&:before, &:after
+					transform: translateX(0)
 .advantages-icons-container
 	background-color: $blue-grey
 	width: 100%
@@ -349,6 +407,8 @@ body
 	background-size: cover
 	background-position: center
 	width: 100%
+	@media #{$small-only}
+		display: none
 	.text-container
 		position: relative
 		left: 50%
@@ -431,6 +491,8 @@ body
 		position: absolute
 		bottom: 90px
 		left: 30px
+		@media #{$medium-only}
+			font-size: 1.5em
 	.under-subtitle-atributes
 		position: absolute
 		left: 30px
@@ -460,6 +522,7 @@ body
 
 .form-wrapper
 	position: relative
+	overflow: hidden
 	.door-container
 		height: 650px
 		width: 550px
@@ -468,6 +531,8 @@ body
 		position: absolute
 		bottom: 0
 		background-position: bottom
+		@media only screen and (max-width: 1024px)
+			display: none
 	.form-container
 		border: 1px solid $light-grey
 		margin-top: 100px
@@ -475,10 +540,14 @@ body
 		position: relative
 		z-index: 2
 		max-width: 500px
+		min-width: 400px
 		textarea
 			border: 1px solid $light-grey
-
-
+		@media #{$medium-only}
+			margin: 100px auto 20px
+		@media #{$small-only}
+			margin: 50px auto 20px
+			min-width: initial
 
 .footer-container
 	line-height: 65px

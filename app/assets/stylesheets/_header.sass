@@ -1,21 +1,26 @@
 .header-container
 	width: 100%
-	height: 55px
+	height: 66px
 	margin-bottom: 5px
+	@media #{$small-only}
+		border: 1px solid $brown
 .header-logo-picture, .header-logo-inscription, .cart, .phone, .menu
 	display: inline-block
 .header-logo-picture, .header-logo-inscription
 	float: left
 	margin-left: 10px
-	margin-top: 3px
+	margin-top: 9px
+.header-logo-inscription
+	@media #{$small-only}
+		display: none
 .icons-right-side
 	float: right
 .cart, .phone, .menu
 	float: left
 	fill: $brown
 	border: 1px solid $brown
-	width: 55px
-	height: 55px
+	width: 65px
+	height: 65px
 	margin-left: 5px
 	transition: .15s
 	svg
@@ -23,6 +28,8 @@
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
+	@media #{$small-only}
+		border: none
 	&:hover
 		background-color: $brown
 		fill: #fff

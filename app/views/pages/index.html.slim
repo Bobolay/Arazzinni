@@ -1,7 +1,17 @@
 .row.collapse
 	.large-12.medium-12.small-12.columns
-		.banner-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-183.jpg')})"
-			.large-5.medium-6.columns
+		.banner-container
+			.slider-container	
+				ul.bxslider
+					li
+						.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-183.jpg')})"
+					li
+						.img-container style="background-image: url(#{asset_path('main/Smart-pro.jpg')})"
+					li
+						.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-48.jpg')})"
+					li
+						.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-133.jpg')})"
+			.large-5.medium-6.columns.end
 				.product-unit-on-banner
 					p.font36.uppercased avanti vetro interior door black apricot
 					.interior
@@ -18,11 +28,11 @@
 						| view
 						.left-border
 						.right-border
-					.squares
-						a.number1 href=""
-						a.number2 href=""
-						a.number3 href=""
-						a.number4 href=""
+					.squares#bx-pager
+						a data-slide-index="0" href=""
+						a data-slide-index="1" href=""
+						a data-slide-index="2" href=""
+						a data-slide-index="3" href=""
 //                                 D O O R S
 .boxes-wrapper
 	.row.collapse

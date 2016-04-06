@@ -7,9 +7,24 @@ body
 .banner-container
 	height: calc(100vh - 80px)
 	width: 100%
-	background-size: cover
-	background-position: center
 	margin-bottom: 2px
+	position: relative
+	.slider-container
+		width: 100%
+		height: 100%
+		position: absolute
+		.bx-wrapper
+			height: inherit
+			.bx-viewport
+				height: inherit
+				.bxslider
+					height: inherit
+					li
+						height: inherit
+						.img-container
+							background-position: center
+							background-size: cover
+							height: inherit
 .product-unit-on-banner
 	position: relative
 	margin-top: 100px
@@ -69,7 +84,7 @@ body
 			width: 10px
 			height: 10px
 			border: 1px solid $light-brown
-			&:active
+			&.active
 				background-color: $brown
 .view
 	text-transform: uppercase

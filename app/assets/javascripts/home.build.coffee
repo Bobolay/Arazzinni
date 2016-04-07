@@ -6,4 +6,6 @@
 
 #= require bxslider
 
+#= require slider-animation.js
+
 #= require form.js

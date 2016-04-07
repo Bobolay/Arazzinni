@@ -4,3 +4,4 @@ $(document).ready ->
     controls: false
     infiniteLoop: false
     hideControlOnEnd: true
+    speed: 1000

@@ -28,7 +28,6 @@ body
 .product-unit-on-banner
 	position: relative
 	margin-top: 100px
-	padding: 30px
 	height: 80%
 	background-color: rgba(255,255,255, .85)
 	outline: 5px solid rgba(255,255,255, .85)
@@ -45,24 +44,29 @@ body
 		width: 90%
 		left: 50%
 		transform: translateX(-50%)
-	.font36
-		margin: 20px 0 60px
+	.unit1, .unit2, .unit3, .unit4
+		position: absolute
+		padding: 30px
+		opacity: 0
+		transition: 0.3s
+		&.visible
+			opacity: 1
+	.unit-title
+		font-size: 2.25em
+		text-transform: uppercase
+		margin-bottom: 50px
 		color: $brown
 		font-weight: 600
 		line-height: 32px
 		position: relative
 		&:after
-			content: ''
-			position: absolute
-			bottom: -15px
-			left: 0
-			width: 100px
-			border: 1px solid $brown
+			+after(100px, $brown)
 	.interior, .traditional, .price
 		float: left
 		margin: 0 20px 15px 0
-	span
+	.atributes
 		margin-left: 10px
+		font-size: 1.25em
 	svg
 		position: relative
 		vertical-align: middle

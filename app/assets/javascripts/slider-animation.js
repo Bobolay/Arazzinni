@@ -5,7 +5,7 @@ $(document).ready(function(){
     	}, 0);
     	setTimeout(function(){
     		$(".unit1").addClass("visible")
-    	}, 800);
+    	}, 300);
     });
     $("#button2").click(function(){
     	setTimeout(function(){
@@ -13,7 +13,7 @@ $(document).ready(function(){
     	}, 0);
     	setTimeout(function(){
     		$(".unit2").addClass("visible")
-    	}, 800);
+    	}, 300);
     });
     $("#button3").click(function(){
     	setTimeout(function(){
@@ -21,7 +21,7 @@ $(document).ready(function(){
     	}, 0);
     	setTimeout(function(){
     		$(".unit3").addClass("visible")
-    	}, 800);
+    	}, 300);
     });
     $("#button4").click(function(){
     	setTimeout(function(){
@@ -29,6 +29,6 @@ $(document).ready(function(){
     	}, 0);
     	setTimeout(function(){
     		$(".unit4").addClass("visible")
-    	}, 800);
+    	}, 300);
     });
 });

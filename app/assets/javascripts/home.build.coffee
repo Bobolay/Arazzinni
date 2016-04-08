@@ -9,3 +9,5 @@
 #= require slider-animation.js
 
 #= require form.js
+
+#= require google-map-initialize.js

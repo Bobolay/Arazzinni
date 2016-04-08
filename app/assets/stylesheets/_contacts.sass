@@ -1,0 +1,58 @@
+#googleMap
+	height: 400px
+	width: 100%
+	position: relative
+#marker-popup
+	background-color: red
+	width: 100px
+	height: 100px
+	opacity: 0
+.contacts-inscription
+	.section-title
+		color: $brown
+		margin: 50px 0 0 0
+		&:after
+			+after(190px,$brown)
+.coordinates
+	margin-bottom: 20px
+	padding-right: 10px
+	width: 100%
+	float: left
+	@media #{$small-only}
+		width: 100%
+	@media #{$medium-only}
+		width: 50%
+	.svg-coordinates
+		float: left
+		height: 50px
+		margin-right: 10px
+	span
+		font-size: 1.25em
+	.social
+		margin-top: 20px
+		a
+			text-decoration: none
+			margin-right: 15px
+			&:hover
+				svg
+					fill: $light-brown
+		svg
+			fill: #BDBDBD
+			transition: .2s
+.contacts-form-container
+	padding: 30px
+	border: 1px solid $light-grey
+	max-width: 650px
+	margin-bottom: 50px
+	.text-near-form
+		.regular
+			margin-top: 30px
+			margin-bottom: 30px
+	.contacts-form
+		form
+			padding: 0
+			.group
+				&:first-child
+					margin-top: 0
+
+

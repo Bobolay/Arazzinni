@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
   before_action :set_page_instance, except: [:index]
 
-  self.layout "home", only: :index
+  self.layout "home"
 
-  # def index
+  def index
   #   set_page_metadata(:home)
-  # end
+  end
 
   def about_us
 
@@ -30,6 +30,6 @@ class PagesController < ApplicationController
   private
 
   def set_page_instance
-    set_page_metadata(action_name)
+  #   set_page_metadata(action_name)
   end
 end

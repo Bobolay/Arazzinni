@@ -63,3 +63,18 @@ $light-grey: #BCBCBC
 	position: relative
 	&:after
 		+after(100px, $dark-grey)
+
+.shadow-text
+	font-size: 10em
+	text-transform: uppercase
+	color: $dark-grey
+	opacity: 0.05
+	font-weight: bold
+	position: relative
+	top: -30px
+	@media #{$small-only}
+		font-size: 5em
+		top: 0
+	@media #{$medium-only}
+		fonr-size: 7em
+		top: -15px

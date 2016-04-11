@@ -1,3 +1,17 @@
+change_slide = (index)->
+
+	$(".product-unit-on-banner").children().removeClass("visible")
+	setTimeout(
+			()->
+				$(".unit#{index + 1}").addClass("visible")
+			300
+		)
+
+$("body").on "click", ".product-unit-on-banner .squares a", ()->
+    $button = (this)
+    index = $button.index()
+    change_slide()
+
 $(document).ready ->
   $('.bxslider').bxSlider
     pagerCustom: '#bx-pager'
@@ -5,3 +19,8 @@ $(document).ready ->
     infiniteLoop: false
     hideControlOnEnd: true
     speed: 1000
+    pause: 5000
+    auto: true
+    infiniteLoop: true
+    onSlideBefore: (element, oldIndex, newIndex)->
+        change_slide(newIndex)

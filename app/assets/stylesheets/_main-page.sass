@@ -92,33 +92,11 @@ body
 			border: 1px solid $light-brown
 			&.active
 				background-color: $brown
-.view
-	text-transform: uppercase
-	color: $light-brown
-	text-decoration: none
-	padding: 5px 10px
-	position: absolute
-	left: 30px
-	bottom: 30px
-	margin: 0
-	font-size: 1.125em
-	overflow: hidden
-	transition: .2s
-	.left-border
-		+left-border($brown)
-	.right-border
-		+right-border($brown)
-	&:before
-		+top-border($brown)
-	&:after
-		+bottom-border($brown)		
-	&:hover
-		color: $brown
-		.left-border, .right-border
-			transform: translateY(0)
-		&:before, &:after
-			transform: translateX(0)
-
+	.button
+		position: absolute
+		left: 30px
+		bottom: 30px
+		color: $light-brown
 
 //                          U N D E R   B A N N E R
 
@@ -275,13 +253,16 @@ body
 			@media only screen and (min-width: 1024px) and (max-width: 1440px)
 				display: none
 		.view
+			text-transform: uppercase
 			color: #fff
 			padding: 5px 10px
+			text-decoration: none
 			position: absolute
 			left: 5px
-			bottom: 0
-			margin: 0
+			font-size: 1.125em
+			overflow: hidden
 			transition: .2s
+			bottom: 0
 			.left-border
 				+left-border(#fff)
 			.right-border
@@ -362,31 +343,10 @@ body
 		.font18
 			color: $dark-grey
 			margin-top: 20px
-		.learn-more
-			text-transform: uppercase
+		.button
 			color: $light-brown
-			text-decoration: none
 			position: relative
-			padding: 5px 10px
 			margin-top: 20px
-			font-size: 1em
-			overflow: hidden
-			display: inline-block
-			transition: .2s
-			.left-border
-				+left-border($brown)
-			.right-border
-				+right-border($brown)
-			&:before
-				+top-border($brown)
-			&:after
-				+bottom-border($brown)		
-			&:hover
-				color: $brown
-				.left-border, .right-border
-					transform: translateY(0)
-				&:before, &:after
-					transform: translateX(0)
 .advantages-icons-container
 	background-color: $blue-grey
 	width: 100%

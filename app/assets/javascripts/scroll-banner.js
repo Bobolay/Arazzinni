@@ -37,7 +37,7 @@ $("body").on("wheel", function(e){
     if(e && e.ctrlKey) {
         return true
     }
-    var $slider = $(".big_wrapper")
+    var $slider = $(".banner-wrapper")
     var slider_height = $slider.first().height()
     var $next_section = $slider.next()
     var next_section_top = $next_section.offset().top

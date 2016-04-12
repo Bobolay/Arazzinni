@@ -19,7 +19,7 @@ $(document).ready ->
     infiniteLoop: false
     hideControlOnEnd: true
     speed: 1000
-    pause: 5000
+    pause: 10000
     auto: true
     infiniteLoop: true
     onSlideBefore: (element, oldIndex, newIndex)->

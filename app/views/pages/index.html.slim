@@ -1,4 +1,4 @@
-.big_wrapper
+.banner-wrapper
 	.row.collapse
 		.large-12.medium-12.small-12.columns
 			.banner-container
@@ -321,8 +321,8 @@
 				.photo-itself style="background-image: url(#{asset_path('main/1_svet_3.jpg')})"
 			.why-arazzinni
 				.subtitle why arazzinni
-				p.font18 We are the fastest growing provider of European and custom interior and exterior doors in the United States. Choose from more than 100 ready-made options or customize Your own. Our team will work with designers to create custom fabricated doors to accommodate any request.
-				p.font18 Our wholesale distribution center is located in Rahway, NJ, with four manufacturing plants throughout Eastern Europe. Since our inception in 2009, we have sold more than 20,000 doors across the country.
+				p.regular We are the fastest growing provider of European and custom interior and exterior doors in the United States. Choose from more than 100 ready-made options or customize Your own. Our team will work with designers to create custom fabricated doors to accommodate any request.
+				p.regular Our wholesale distribution center is located in Rahway, NJ, with four manufacturing plants throughout Eastern Europe. Since our inception in 2009, we have sold more than 20,000 doors across the country.
 				a.button
 					| learn more
 					.left-border
@@ -331,27 +331,31 @@
 			.advantages-icons-container
 				.row
 					.xxlarge-6.large-12.medium-12.columns
-						.icon-container style="background-image: url(#{asset_path('main/advantages1.png')})"
+						.icon-frame
+							.icon.appear1 style="background-image: url(#{asset_path('main/advantages1.png')})"
 						.text-container
 							.this-title
 								| over 100 
 								span years
 							.this-subtitle in historic production
 					.xxlarge-6.large-12.medium-12.columns
-						.icon-container style="background-image: url(#{asset_path('main/advantages2.png')})"
+						.icon-frame	
+							.icon.appear2 style="background-image: url(#{asset_path('main/advantages2.png')})"
 						.text-container
 							.this-title
 								| 5000+
 							.this-subtitle successful projects
 					.xxlarge-6.large-12.medium-12.columns
-						.icon-container style="background-image: url(#{asset_path('main/advantages3.png')})"
+						.icon-frame	
+							.icon.appear3 style="background-image: url(#{asset_path('main/advantages3.png')})"
 						.text-container
 							.this-title
 								| over 5 
 								span years
 							.this-subtitle on market
 					.xxlarge-6.large-12.medium-12.columns
-						.icon-container style="background-image: url(#{asset_path('main/advantages4.png')})"
+						.icon-frame
+							.icon.appear4 style="background-image: url(#{asset_path('main/advantages4.png')})"
 						.text-container
 							.this-title
 								| 4 
@@ -361,7 +365,7 @@
 .video-container style="background-image: url(#{asset_path('main/video.jpg')})"
 	.text-container
 		a.play-button href="" = inline_svg "icons/playvideo.svg"
-		p.font22 We are the fastest growing provider of European and custom interior and exterior doors in the United States
+		p.text We are the fastest growing provider of European and custom interior and exterior doors in the United States
 //                               C O L L E C T I O N S
 .boxes-wrapper.arazzinni-colections
 	.row.collapse
@@ -417,13 +421,13 @@
 			.square
 				.section-name
 					.sand = inline_svg "icons/sand27.svg"
-					p.font24 Coming soon...
+					p.coming-soon Coming soon...
 //                                 M A P
 .map-wrapper	
 	.row
 		.large-6.large-centered.medium-8.medium-centered.columns
 			.subtitle worldwide shipping
-			p.font18 Since our inception in 2009, we have sold more than 20,000 doors across the country. In 2015, we will expand our reach globally to Eastern European, Middle Eastern and Canadian markets. We are confident in our projected growth as we continue to offer customers the best price, quality and service.
+			p.regular Since our inception in 2009, we have sold more than 20,000 doors across the country. In 2015, we will expand our reach globally to Eastern European, Middle Eastern and Canadian markets. We are confident in our projected growth as we continue to offer customers the best price, quality and service.
 			.map-frame
 				.map = inline_svg "icons/map.svg"
 //                           P U B L I C A T I O N S
@@ -448,10 +452,10 @@
 				.under-subtitle-atributes
 					.date
 						.svg-block = inline_svg "icons/calendar.svg"
-						span.font16 18 september
+						span.text 18 september
 					.views
 						.svg-block = inline_svg "icons/views.svg"
-						span.font16 154
+						span.text 154
 		.large-4.medium-6.columns
 			.square
 				.photo-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-136.jpg')})"
@@ -463,10 +467,10 @@
 				.under-subtitle-atributes
 					.date
 						.svg-block = inline_svg "icons/calendar.svg"
-						span.font16 21 october
+						span.text 21 october
 					.views
 						.svg-block = inline_svg "icons/views.svg"
-						span.font16 15
+						span.text 15
 		.large-4.medium-6.columns
 			.square
 				.photo-container style="background-image: url(#{asset_path('main/GFQvGsVvong.jpg')})"
@@ -478,10 +482,10 @@
 				.under-subtitle-atributes
 					.date
 						.svg-block = inline_svg "icons/calendar.svg"
-						span.font16 18 july
+						span.text 18 july
 					.views
 						.svg-block = inline_svg "icons/views.svg"
-						span.font16 52
+						span.text 52
 		.large-4.medium-6.columns
 			.square
 				.photo-container style="background-image: url(#{asset_path('main/18_600x400p.jpg')})"
@@ -493,10 +497,10 @@
 				.under-subtitle-atributes
 					.date
 						.svg-block = inline_svg "icons/calendar.svg"
-						span.font16 30 december
+						span.text 30 december
 					.views
 						.svg-block = inline_svg "icons/views.svg"
-						span.font16 76
+						span.text 76
 		.large-4.medium-6.columns
 			.square
 				.photo-container style="background-image: url(#{asset_path('main/790534-door.jpg')})"
@@ -508,10 +512,10 @@
 				.under-subtitle-atributes
 					.date
 						.svg-block = inline_svg "icons/calendar.svg"
-						span.font16 24 march
+						span.text 24 march
 					.views
 						.svg-block = inline_svg "icons/views.svg"
-						span.font16 112
+						span.text 112
 //                                 F O R M
 .form-wrapper	
 	.row

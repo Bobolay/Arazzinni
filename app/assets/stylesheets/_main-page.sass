@@ -4,10 +4,11 @@ body
 	color: $dark-grey
 	@media #{$small-only}
 		padding: 10px
+
 .columns
 	height: inherit
 .banner-container
-	height: calc(100vh - 80px)
+	height: calc(100vh - 70px)
 	width: 100%
 	margin-bottom: 2px
 	position: relative
@@ -103,6 +104,8 @@ body
 .boxes-wrapper
 	margin-left: -2px
 	margin-right: -2px
+	position: relative
+	background-color: #fff
 
 .section-name
 	background-color: $brown
@@ -334,13 +337,7 @@ body
 		padding: 0 15px
 		@media only screen and (max-width: 1200px)
 			width: 100%
-		.font30
-			color: $brown
-			position: relative
-			top: -8px
-			&:after
-				+after(100px,$brown)
-		.font18
+		.regular
 			color: $dark-grey
 			margin-top: 20px
 		.button
@@ -354,15 +351,37 @@ body
 	padding: 20px
 	@media #{$xxlarge-up}
 		margin: 70px 20px 50px 0
-	.icon-container
+	.icon-frame
 		border: 1px solid $light-grey
-		background-size: contain
-		background-position: center
-		background-repeat: no-repeat
-		display: inline-block
 		width: 110px
 		height: 110px
 		margin-bottom: 20px
+		display: inline-block
+	.icon
+		background-size: contain
+		background-position: center
+		background-repeat: no-repeat
+	.appear1, .appear2, .appear3, .appear4
+		width: 0
+		height: 0
+		position: relative
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+	.appear1
+		+transition(1s)
+	.appear2
+		+transition(.9s)
+		+transition-delay(.2s)
+	.appear3
+		+transition(.8s)
+		+transition-delay(.4s)
+	.appear4
+		+transition(.7s)
+		+transition-delay(.6s)
+	.appeared
+		width: 110px
+		height: 110px
 	.text-container
 		display: inline-block
 		vertical-align: top
@@ -402,7 +421,8 @@ body
 			height: 80px
 			margin-bottom: 20px
 			display: inline-block
-		.font22
+		.text
+			font-size: 1.22em
 			color: white
 
 //                           C O L L E C T I O N S
@@ -434,7 +454,8 @@ body
 		right: 120px
 		bottom: 35px
 		width: 40%
-	.font24
+	.coming-soon
+		font-size: 1.33em
 		font: Georgia
 		font-style: italic
 		color: #fff
@@ -450,7 +471,7 @@ body
 	.subtitle
 		position: relative
 		padding-top: 70px
-	.font18
+	.regular
 		padding-top: 30px
 	.map-frame
 		height: 500px
@@ -481,7 +502,8 @@ body
 		.date, .views
 			display: inline-block
 			margin-right: 10px
-			span
+			.text
+				font-size: 0.875em
 				margin-left: 5px
 			.svg-block
 				height: 35px

@@ -18,3 +18,6 @@
 #= require components/fixed_header
 #= require menu
 #= require scroll-banner
+
+#= require jquery.appear
+#= require appeared

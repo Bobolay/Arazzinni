@@ -4,6 +4,18 @@ $dark-grey: #414141
 $blue-grey: #DFDFDF
 $light-grey: #BCBCBC
 
+body
+	padding: 5px
+	+exo
+	color: $dark-grey
+	@media #{$small-only}
+		padding: 10px
+.columns
+	height: inherit
+a
+	text-decoration: none
+	color: inherit
+
 =after($width, $color)
 	content: ''
 	position: absolute
@@ -80,6 +92,7 @@ $light-grey: #BCBCBC
 	position: relative
 	&:after
 		+after(100px, $brown)
+
 .subtitle-bold
 	font-size: 1.875em
 	font-weight: 600
@@ -118,7 +131,7 @@ $light-grey: #BCBCBC
 		fonr-size: 7em
 		top: -15px
 
-.button
+.button-brown, .button-white
 	text-transform: uppercase
 	text-decoration: none
 	padding: 5px 10px
@@ -126,7 +139,14 @@ $light-grey: #BCBCBC
 	font-size: 1.125em
 	overflow: hidden
 	display: inline-block
+	z-index: 5
 	transition: .2s
+	&:hover
+		.left-border, .right-border
+			transform: translateY(0)
+		&:before, &:after
+			transform: translateX(0)
+.button-brown
 	.left-border
 		+left-border($brown)
 	.right-border
@@ -135,9 +155,12 @@ $light-grey: #BCBCBC
 		+top-border($brown)
 	&:after
 		+bottom-border($brown)		
-	&:hover
-		color: $brown
-		.left-border, .right-border
-			transform: translateY(0)
-		&:before, &:after
-			transform: translateX(0)
+.button-white
+	.left-border
+		+left-border(#fff)
+	.right-border
+		+right-border(#fff)
+	&:before
+		+top-border(#fff)
+	&:after
+		+bottom-border(#fff)	

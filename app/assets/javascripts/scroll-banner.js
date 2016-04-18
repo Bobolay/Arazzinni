@@ -38,6 +38,9 @@ $("body").on("wheel", function(e){
         return true
     }
     var $slider = $(".banner-wrapper")
+    if($slider.length == 0){
+        return;
+    }
     var slider_height = $slider.first().height()
     var $next_section = $slider.next()
     var next_section_top = $next_section.offset().top

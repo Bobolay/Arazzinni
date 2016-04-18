@@ -11,13 +11,13 @@ $('#fullpage').fullpage
 			), 500
 			setTimeout (->	
 				$('.shadow-text-1').addClass('appeared')
-			), 600
+			), 500
 			setTimeout (->	
 				$('.photo-left').addClass('appeared')
-			), 1000
+			), 1500
 			setTimeout (->	
 				$('.text-1').addClass('appeared')
-			), 1000
+			), 1500
 		
 		if !sections[1] && index == 2
 			sections[1] = true
@@ -26,13 +26,13 @@ $('#fullpage').fullpage
 			), 500
 			setTimeout (->	
 				$('.shadow-text-2').addClass('appeared')
-			), 600
+			), 500
 			setTimeout (->	
 				$('.photo-right').addClass('appeared')
-			), 1000
+			), 1500
 			setTimeout (->	
 				$('.text-2').addClass('appeared')
-			), 1000
+			), 1500
 
 		if !sections[2] && index == 3
 			sections[2] = true
@@ -41,16 +41,16 @@ $('#fullpage').fullpage
 			), 500
 			setTimeout (->	
 				$('.shadow-text-3').addClass('appeared')
-			), 800
+			), 1200
 			setTimeout (->	
 				$('.advantage-container').addClass('appeared')
 			), 1200
 			setTimeout (->	
 				$('.text-3').addClass('appeared')
-			), 1500
+			), 2000
 			setTimeout (->
 				$('.appear1, .appear2, .appear3, .appear4').addClass('appeared')
-			), 1500
+			), 2500
 
 		if !sections[3] && index == 4
 			sections[3] = true
@@ -59,10 +59,10 @@ $('#fullpage').fullpage
 			), 500
 			setTimeout (->	
 				$('.shadow-text-4').addClass('appeared')
-			), 600
+			), 500
 			setTimeout (->	
 				$('.form-container').addClass('appeared')
-			), 1000
+			), 1500
 			setTimeout (->
 				$('.door').addClass('appeared')
-			), 1500
+			), 2500

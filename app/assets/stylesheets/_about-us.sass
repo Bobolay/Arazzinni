@@ -5,6 +5,7 @@
 	height: 700px
 	@media #{$small-only}
 		height: initial
+		overflow: hidden
 	.section-title-1, .section-title-2, .section-title-3, .section-title-4
 		@extend .section-title
 		color: $brown
@@ -15,6 +16,7 @@
 			+transition(0.7s)
 		@media #{$small-only}
 			margin: 30px 0 0 30px
+			font-size: 1.5em
 		&:after
 			border: 1px solid $brown
 		&.appeared
@@ -112,6 +114,10 @@
 			opacity: 0
 			+translate(200%,0)
 			+transition(1s)
+		@media #{$small-only}
+			padding: 0
+		@media #{$medium-only}
+			padding: 0
 		&.appeared
 			opacity: 1
 			+translate(0,0)
@@ -148,6 +154,8 @@
 			display: inline-block
 			vertical-align: top
 			padding: 10px	
+			@media #{$medium-only}
+				padding: 10px 0
 			.this-title
 				font-size: 2em
 				text-transform: uppercase
@@ -182,6 +190,8 @@
 			+translate(0,0)
 		@media #{$small-only}
 			display: none
+		@media #{$medium-only}
+			display: none
 	.form-container
 		border: 1px solid $dark-grey
 		padding: 0 30px
@@ -189,5 +199,16 @@
 		@media #{$medium-up}
 			opacity: 0
 			+transition(1s)
+		@media #{$small-only}
+			padding: 20px 10px 0
+		@media #{$medium-only}
+			margin: 0 auto
 		&.appeared
 			opacity: 1
+		form
+			@media #{$small-only}
+				padding: 10px
+		.subtitle
+			line-height: 30px
+			@media #{$small-only}
+				font-size: 1.5em

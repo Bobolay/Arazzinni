@@ -1,0 +1,145 @@
+#fullpage
+.fp-section
+	height: calc(100vh - 70px)
+.block-wrapper
+	height: 700px
+	transition: 0.5s
+	.section-title
+		color: $brown
+		margin: 0 0 0 30px
+		opacity: 0
+		+translate(0,-300%)
+		+transition(0.5s)
+		&:after
+			border: 1px solid $brown
+		&.appeared
+			+translate(0,0)
+			opacity: 1
+	.shadow-text
+		position: relative
+		top: -25px
+		left: 50px
+		line-height: 100px
+		opacity: 0
+		+translate(-200%,0)
+		+transition(0.3s)
+		&.left-to-right
+			+translate(0,0)
+			opacity: 0.05
+	.photo-container
+		position: relative
+		.photo-left, .photo-right
+			height: 400px
+			width: 200%
+			background-size: cover
+			position: absolute
+			opacity: 0
+			+transition(0.25s)
+			&.appeared
+				+translate(0,0)
+				opacity: 1
+		.photo-left
+			right: 0
+			background-position: right
+			+translate(-100%,0)
+		.photo-right
+			left: 0
+			background-position: left
+			+translate(50%,0)
+		.photo-frame-left, .photo-frame-right
+			width: inherit
+			height: 95%
+			position: absolute
+			top: 2.5%
+			border: 1px solid $light-brown
+		.photo-frame-left
+			right: -10px
+		.photo-frame-right
+			left: -10px
+	.text
+		padding: 30px
+		opacity: 0
+		transition: 0.5s
+		@media #{$small-only}
+			padding: 10px
+		.regular
+			line-height: 22px
+			&:nth-child(2)
+				margin-top: 20px
+		&.appeared
+			opacity: 1
+
+	.advantage-container
+		width: 100%
+		border: 1px solid $brown
+		margin-bottom: 20px
+		padding: 20px
+		.icon-frame
+			width: 110px
+			height: 110px
+			display: inline-block
+		.icon
+			background-size: contain
+			background-position: center
+			background-repeat: no-repeat
+		.appear1, .appear2, .appear3, .appear4
+			width: 0
+			height: 0
+			position: relative
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+		.appear1
+			+transition(1s)
+		.appear2
+			+transition(.9s)
+			+transition-delay(.2s)
+		.appear3
+			+transition(.8s)
+			+transition-delay(.4s)
+		.appear4
+			+transition(.7s)
+			+transition-delay(.6s)
+		.appeared
+			width: 110px
+			height: 110px
+		.text-container
+			display: inline-block
+			vertical-align: top
+			padding: 10px	
+			.this-title
+				font-size: 2em
+				text-transform: uppercase
+				color: $brown
+				span
+					font-size: 0.5em
+					text-transform: uppercase
+					color: $brown
+			.this-subtitle
+				font-size: 1.125em
+				color: $dark-grey
+
+	.door-container
+		position: relative
+		float: right
+		overflow: hidden
+		width: 360px
+		&:after
+			content: ''
+			position: absolute
+			width: 100%
+			bottom: 0
+			height: 3px
+			background: $light-brown
+		.door
+			position: relative
+			top: 5px
+			+transition(0.5s)
+			left: 20px
+			+translate(0,100%)
+		.appeared
+			+translate(0,0)
+	.form-container
+		border: 1px solid $dark-grey
+		padding: 0 30px
+		max-width: 600px

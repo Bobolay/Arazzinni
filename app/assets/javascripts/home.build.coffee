@@ -5,13 +5,15 @@
 #= require jquery-easing
 
 #= require jquery.bxslider.js
-
 #= require bxslider
+
+#= require jquery.fullPage
+#= require jquery.slimscroll
+#= require fullpage
 
 #= require form.js
 
 #= require richmarker.js
-
 #= require google-map-initialize.js
 
 #= require vendor/jquery.scrolldelta

@@ -4,7 +4,8 @@
 .block-wrapper
 	height: 700px
 	transition: 0.5s
-	.section-title
+	.section-title-1, .section-title-2
+		@extend .section-title
 		color: $brown
 		margin: 0 0 0 30px
 		opacity: 0
@@ -15,15 +16,19 @@
 		&.appeared
 			+translate(0,0)
 			opacity: 1
-	.shadow-text
+	.shadow-text-1, .shadow-text-2
+		@extend .shadow-text
 		position: relative
 		top: -25px
 		left: 50px
 		line-height: 100px
 		opacity: 0
-		+translate(-200%,0)
-		+transition(0.3s)
-		&.left-to-right
+		+transition(0.4s)
+		.shadow-text-1
+			+translate(-200%,0)
+		.shadow-text-2
+			+translate(200%,0)
+		&.appeared
 			+translate(0,0)
 			opacity: 0.05
 	.photo-container
@@ -34,7 +39,7 @@
 			background-size: cover
 			position: absolute
 			opacity: 0
-			+transition(0.25s)
+			+transition(0.5s)
 			&.appeared
 				+translate(0,0)
 				opacity: 1
@@ -56,7 +61,7 @@
 			right: -10px
 		.photo-frame-right
 			left: -10px
-	.text
+	.text-1, .text-2
 		padding: 30px
 		opacity: 0
 		transition: 0.5s

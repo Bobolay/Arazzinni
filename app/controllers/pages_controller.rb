@@ -23,6 +23,10 @@ class PagesController < ApplicationController
 
   end
 
+  def publication
+
+  end
+
   def contacts
 
   end

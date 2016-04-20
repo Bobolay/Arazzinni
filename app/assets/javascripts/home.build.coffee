@@ -23,3 +23,5 @@
 
 #= require jquery.appear
 #= require appeared
+
+#= require vendor/collection-navigation

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get "collection", action: "collection"
     get "help", action: "help"
     get "publications", action: "publications"
+    get "publication", action: "publication"
     get "contact-us", action: "contact_us"
   end
 

@@ -15,6 +15,10 @@ class PagesController < ApplicationController
 
   end
 
+  def collection_one
+
+  end
+
   def help
 
   end

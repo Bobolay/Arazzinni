@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   controller :pages do
     get "about-us", action: "about_us"
     get "collection", action: "collection"
+    get "collection_one", action: "collection_one"
     get "help", action: "help"
     get "publications", action: "publications"
     get "publication", action: "publication"

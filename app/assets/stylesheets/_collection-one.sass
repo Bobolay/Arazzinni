@@ -1,0 +1,53 @@
+.collection-one-wrapper
+	.go-left
+		float: left !important
+	.go-right
+		float: right !important
+	.banner-container
+		height: calc(100vh - 90px)
+		.row
+			height: 100%
+	.frame-on-banner
+		border: 1px solid $brown
+		height: 100%
+		position: relative
+		.text-container
+			position: relative
+			top: 50%
+			padding: 0 20px
+			+translate(0,-50%)
+		.section-title
+			margin: 0
+			color: $brown
+			margin-bottom: 50px
+			&:after
+				+after(100px,$brown)
+		.block-container
+			+clearfix
+		.block
+			width: 200px
+			float: left
+			margin: 0 30px 15px 0
+			.svg
+				width: 35px
+				height: 35px
+				padding: 5px
+				background-color: $dark-grey
+				fill: #fff
+				float: left
+			span
+				font-size: 1.25em
+				margin-left: 10px
+		.regular
+			clear: both
+			margin-top: 35px
+		.more
+			position: absolute
+			left: 50%
+			+translate(-50%,0)
+			text-align: center
+			bottom: 30px
+			.regular-big
+				text-transform: uppercase
+				font-weight: 300
+				color: $brown

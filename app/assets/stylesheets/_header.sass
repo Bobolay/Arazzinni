@@ -43,7 +43,7 @@ $header-bg-color: white
 		display: none
 .icons-right-side
 	float: right
-.cart, .phone, .menu
+.cart, .phone, .menu-button
 	float: left
 	fill: $brown
 	border: 1px solid $brown
@@ -61,3 +61,127 @@ $header-bg-color: white
 	&:hover
 		background-color: $brown
 		fill: #fff
+
+.menu-button
+	cursor: pointer
+.close-button
+	position: absolute
+	top: 30px
+	right: 30px
+	color: $brown
+	font-size: 1em
+	cursor: pointer
+	span
+		vertical-align: sub
+		margin-left: 10px
+.menu-wrapper
+	position: absolute
+	right: 0
+	top: 0
+	width: 0
+	height: 0
+	background: #fff
+	display: block
+	padding-top: 100px
+	+transition(0.5s)
+	&.opened
+		width: 100vw
+		height: 100vh
+	.navigation-wrapper
+		text-align: right
+		margin-right: 20px
+		.menu-title
+			color: $brown
+			&:after
+				content: ''
+				position: absolute
+				height: 1px
+				width: 500px
+				right: 0
+				bottom: -5px
+				background: $light-grey
+	
+	.navigation
+		list-style: none
+		padding-top: 30px
+		a
+			color: $light-grey
+			font-size: 1.75em
+			font-weight: 100
+			text-transform: uppercase
+			display: block
+			cursor: pointer
+			&:hover
+				color: $brown
+
+	.securement
+		list-style: none
+		padding-top: 30px
+		a
+			font-size: 1.125em
+			color: $light-grey
+			font-weight: 100
+			cursor: pointer
+			display: block
+			&:hover
+				color: $brown
+
+	.moving-arrow
+		opacity: 0
+		display: inline-block
+		position: absolute
+		right: 0
+		bottom: 5px
+		margin-right: 50px
+		+transition(0.25s)
+	.menu-collection-container
+		margin-bottom: 5px
+		height: 200px
+		cursor: pointer
+		// +transition(0.5s)
+		&:first-child
+			margin-top: 10px
+		&:hover
+			background-color: #F1F2F2
+			.menu-title
+				color: $brown
+			.photo-container
+				+disable-grayscale
+			span
+				display: none
+			.moving-arrow
+				opacity: 1
+				margin-right: 0
+		.photo-container
+			height: 100%
+			width: 25%
+			background-size: cover
+			background-position: center
+			+grayscale
+			float: left
+			margin-right: 20px
+			// +transition(0)
+			@media #{$large-up}
+				width: 50%
+		.text-container
+			height: 100%
+			padding: 20px
+		.menu-title
+			color: $grey
+			&:after
+				content: ''
+				position: absolute
+				height: 1px
+				width: 50%
+				left: 50%
+				bottom: -5px
+				background: $light-grey
+			span
+				color: $light-grey
+				font-weight: 100
+				font-size: 0.875
+				float: right
+		.menu-subtitle
+			color: $light-grey
+			font-size: 1.375em
+			margin-top: 10px

@@ -1,7 +1,7 @@
 .collection-one-wrapper
 	.banner-container
 		.row.collapse
-			.xlarge-8.large-7.medium-6.go-right.columns
+			.xlarge-8.large-7.medium-5.go-right.columns
 				.slider-container	
 					ul.bxslider
 						li
@@ -12,7 +12,12 @@
 							.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-48.jpg')})"
 						li
 							.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-133.jpg')})"
-			.xlarge-4.large-5.medium-6.go-left.columns
+					.squares#bx-pager
+						a#button1 data-slide-index="0" href=""
+						a#button2 data-slide-index="1" href=""
+						a#button3 data-slide-index="2" href=""
+						a#button4 data-slide-index="3" href=""
+			.xlarge-4.large-5.medium-7.go-left.columns
 				.frame-on-banner
 					.text-container
 						.section-title high endurance collection
@@ -30,6 +35,18 @@
 								.svg = inline_svg "icons/favourite24.svg"
 								span.text 5 year warranty
 						p.regular As it comes from the name, this collection features high durability of door finish, thanks to innovative composite materials. All backed up by sturdy construction of the door slab and parts. Extra layer of endurance is added by aluminium edges made from forged aluminium. Say commercial grade for home use. If you need a sound resistance door with extra durability this door model is the best choice. All flush design doors has a solid wood core also available sound resistance core by buyer request as option.
-					a.more href=""
-						p.regular-big more
-						.arrow-down = inline_svg "icons/more-arrow-down.svg"
+						a.more href=""
+							p.regular-big more
+							.arrow-down = inline_svg "icons/more-arrow-down.svg"
+	.door-container
+		.row
+			.large-10.large-centered.medium-10.medium-centered.small-12.columns
+				.section-title doors
+				.shadow-text doors
+				.choose-option-field
+					p.option Sort:
+					select
+						option value="first" First door
+						option value="second" Second door
+						option value="third" Third door
+						option value="fourth" Fourth door

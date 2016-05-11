@@ -11,3 +11,7 @@ window.toggle_menu = (menu_key = 'menu')->
 $(".header-container .menu").on "click", (e)->
   opened = toggle_menu()
   
+$(".menu-button").on "click", ()->
+  $('.menu-wrapper').toggleClass("opened")
+$(".close-button").on "click", ()->
+  $('.menu-wrapper').toggleClass("opened")

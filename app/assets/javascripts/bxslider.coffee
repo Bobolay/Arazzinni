@@ -9,7 +9,7 @@ change_slide = (index)->
 
 $("body").on "click", ".product-unit-on-banner .squares a", ()->
     $button = (this)
-    index = $button.index()
+    index = $button.index
     change_slide()
 
 $(document).ready ->

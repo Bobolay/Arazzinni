@@ -2,18 +2,18 @@
 
 #= require jquery_ujs
 
-#= require jquery-easing
+#= require vendor/jquery-easing
 
-#= require jquery.bxslider.js
+#= require vendor/jquery.bxslider.js
 #= require bxslider
 
-#= require jquery.fullPage
-#= require jquery.slimscroll
+#= require vendor/jquery.fullPage
+#= require vendor/jquery.slimscroll
 #= require fullpage
 
 #= require form.js
 
-#= require richmarker.js
+#= require vendor/richmarker.js
 #= require google-map-initialize.js
 
 #= require vendor/jquery.scrolldelta
@@ -21,7 +21,7 @@
 #= require menu
 #= require scroll-banner
 
-#= require jquery.appear
+#= require vendor/jquery.appear
 #= require appeared
 
-#= require vendor/collection-navigation
+#= require collection-navigation

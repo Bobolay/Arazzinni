@@ -64,18 +64,8 @@ $header-bg-color: white
 
 .menu-button
 	cursor: pointer
-.close-button
-	position: absolute
-	top: 30px
-	right: 30px
-	color: $brown
-	font-size: 1em
-	cursor: pointer
-	span
-		vertical-align: sub
-		margin-left: 10px
 .menu-wrapper
-	position: absolute
+	position: fixed
 	right: 0
 	top: 0
 	width: 0
@@ -84,6 +74,20 @@ $header-bg-color: white
 	display: block
 	padding-top: 100px
 	+transition(0.5s)
+	z-index: 55555
+	.close-button
+		position: absolute
+		display: none
+		top: 30px
+		right: 30px
+		color: $brown
+		font-size: 1em
+		cursor: pointer
+		&.show-it
+			display: block
+		span
+			vertical-align: sub
+			margin-left: 10px
 	&.opened
 		width: 100vw
 		height: 100vh
@@ -123,8 +127,10 @@ $header-bg-color: white
 			font-weight: 100
 			cursor: pointer
 			display: block
+			opacity: 0.65
 			&:hover
 				color: $brown
+				opacity: 1
 
 	.moving-arrow
 		opacity: 0
@@ -133,49 +139,57 @@ $header-bg-color: white
 		right: 0
 		bottom: 5px
 		margin-right: 50px
-		+transition(0.25s)
+		+transition(0.5s)
 	.menu-collection-container
 		margin-bottom: 5px
 		height: 200px
 		cursor: pointer
-		// +transition(0.5s)
+		+transition(0.1s)
 		&:first-child
 			margin-top: 10px
-		&:hover
-			background-color: #F1F2F2
-			.menu-title
-				color: $brown
-			.photo-container
-				+disable-grayscale
-			span
-				display: none
-			.moving-arrow
-				opacity: 1
-				margin-right: 0
 		.photo-container
+			position: relative
 			height: 100%
 			width: 25%
-			background-size: cover
-			background-position: center
-			+grayscale
+			overflow: hidden
 			float: left
 			margin-right: 20px
-			// +transition(0)
 			@media #{$large-up}
 				width: 50%
+			.photo
+				position: absolute
+				background-size: cover
+				background-position: center
+				width: 100%
+				height: 100%
+				z-index: 2
+				+grayscale
+				+transition(0.25s)
 		.text-container
 			height: 100%
 			padding: 20px
 		.menu-title
 			color: $grey
+			&:before
+				content: ''
+				position: absolute
+				height: 1px
+				width: 51%
+				left: 49%
+				bottom: -5px
+				background: $light-grey		
+				opacity: 0.5	
 			&:after
 				content: ''
 				position: absolute
 				height: 1px
-				width: 50%
-				left: 50%
+				width: 51%
+				left: 49%
 				bottom: -5px
-				background: $light-grey
+				background: $brown
+				+translate(-100%,0)
+				+transition(0.4s)
+				+transition-timing-function(ease-in-out)
 			span
 				color: $light-grey
 				font-weight: 100
@@ -185,3 +199,23 @@ $header-bg-color: white
 			color: $light-grey
 			font-size: 1.375em
 			margin-top: 10px
+			span
+				font-size: 0.875em
+				font-weight: 100
+				opacity: 0.7
+		&:hover
+			background-color: #F1F2F2
+			.menu-title
+				color: $brown
+				&:after
+					+translate(0,0)
+			.photo
+				+disable-grayscale
+				+scale(1.05)
+			.menu-title
+				span
+					display: none
+			.moving-arrow
+				+transition-delay(0.3s)
+				opacity: 1
+				margin-right: 0

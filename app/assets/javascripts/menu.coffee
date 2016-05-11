@@ -13,5 +13,10 @@ $(".header-container .menu").on "click", (e)->
   
 $(".menu-button").on "click", ()->
   $('.menu-wrapper').toggleClass("opened")
+  $('body').addClass("fixed")
+  $('.close-button').addClass("show-it")
+
 $(".close-button").on "click", ()->
   $('.menu-wrapper').toggleClass("opened")
+  $('body').removeClass("fixed")
+  $('.close-button').removeClass("show-it")

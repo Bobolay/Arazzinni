@@ -130,12 +130,13 @@
 			background-position: center
 			background-repeat: no-repeat
 		.appear1, .appear2, .appear3, .appear4
-			width: 0
-			height: 0
+			width: 110px
+			height: 110px
 			position: relative
-			left: 50%
-			top: 50%
-			transform: translate(-50%, -50%)
+			+scale(0)
+			// left: 50%
+			// top: 50%
+			// transform: translate(-50%, -50%)
 		.appear1
 			+transition(1.5s)
 		.appear2
@@ -148,8 +149,9 @@
 			+transition(.7s)
 			+transition-delay(.6s)
 		.appeared
-			width: 110px
-			height: 110px
+			// width: 110px
+			// height: 110px
+			+scale(1)
 		.text-container
 			display: inline-block
 			vertical-align: top

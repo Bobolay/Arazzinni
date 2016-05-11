@@ -24,4 +24,6 @@
 #= require vendor/jquery.appear
 #= require appeared
 
+#= require vendor/parallax.min.js
+
 #= require collection-navigation

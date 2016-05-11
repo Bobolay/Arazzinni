@@ -7,7 +7,13 @@ function initialize() {
 	      { lightness: 6 },
 	      { gamma: 0.87 }
 	    ]
-	  }
+	  },{
+        featureType: "all",
+        elementType: "geometry",
+      },{
+        featureType: "road",
+        elementType: "labels",
+      }
 	];
     var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
     
@@ -26,7 +32,7 @@ function initialize() {
         zoom: zoomZoom,
         center: new google.maps.LatLng(40.6097477, -74.2979765),
         panControl:false,
-        zoomControl:false,
+        zoomControl:true,
         mapTypeControl:false,
         scaleControl:false,
         streetViewControl:false,
@@ -47,43 +53,8 @@ function initialize() {
         position: new google.maps.LatLng(40.6097477, -74.2979765),
         icon: image
     });
-
-
-    var div = '<div id="marker-popup">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Arazzinni</h1>'+
-    '<div id="bodyContent">'+
-    '<p>Arazzinni address</p>'+
-    '</div>'+
-    '</div>';
-
-    marker = new RichMarker({
-        map: map,
-        position: new google.maps.LatLng(m.lat, m.lng),
-        draggable: false,
-        flat: true,
-        anchor: RichMarkerPosition.MIDDLE,
-        content: div
-    });
-
-    google.maps.event.addListener(marker, 'position_changed', function () {
-        log('Marker position: ' + marker.getPosition());
-    });
-
-    // map.mapTypes.set('map_style', styledMap);
-    // map.setMapTypeId('map_style');
-    // google.maps.event.addListener(marker, 'click', function () {
-    //     var popup = document.getElementById('marker-popup'),
-    //     style = window.getComputedStyle(popup),
-    //     opacity = style.getPropertyValue('opacity');
-    //     if(opacity=='0'){
-    //         popup.style.opacity=1;
-    //     } else {
-    //         popup.style.opacity=0;
-    //     }
-    //     console.log(opacity)
-    // });
+    map.mapTypes.set('map_style', styledMap);
+    map.setMapTypeId('map_style');
 }
 google.maps.event.addDomListener(window, 'resize', initialize);
 google.maps.event.addDomListener(window, 'load', initialize)

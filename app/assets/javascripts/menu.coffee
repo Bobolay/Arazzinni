@@ -15,8 +15,14 @@ $(".menu-button").on "click", ()->
   $('.menu-wrapper').toggleClass("opened")
   $('body').addClass("fixed")
   $('.close-button').addClass("show-it")
+  setTimeout (->
+      $(".navigation-wrapper, .menu-collection-container").addClass("show-it")
+    ), 200
 
 $(".close-button").on "click", ()->
   $('.menu-wrapper').toggleClass("opened")
   $('body').removeClass("fixed")
   $('.close-button').removeClass("show-it")
+  setTimeout (->
+      $(".navigation-wrapper, .menu-collection-container").removeClass("show-it")
+    ), 0

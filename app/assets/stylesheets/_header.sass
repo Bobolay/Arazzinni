@@ -66,6 +66,7 @@ $header-bg-color: white
 	cursor: pointer
 .menu-wrapper
 	position: fixed
+	overflow: hidden
 	right: 0
 	top: 0
 	width: 0
@@ -94,13 +95,17 @@ $header-bg-color: white
 	.navigation-wrapper
 		text-align: right
 		margin-right: 20px
+		opacity: 0
+		+transition(1s)
+		&.show-it
+			opacity: 1
 		.menu-title
 			color: $brown
 			&:after
 				content: ''
 				position: absolute
 				height: 1px
-				width: 500px
+				width: 1000px
 				right: 0
 				bottom: -5px
 				background: $light-grey
@@ -144,7 +149,10 @@ $header-bg-color: white
 		margin-bottom: 5px
 		height: 200px
 		cursor: pointer
-		+transition(0.1s)
+		opacity: 0
+		+transition(1s)
+		&.show-it
+			opacity: 1
 		&:first-child
 			margin-top: 10px
 		.photo-container
@@ -174,8 +182,8 @@ $header-bg-color: white
 				content: ''
 				position: absolute
 				height: 1px
-				width: 51%
-				left: 49%
+				width: 50%
+				left: 50%
 				bottom: -5px
 				background: $light-grey		
 				opacity: 0.5	
@@ -183,11 +191,10 @@ $header-bg-color: white
 				content: ''
 				position: absolute
 				height: 1px
-				width: 51%
-				left: 49%
+				width: 0%
+				left: 50%
 				bottom: -5px
 				background: $brown
-				+translate(-100%,0)
 				+transition(0.4s)
 				+transition-timing-function(ease-in-out)
 			span
@@ -208,7 +215,7 @@ $header-bg-color: white
 			.menu-title
 				color: $brown
 				&:after
-					+translate(0,0)
+					width: 50%
 			.photo
 				+disable-grayscale
 				+scale(1.05)

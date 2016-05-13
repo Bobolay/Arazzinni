@@ -11,7 +11,7 @@ class PagesController < ApplicationController
 
   end
 
-  def collection
+  def collections
 
   end
 
@@ -27,7 +27,7 @@ class PagesController < ApplicationController
 
   end
 
-  def publication
+  def publication_one
 
   end
 

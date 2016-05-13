@@ -7,6 +7,21 @@
 		height: calc(100vh - 80px)
 		.row
 			height: 100%
+	.section-title
+		color: $brown
+		margin: 0
+		display: inline-block
+		.underline
+			content: ''
+			position: absolute
+			width: 1000px
+			height: 1px
+			border: 1px solid $brown
+			right: 0
+			bottom: -5px
+	.shadow-text
+		top: 0
+		margin-top: -70px
 	.frame-on-banner
 		border: 1px solid $brown
 		height: 100%
@@ -20,8 +35,6 @@
 			margin: 0
 			color: $brown
 			margin-bottom: 50px
-			&:after
-				+after(100px,$brown)
 		.block-container
 			+clearfix
 		.block
@@ -65,19 +78,212 @@
 				border: 1px solid #fff
 				&.active
 					background-color: #fff
-	.door-container
+	.doors-container
 		padding-top: 100px
-		.section-title
-			color: $brown
-			margin: 0
-		.choose-option-field
-			.option
-				font-size: 0.875em
-				color: $grey
-			select
-				-webkit-webkit-appearence: none
-				-moz-webkit-appearence: none
-				-ms-webkit-appearence: none
-				-o-webkit-appearence: none
-				webkit-appearence: none
-				
+		.filter-container
+			position: relative
+			margin-top: -60px
+			margin-bottom: 100px
+			z-index: 2
+			+clearfix
+			.filter-field
+				width: 20%
+				float: left
+				.filter
+					font-size: 0.875em
+					color: $grey
+				select
+					-webkit-webkit-appearence: none
+					-moz-webkit-appearence: none
+					-ms-webkit-appearence: none
+					-o-webkit-appearence: none
+					-webkit-appearence: none
+					border: none
+					box-shadow: none
+					background: transparent
+					background-image: none
+					&:focus
+						outline: none
+		.frame
+			position: relative
+			border: 1px solid $grey
+			padding: 30px
+			margin: 0 auto 150px
+			max-width: 400px
+			+clearfix
+			.text-container
+				padding-left: 170px
+				.title-name
+					text-transform: uppercase
+					font-weight: 600
+					position: relative
+					line-height: 21px
+					margin-bottom: 20px
+					&:after
+						+after(100px,$dark-grey)
+				.specs
+					color: $light-grey
+				.price
+					font-size: 1.75em
+					color: $brown
+					margin-top: 10px
+				.pick-colors
+					+clearfix
+					margin-top: 30px
+					.color
+						float: left
+						width: 30px
+						height: 30px
+						margin-right: 10px
+						background-size: cover
+						background-position: center
+						cursor: pointer
+			.door
+				position: absolute
+				background-position: center
+				background-size: contain
+				background-repeat: no-repeat
+				width: 50%
+				height: 120%
+				top: -10%
+				left: -5px
+				opacity: 0
+				+transition(0.1s)
+				&.show-it
+					opacity: 1
+			.add-to-cart
+				position: absolute
+				fill: $brown
+				background-color: #fff
+				border: 1px solid $brown
+				padding: 10px
+				top: 50%
+				right: 0
+				+translate(50%, -50%)
+	.photo-frame
+		width: 100%
+		height: 50vh
+		padding: 5px
+		border: 1px solid $brown
+		margin-bottom: 100px
+		.photo
+			width: 100%
+			height: 100%
+
+	.features-container
+		.square
+			overflow: initial
+			// max-width: 500px
+			margin: -0.03125em
+		.photo-container
+			position: absolute
+			background-position: center
+			background-size: cover
+			width: 80%
+			height: 80%
+			left: 50%
+			top: 50%
+			+translate(-50%,-50%)
+		.text-container
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			.text
+				position: absolute
+				width: 80%
+				height: 250px
+				top: 50%
+				left: 50%
+				+translate(-50%,-50%)
+				@media #{$medium-only}
+					width: 90%
+				.features-title
+					font-size: 2.1em
+					position: relative
+					color: $brown
+					text-transform: uppercase
+					line-height: 34px
+					&:after
+						+after(100px,$brown)
+					@media #{$medium-only}
+						font-size: 1.75em
+				.regular
+					margin-top: 10px
+					line-height: 21px
+					@media #{$medium-only}
+						font-size: 1em
+
+	.collections-navigation
+		margin: 100px 0
+		.navigation-container
+			height: 400px
+			background-color: $brown
+			position: relative
+			.arrow-left
+				position: absolute
+				top: 50%
+				left: 50px
+				+translate(0,-50%)
+			.arrow-right
+				position: absolute
+				top: 50%
+				right: 50px
+				+translate(0,-50%)
+			.photo-container-left, .photo-container-right
+				position: absolute
+				width: 80%
+				height: 100%
+				overflow: hidden
+				&:after
+					content: ''
+					position: absolute
+					top: 0
+					right: 0
+					bottom: 0
+					left: 0
+					background: linear-gradient(to bottom, transparent, transparent, rgba(65,65,65,0.5))
+				.photo
+					position: absolute
+					width: 100%
+					height: 100%
+					background-position: center
+					background-size: cover
+					+transition(1s)
+				.number
+					color: #fff
+					font-size: 3.75em
+					position: absolute
+					left: 30px
+					top: 10px
+				.collection-title
+					position: absolute
+					font-size: 1.875em
+					color: #fff
+					text-transform: uppercase
+					left: 30px
+					bottom: 50px
+					z-index: 1
+				.collection-items
+					position: absolute
+					font-size: 1.125em
+					color: #fff
+					left: 30px
+					bottom: 30px
+					z-index: 1
+					opacity: 0.8
+					span
+						font-size: 0.875em
+			.photo-container-left
+				right: 0
+			.photo-container-right
+				left: 0
+			&:hover
+				.animated-frame
+					.left-border, .right-border
+						+translate(0,0)
+					&:before, &:after
+						+translate(0,0)
+				.photo
+					+scale(1.05)

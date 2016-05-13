@@ -38,15 +38,239 @@
 						a.more href=""
 							p.regular-big more
 							.arrow-down = inline_svg "icons/more-arrow-down.svg"
-	.door-container
+	.doors-container
 		.row
 			.large-10.large-centered.medium-10.medium-centered.small-12.columns
-				.section-title doors
+				.section-title
+					| doors
+					.underline
 				.shadow-text doors
-				.choose-option-field
-					p.option Sort:
-					select
-						option value="first" First door
-						option value="second" Second door
-						option value="third" Third door
-						option value="fourth" Fourth door
+				.filter-container
+					.filter-field
+						p.filter Sort:
+						select
+							option value="first" First door
+							option value="second" Second door
+							option value="third" Third door
+							option value="fourth" Fourth door
+					.filter-field
+						p.filter Color:
+						select
+							option value="white" White
+							option value="red" Red
+							option value="black" Black
+							option value="brown" Brown
+					.filter-field
+						p.filter Style:
+						select
+							option value="modern" Modern
+							option value="classic" Classic
+					.filter-field
+						p.filter Price:
+						select
+							option value="500-1500" $500 &mdash; $1500
+							option value="1500-2500" $1500 &mdash; $2500
+							option value="2500-3500" $2500 &mdash; $3500
+					.filter-field
+						p.filter Confugurations:
+						select
+							option value="double" Double (Swing)
+							option value="triple" Triple (Swing)
+				.row
+					.xlarge-4.large-6.medium-6.small-12.columns
+						.frame
+							.text-container	
+								p.title-name modern lux interior door wenge
+								p.specs Type: Interior
+								p.specs Style: Modern
+								p.price $955
+								.pick-colors
+									.color style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-3.jpg')})"
+							.door.show-it style="background-image: url(#{asset_path('sampleDoors/sample-door1.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
+							.add-to-cart = inline_svg "icons/supermarket39.svg"
+					.xlarge-4.large-6.medium-6.small-12.columns
+						.frame
+							.text-container	
+								p.title-name modern lux interior door wenge
+								p.specs Type: Interior
+								p.specs Style: Modern
+								p.price $955
+								.pick-colors
+									.color style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-3.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-4.jpg')})"
+							.door.show-it style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
+							.add-to-cart = inline_svg "icons/supermarket39.svg"
+					.xlarge-4.large-6.medium-6.small-12.columns
+						.frame
+							.text-container	
+								p.title-name modern lux interior door wenge
+								p.specs Type: Interior
+								p.specs Style: Modern
+								p.price $955
+								.pick-colors
+									.color style="background-image: url(#{asset_path('panels/panel-3.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-4.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-5.jpg')})"
+							.door.show-it style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door5.jpg')})"
+							.add-to-cart = inline_svg "icons/supermarket39.svg"
+					.xlarge-4.large-6.medium-6.small-12.columns
+						.frame
+							.text-container	
+								p.title-name modern lux interior door wenge
+								p.specs Type: Interior
+								p.specs Style: Modern
+								p.price $955
+								.pick-colors
+									.color style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-3.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-4.jpg')})"
+							.door.show-it style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
+							.add-to-cart = inline_svg "icons/supermarket39.svg"
+					.xlarge-4.large-6.medium-6.small-12.columns
+						.frame
+							.text-container	
+								p.title-name modern lux interior door wenge
+								p.specs Type: Interior
+								p.specs Style: Modern
+								p.price $955
+								.pick-colors
+									.color style="background-image: url(#{asset_path('panels/panel-3.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-4.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-5.jpg')})"
+							.door.show-it style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door5.jpg')})"
+							.add-to-cart = inline_svg "icons/supermarket39.svg"
+					.xlarge-4.large-6.medium-6.small-12.columns
+						.frame
+							.text-container	
+								p.title-name modern lux interior door wenge
+								p.specs Type: Interior
+								p.specs Style: Modern
+								p.price $955
+								.pick-colors
+									.color style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+									.color style="background-image: url(#{asset_path('panels/panel-3.jpg')})"
+							.door.show-it style="background-image: url(#{asset_path('sampleDoors/sample-door1.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
+							.door style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
+							.add-to-cart = inline_svg "icons/supermarket39.svg" 
+	.photo-frame
+		.photo.parallax-window data-image-src="#{asset_path('collection/parallax-banner.jpg')}" data-parallax="scroll"
+	.features-container
+		.row
+			.large-10.large-centered.medium-10.medium-centered.small-12.columns
+				.section-title
+					| features
+					.underline
+				.shadow-text features
+				.row.collapse
+					.large-9.large-centered.medium-12.small-12.columns
+						.row.collapse
+							.large-6.medium-6.small-12.columns
+								.square
+									.frame-left-right.left-to-right-close
+										.left-border
+										.right-border
+										.photo-container style="background-image: url(#{asset_path('sampleDoors/sample-door1.jpg')})"
+							.large-6.medium-6.small-12.columns
+								.square
+									.text-container.right-to-left-far
+										.text
+											.features-title smartcore
+											.regular Door is made from solid pine with Smart Core filling. This benefit allows to significantly increase sound and thermal insulation in comparison to regular doors.
+							.large-6.medium-6.small-12.columns.go-right
+								.square
+									.frame-left-right.right-to-left-close
+										.left-border
+										.right-border
+										.photo-container style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
+							.large-6.medium-6.small-12.columns.go-left
+								.square
+									.text-container.left-to-right-far
+										.text
+											.features-title exotic wood veneer
+											.regular While being made from regular wood (pine or alder) these doors are covered by thin layer made from exotic wood veneer  like Wenge, Sapele, Black Apricot  etc. Additional layer of Becker Acroma (The Sherwin-Williams Company) coatings gives the surface finished look and protects it from wear and tear.
+							.large-6.medium-6.small-12.columns
+								.square
+									.frame-right-left.left-to-right-close
+										.left-border
+										.right-border
+										.photo-container style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
+							.large-6.medium-6.small-12.columns
+								.square
+									.text-container.right-to-left-far
+										.text
+											.features-title innovative frame structure
+											.regular blablabla
+							.large-6.medium-6.small-12.columns.go-right
+								.square
+									.frame-left-right.right-to-left-close
+										.left-border
+										.right-border
+										.photo-container style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
+							.large-6.medium-6.small-12.columns.go-left
+								.square
+									.text-container.left-to-right-far
+										.text
+											.features-title weatherproof
+											.regular Since these are exterior doors, every unit is equipped with double-layered compression weather stripping, which adds extra protection from drafts and dust. No need in extra expenses for a storm door.
+							.large-6.medium-6.small-12.columns
+								.square
+									.frame-right-left.left-to-right-close
+										.left-border
+										.right-border
+										.photo-container style="background-image: url(#{asset_path('sampleDoors/sample-door5.jpg')})"
+							.large-6.medium-6.small-12.columns
+								.square
+									.text-container.right-to-left-far
+										.text
+											.features-title modern door casings design
+											.regular blablabla
+	.collections-navigation
+		.row.collapse
+			.large-6.medium-6.small-6.columns
+				.navigation-container
+					.animated-frame
+						.left-border
+						.right-border
+					.arrow-left = inline_svg "icons/arrow-collection-left.svg"
+					.photo-container-left
+						.photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-183.jpg')})"
+						.number 5
+						.collection-title exterior doors
+						.collection-items
+							| 27 
+							span items
+			.large-6.medium-6.small-6.columns
+				.navigation-container
+					.animated-frame
+						.left-border
+						.right-border
+					.arrow-right = inline_svg "icons/arrow-collection-right.svg"
+					.photo-container-right
+						.photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-48.jpg')})"
+						.number 7
+						.collection-title wall panels
+						.collection-items
+							| 37 
+							span items
+	.consultant-container
+		.row
+			.large-10.large-centered.medium-10.medium-centered.small-12.columns
+				.section-title
+					| consultant
+					.underline
+				.shadow-text consultant

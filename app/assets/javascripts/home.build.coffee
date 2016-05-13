@@ -4,6 +4,8 @@
 
 #= require vendor/jquery-easing
 
+#= require vendor/parallax.min.js
+
 #= require vendor/jquery.bxslider.js
 #= require bxslider
 
@@ -24,6 +26,6 @@
 #= require vendor/jquery.appear
 #= require appeared
 
-#= require vendor/parallax.min.js
-
 #= require collection-navigation
+
+#= require collection-door

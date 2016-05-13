@@ -59,8 +59,9 @@ a
 	left: 0
 	top: 0
 	border-left: 1px solid $color
-	transform: translateY(100%)
-	transition: .3s
+	+translate(0,100%)
+	+transition(0.3s)
+	+transition-timing-function(ease-in-out)
 =right-border($color)
 	content: ''
 	position: absolute
@@ -68,8 +69,9 @@ a
 	right: 0
 	top: 0
 	border-right: 1px solid $color
-	transform: translateY(-100%)
-	transition: .4s
+	+translate(0,-100%)
+	+transition(0.4s)
+	+transition-timing-function(ease-in-out)
 =top-border($color)
 	content: ''
 	position: absolute
@@ -77,8 +79,9 @@ a
 	top: 0
 	border-top: 1px solid $color
 	left: 0
-	transform: translateX(-100%)
-	transition: .5s
+	+translate(-100%,0)
+	+transition(0.5s)
+	+transition-timing-function(ease-in-out)
 =bottom-border($color)
 	content: ''
 	position: absolute
@@ -86,13 +89,21 @@ a
 	bottom: 0
 	border-bottom: 1px solid $color
 	right: 0
-	transform: translateX(100%)
-	transition: .6s
+	+translate(100%,0)
+	+transition(0.6s)
+	+transition-timing-function(ease-in-out)
+
+.go-right
+	float: right !important
+.go-left
+	float: left !important
 
 .regular
 	font-size: 1.125em
 .regular-big
 	font-size: 1.25em
+.title-name
+	font-size: 1.375em
 .header3
 	font-size: 1.5em
 	text-transform: uppercase
@@ -197,3 +208,148 @@ a
 		+top-border(#fff)
 	&:after
 		+bottom-border(#fff)	
+
+//                     C O L L E C T I O N - O N E 
+
+.frame-left-right
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	.left-border
+		position: absolute
+		width: 1px
+		height: 0
+		background-color: $light-grey
+		top: 0
+		left: 0
+		+transition(1s)
+		+transition-delay(1s)
+	.right-border
+		position: absolute
+		width: 1px
+		height: 0
+		background-color: $light-grey
+		top: 0
+		right: 0
+		+transition(1s)
+		+transition-delay(2s)
+	&:before
+		content: ''
+		position: absolute
+		width: 0
+		height: 1px
+		background-color: $light-grey
+		top: 0
+		left: 0
+		+transition(1s)
+		+transition-delay(1s)
+	&:after
+		content: ''
+		position: absolute
+		width: 0
+		height: 1px
+		background-color: $light-grey
+		bottom: 0
+		left: 0
+		+transition(1s)
+		+transition-delay(2s)
+	&.appeared
+		.left-border, .right-border
+			height: 100%
+		&:before, &:after
+			width: 100%
+
+.frame-right-left
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	.left-border
+		position: absolute
+		width: 1px
+		height: 0
+		background-color: $light-grey
+		top: 0
+		left: 0
+		+transition(1s)
+		+transition-delay(2s)
+	.right-border
+		position: absolute
+		width: 1px
+		height: 0
+		background-color: $light-grey
+		top: 0
+		right: 0
+		+transition(1s)
+		+transition-delay(1s)
+	&:before
+		content: ''
+		position: absolute
+		width: 0
+		height: 1px
+		background-color: $light-grey
+		top: 0
+		right: 0
+		+transition(1s)
+		+transition-delay(1s)
+	&:after
+		content: ''
+		position: absolute
+		width: 0
+		height: 1px
+		background-color: $light-grey
+		bottom: 0
+		right: 0
+		+transition(1s)
+		+transition-delay(2s)
+	&.appeared
+		.left-border, .right-border
+			height: 100%
+		&:before, &:after
+			width: 100%
+
+
+
+.left-to-right-close
+	position: absolute
+	+translate(-10%,0)
+	opacity: 0
+	+transition(0.5s)
+	+transition-timing-function(ease-in-out)
+	&.appeared
+		+translate(0,0)
+		opacity: 1
+
+.left-to-right-far
+	position: absolute
+	+translate(-50%,0)
+	opacity: 0
+	+transition(3s)
+	+transition-timing-function(ease-in-out)
+	&.appeared
+		+translate(0,0)
+		opacity: 1
+
+
+
+.right-to-left-close
+	position: absolute
+	+translate(10%,0)
+	opacity: 0
+	+transition(0.5s)
+	+transition-timing-function(ease-in-out)
+	&.appeared
+		+translate(0,0)
+		opacity: 1
+.right-to-left-far
+	position: absolute
+	+translate(50%,0)
+	opacity: 0
+	+transition(3s)
+	+transition-timing-function(ease-in-out)
+	&.appeared
+		+translate(0,0)
+		opacity: 1

@@ -1,42 +1,57 @@
 .collection-one-wrapper
+	overflow: hidden
 	.go-left
 		float: left !important
 	.go-right
 		float: right !important
 	.banner-container
-		height: calc(100vh - 80px)
-		.row
-			height: 100%
-	.section-title
-		color: $brown
-		margin: 0
-		display: inline-block
-		.underline
-			content: ''
-			position: absolute
-			width: 1000px
-			height: 1px
-			border: 1px solid $brown
-			right: 0
-			bottom: -5px
-	.shadow-text
-		top: 0
-		margin-top: -70px
+		height: initial
+		.section-title
+			font-size: 3.125em
+			line-height: 45px
+			font-weight: 600
+			opacity: 1
+			&:after
+				content: ''
+				position: absolute
+				bottom: -15px
+				left: 3px
+				width: 100px
+				border: 2px solid $brown
+			@media #{$small-only}
+				&:after
+					border: 1px solid $brown
 	.frame-on-banner
 		border: 1px solid $brown
-		height: 100%
+		height: 400px
 		position: relative
+		@media #{$medium-only}
+			height: calc(50vh - 40px)
+		@media #{$large-up}
+			height: calc(100vh - 80px)
 		.text-container
 			position: relative
-			top: 50%
-			padding: 0 20px
-			+translate(0,-50%)
+			padding: 20px
+			@media #{$medium-up}
+				top: 50%
+				padding: 0 20px
+				+translate(0,-50%)
 		.section-title
 			margin: 0
 			color: $brown
 			margin-bottom: 50px
+			@media #{$small-only}
+				margin-bottom: 10px
+				line-height: 30px
+				font-size: 1.75em
+				&:after
+					bottom: -10px
+					left: 0
+
 		.block-container
 			+clearfix
+			@media #{$small-only}
+				margin-top: 20px
 		.block
 			width: 200px
 			float: left
@@ -54,6 +69,10 @@
 		.regular
 			clear: both
 			margin-top: 35px
+			@media #{$small-only}
+				display: none
+			@media #{$medium-only}
+				display: none
 		.more
 			position: relative
 			left: 50%
@@ -61,15 +80,23 @@
 			text-align: center
 			display: inline-block
 			margin-top: 50px
+			@media #{$small-only}
+				margin-top: 0
 			.regular-big
 				text-transform: uppercase
 				font-weight: 300
 				color: $brown
 	.slider-container
 		width: 100%
+		height: calc(50vh - 40px)
 		position: relative
-		@media #{$medium-up}	
+		margin-bottom: 5px
+		@media #{$large-up}	
 			padding-left: 5px
+			margin-bottom: 0
+			height: calc(100vh - 80px)
+		.bxslider
+			list-style: none
 		.squares
 			left: 50%
 			right: initial
@@ -78,17 +105,65 @@
 				border: 1px solid #fff
 				&.active
 					background-color: #fff
+	.section-title
+		color: $brown
+		margin: 0
+		display: inline-block
+		opacity: 0
+		+transition(1s)
+		+transition-delay(0.5s)
+		.underline
+			content: ''
+			position: absolute
+			width: 1000px
+			height: 1px
+			border: 1px solid $brown
+			right: 0
+			bottom: -5px
+		&.appeared
+			opacity: 1
+		@media #{$small-only}
+			opacity: 1
+	.shadow-text
+		top: 0
+		margin-top: -70px
+		opacity: 0
+		+transition(1.5s)
+		+transition-delay(0.5s)
+		+translate(-100%,0)
+		&.appeared
+			opacity: 0.05
+			+translate(0,0)
+		@media #{$small-only}
+			opacity: 0.05
+			+translate(0,0)
+			font-size: 20vw
+			margin-top: -50px
 	.doors-container
-		padding-top: 100px
+		padding-top: 50px
+		@media #{$medium-up}
+			padding-top: 100px
 		.filter-container
 			position: relative
-			margin-top: -60px
-			margin-bottom: 100px
+			list-style: none
 			z-index: 2
 			+clearfix
+			li
+				width: 50%
+				max-width: 300px
+				@media #{$large-up}
+					display: inline-block
+					float: left
+					width: 20%
+					padding-right: 10px
+					max-width: none
+					&:last-child
+						padding-right: 0
 			.filter-field
-				width: 20%
-				float: left
+				width: 100%
+				border-bottom: 1px solid $light-grey
+				margin-bottom: 15px
+				position: relative
 				.filter
 					font-size: 0.875em
 					color: $grey
@@ -102,17 +177,28 @@
 					box-shadow: none
 					background: transparent
 					background-image: none
+					position: relative
+					color: $brown
 					&:focus
 						outline: none
+				.select-arrow
+					position: absolute
+					right: 5px
+					bottom: 0
+					background-color: #fff
 		.frame
 			position: relative
-			border: 1px solid $grey
+			border: 1px solid $light-grey
 			padding: 30px
-			margin: 0 auto 150px
+			margin: 50px auto 0
 			max-width: 400px
 			+clearfix
+			@media #{$medium-up}
+				margin: 100px auto 0
 			.text-container
-				padding-left: 170px
+				padding-left: 70px
+				@media #{$medium-up}
+					padding-left: 170px
 				.title-name
 					text-transform: uppercase
 					font-weight: 600
@@ -144,13 +230,19 @@
 				background-size: contain
 				background-repeat: no-repeat
 				width: 50%
-				height: 120%
-				top: -10%
-				left: -5px
+				height: 80%
+				top: 10%
+				left: 0
 				opacity: 0
+				+translate(-50%,0)
 				+transition(0.1s)
 				&.show-it
 					opacity: 1
+				@media #{$medium-up}
+					left: -5px
+					+translate(0,0)
+					height: 120%
+					top: -10%
 			.add-to-cart
 				position: absolute
 				fill: $brown
@@ -158,23 +250,42 @@
 				border: 1px solid $brown
 				padding: 10px
 				top: 50%
-				right: 0
-				+translate(50%, -50%)
+				right: -10px
+				width: 50px
+				height: 50px
+				cursor: pointer
+				+transition(0.25s)
+				+translate(0, -50%)
+				svg
+					vertical-align: middle
+				&:hover
+					background-color: $brown
+					fill: #fff
+				@media #{$medium-up}
+					right: 0
+					+translate(50%,-50%)
 	.photo-frame
 		width: 100%
 		height: 50vh
 		padding: 5px
 		border: 1px solid $brown
-		margin-bottom: 100px
+		margin: 50px 0
+		@media #{$medium-up}
+			margin: 200px 0 100px
 		.photo
 			width: 100%
 			height: 100%
 
 	.features-container
-		.square
+		.square, .square-text
 			overflow: initial
-			// max-width: 500px
 			margin: -0.03125em
+			@media #{$small-only}
+				margin: 0
+		.square-text
+			@media #{$small-only}
+				&:after
+					padding-bottom: 0
 		.photo-container
 			position: absolute
 			background-position: center
@@ -190,6 +301,8 @@
 			right: 0
 			bottom: 0
 			left: 0
+			@media #{$small-only}
+				position: relative
 			.text
 				position: absolute
 				width: 80%
@@ -197,6 +310,14 @@
 				top: 50%
 				left: 50%
 				+translate(-50%,-50%)
+				@media #{$small-only}
+					position: relative
+					height: initial
+					width: 100%
+					top: 0
+					left: 0
+					+translate(0,0)
+					margin: 10px 0
 				@media #{$medium-only}
 					width: 90%
 				.features-title
@@ -210,32 +331,136 @@
 					@media #{$medium-only}
 						font-size: 1.75em
 				.regular
-					margin-top: 10px
+					margin-top: 20px
 					line-height: 21px
 					@media #{$medium-only}
 						font-size: 1em
+				.list
+					margin-top: 20px
+					font-size: 1.125em
+					margin-left: 15px
+					@media #{$medium-only}
+						font-size: 1em
+					li
+						margin-top: 5px
+				.sublist
+					padding-left: 20px
+					font-size: 0.875em
+					li
+						margin-top: 0
 
 	.collections-navigation
 		margin: 100px 0
+		@media #{$small-only}
+			margin: 50px 0
 		.navigation-container
 			height: 400px
 			background-color: $brown
 			position: relative
-			.arrow-left
-				position: absolute
-				top: 50%
-				left: 50px
-				+translate(0,-50%)
-			.arrow-right
-				position: absolute
-				top: 50%
-				right: 50px
-				+translate(0,-50%)
+			cursor: pointer
+			+clearfix
+			@media #{$small-only}
+				height: 350px
+			&.left-navigation-container
+				margin-right: 2px
+				position: relative
+			&.right-navigation-container
+				margin-left: 2px
+				position: relative
+			.arrow-container-left
+				position: relative
+				float: left
+				width: 20%
+				height: 100%
+				@media #{$small-only}
+					width: 100%
+				.arrow-left
+					position: absolute
+					top: 50%
+					left: 25px
+					+translate(0%,-50%)
+					@media #{$medium-up}
+						left: 50%
+						+translate(-50%,-50%)
+				.number
+					color: #fff
+					font-size: 3em
+					position: absolute
+					left: 25px
+					top: 10px
+				.collection-title
+					position: absolute
+					font-size: 1.5em
+					color: #fff
+					text-transform: uppercase
+					left: 25px
+					bottom: 60px
+					line-height: 30px
+					z-index: 1
+				.collection-items
+					position: absolute
+					font-size: 1.125em
+					color: #fff
+					left: 25px
+					bottom: 30px
+					z-index: 1
+					opacity: 0.8
+					span
+						font-size: 0.875em
+				.number, .collection-title, .collection-items
+					@media #{$medium-up}
+						display: none
+			.arrow-container-right
+				position: relative
+				float: right
+				width: 20%
+				height: 100%
+				@media #{$small-only}
+					width: 100%
+				.arrow-right
+					position: absolute
+					top: 50%
+					right: 25px
+					+translate(0%,-50%)
+					@media #{$medium-up}
+						right: 50%
+						+translate(50%,-50%)
+				.number
+					color: #fff
+					font-size: 3em
+					position: absolute
+					right: 25px
+					top: 10px
+				.collection-title
+					position: absolute
+					font-size: 1.5em
+					color: #fff
+					text-transform: uppercase
+					right: 25px
+					text-align: right
+					bottom: 60px
+					line-height: 30px
+					z-index: 1
+				.collection-items
+					position: absolute
+					font-size: 1.125em
+					color: #fff
+					right: 25px
+					bottom: 30px
+					z-index: 1
+					opacity: 0.8
+					span
+						font-size: 0.875em
+				.number, .collection-title, .collection-items
+					@media #{$medium-up}
+						display: none
 			.photo-container-left, .photo-container-right
 				position: absolute
 				width: 80%
 				height: 100%
 				overflow: hidden
+				@media #{$small-only}
+					display: none
 				&:after
 					content: ''
 					position: absolute
@@ -287,3 +512,51 @@
 						+translate(0,0)
 				.photo
 					+scale(1.05)
+	.consultant-container
+		padding-bottom: 100px
+		@media #{$small-only}
+			padding-bottom: 5px
+		.door-container
+			position: relative
+			float: right
+			overflow: hidden
+			width: 360px
+			&:after
+				content: ''
+				position: absolute
+				width: 100%
+				bottom: 0
+				height: 3px
+				background: $light-brown
+			.door
+				position: relative
+				top: 5px
+				+transition(0.8s)
+				left: 20px
+				+translate(0,100%)
+				&.appeared
+					+translate(0,0)
+			@media #{$small-only}
+				display: none
+			@media #{$medium-only}
+				display: none
+		.form-container
+			border: 1px solid $dark-grey
+			padding: 0 30px
+			max-width: 600px
+			@media #{$medium-up}
+				opacity: 0
+				+transition(1s)
+			@media #{$small-only}
+				padding: 20px 10px 0
+			@media #{$medium-only}
+				margin: 0 auto
+			&.appeared
+				opacity: 1
+			form
+				@media #{$small-only}
+					padding: 10px
+			.subtitle
+				line-height: 30px
+				@media #{$small-only}
+					font-size: 1.5em

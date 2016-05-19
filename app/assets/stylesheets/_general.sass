@@ -34,7 +34,7 @@ body
 .row
 	margin: 0 auto !important
 .columns
-	height: inherit
+	// height: inherit
 a
 	text-decoration: none
 	color: inherit
@@ -260,6 +260,11 @@ a
 			height: 100%
 		&:before, &:after
 			width: 100%
+	@media #{$small-only}
+		.left-border, .right-border
+			height: 100%
+		&:before, &:after
+			width: 100%
 
 .frame-right-left
 	position: absolute
@@ -310,7 +315,11 @@ a
 			height: 100%
 		&:before, &:after
 			width: 100%
-
+	@media #{$small-only}
+		.left-border, .right-border
+			height: 100%
+		&:before, &:after
+			width: 100%
 
 
 .left-to-right-close
@@ -322,6 +331,9 @@ a
 	&.appeared
 		+translate(0,0)
 		opacity: 1
+	@media #{$small-only}
+		+translate(0,0)
+		opacity: 1	
 
 .left-to-right-far
 	position: absolute
@@ -332,6 +344,9 @@ a
 	&.appeared
 		+translate(0,0)
 		opacity: 1
+	@media #{$small-only}
+		+translate(0,0)
+		opacity: 1	
 
 
 
@@ -344,6 +359,9 @@ a
 	&.appeared
 		+translate(0,0)
 		opacity: 1
+	@media #{$small-only}
+		+translate(0,0)
+		opacity: 1	
 .right-to-left-far
 	position: absolute
 	+translate(50%,0)
@@ -351,5 +369,8 @@ a
 	+transition(3s)
 	+transition-timing-function(ease-in-out)
 	&.appeared
+		+translate(0,0)
+		opacity: 1
+	@media #{$small-only}
 		+translate(0,0)
 		opacity: 1

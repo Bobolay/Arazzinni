@@ -315,7 +315,7 @@
 							.right-border
 //                           A D V A N T A G E S
 .advantages
-	.row
+	.row.collapse
 		.large-6.medium-6.columns
 			.picture-frame
 				.photo style="background-image: url(#{asset_path('main/1_svet_3.jpg')})"
@@ -329,7 +329,7 @@
 					.right-border
 		.large-6.medium-6.columns
 			.advantages-icons-container
-				.row
+				.row.collapse
 					.xxlarge-6.large-12.medium-12.columns
 						.icon-frame
 							.icon.appear1 style="background-image: url(#{asset_path('main/advantages1.png')})"
@@ -586,30 +586,31 @@
 
 //                                 F O R M
 .form-wrapper	
-	.row
+	.row.collapse
 		.large-8.large-centered.medium-10.medium-centered.columns
-			.large-6.medium-6.columns
-				.door-container
-					.first-door style="background-image: url(#{asset_path('main/above-footer1.jpg')})"
-					.second-door style="background-image: url(#{asset_path('main/above-footer2.jpg')})"
-					.third-door style="background-image: url(#{asset_path('main/above-footer3.jpg')})"
-			.large-6.medium-12.columns
-				.form-container
-					form
-						.subtitle ask a consultant
-						p.regular Do You need advice in choosing the door? Your proffessional consultants are always happy to help You in selecting the right door, or additional products.
-						.group
-							input type="text"
-								span.bar
-							label Name
-						.group
-							input type="text"
-								span.bar
-							label Phone
-						p.above-textarea Message
-						.group
-							textarea rows="7"
-						a.button-brown href="" 
-							| send
-							.left-border
-							.right-border
+			.row.collapse
+				.large-6.medium-6.columns
+					.door-container
+						.first-door style="background-image: url(#{asset_path('main/above-footer1.jpg')})"
+						.second-door style="background-image: url(#{asset_path('main/above-footer2.jpg')})"
+						.third-door style="background-image: url(#{asset_path('main/above-footer3.jpg')})"
+				.large-6.medium-12.columns
+					.form-container
+						form
+							.subtitle ask a consultant
+							p.regular Do You need advice in choosing the door? Your proffessional consultants are always happy to help You in selecting the right door, or additional products.
+							.group
+								input type="text"
+									span.bar
+								label Name
+							.group
+								input type="text"
+									span.bar
+								label Phone
+							p.above-textarea Message
+							.group
+								textarea rows="7"
+							a.button-brown href="" 
+								| send
+								.left-border
+								.right-border

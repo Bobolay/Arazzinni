@@ -14,24 +14,19 @@ $header-bg-color: white
 	transform: translateY(-#{$header-height})
 .header-container
 	position: relative
-	z-index: 10000
+	z-index: 10
 	width: 100%
 	height: 60px
 	margin-bottom: 5px
 	padding: 5px
 
 	&.scrolled, &.visible, body.has-opened-menu &
-		//& + .navigationleft, & ~ .header-logo
 		.header-fixed
 			transform: translateY(0)
 
 	body.has-opened-menu &
 		.header-fixed
-			//position: relative
 
-	
-	@media #{$small-only}
-		border: 1px solid $brown
 .header-logo-picture, .header-logo-inscription, .cart, .phone, .menu
 	display: inline-block
 .header-logo-picture, .header-logo-inscription
@@ -151,6 +146,8 @@ $header-bg-color: white
 		cursor: pointer
 		opacity: 0
 		+transition(1s)
+		@media #{$small-only}
+			display: none
 		&.show-it
 			opacity: 1
 		&:first-child

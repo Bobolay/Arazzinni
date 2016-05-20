@@ -31,9 +31,10 @@
 	min-width: 400px
 	@media #{$small-only}
 		position: absolute
+		margin-top: 0
 		left: initial
-		height: 45%
-		bottom: 100px
+		height: 65%
+		bottom: 20px
 		min-width: initial
 		width: 90%
 		left: 50%
@@ -45,6 +46,8 @@
 		transition: 0.3s
 		&.visible
 			opacity: 1
+		@media #{$small-only}
+			padding: 10px
 	.unit-title
 		font-size: 2.25em
 		text-transform: uppercase
@@ -55,12 +58,20 @@
 		position: relative
 		&:after
 			+after(100px, $brown)
+		@media #{$small-only}
+			font-size: 1.5em
+			line-height: 25px
+			margin-bottom: 25px
 	.interior, .traditional, .price
 		float: left
 		margin: 0 20px 15px 0
+		@media #{$small-only}
+			margin: 0 10px 10px 0
 	.atributes
 		margin-left: 10px
 		font-size: 1.25em
+		@media #{$small-only}
+			font-size: 1em
 	svg
 		position: relative
 		vertical-align: middle
@@ -77,6 +88,8 @@
 		left: 30px
 		bottom: 30px
 		color: $light-brown
+		@media #{$small-only}
+			bottom: 23px
 .squares
 	position: absolute
 	right: 30px
@@ -135,6 +148,11 @@
 	@media #{$small-only}
 		&:after
 			padding-bottom: 50%
+	.section-title
+		@media #{$small-only}
+			font-size: 2em
+			&:after
+				bottom: -10px
 .section-name, .doors, .collection, .publication
 	position: absolute
 	width: 100%
@@ -210,9 +228,11 @@
 	.text
 		float: left
 		width: 55%
-		height: 65%
+		height: 75%
 		+transform
 		padding: 0 15px
+		@media #{$xxlarge-up}
+			height: 65%
 		.product-offer
 			display: inline-block
 			padding: 3px 5px
@@ -228,6 +248,8 @@
 		+transform
 		padding: 0 15px
 		color: #fff
+		@media #{$xxlarge-up}
+			height: 75%
 		.wood-type
 			&:after
 				border: 1px solid #fff
@@ -246,7 +268,8 @@
 			bottom: 0
 
 	table
-		margin-top: 20px
+		position: absolute
+		bottom: 0
 		tr
 			&:nth-child(-n+2)
 				@media only screen and (min-width: 0) and (max-width: 400px)
@@ -269,7 +292,8 @@
 .advantages
 	border: 1px solid $brown
 	overflow: hidden
-	margin-top: 3px
+	margin-top: 2px
+	margin-bottom: 2px
 	.picture-frame
 		position: relative
 		height: 330px
@@ -290,11 +314,13 @@
 		top: -9px
 	.why-arazzinni
 		margin: 70px 0
-		width: 70%
+		width: 100%
 		float: left
 		padding: 0 15px
-		@media only screen and (max-width: 1200px)
-			width: 100%
+		@media #{$small-only}
+			margin: 30px 0 0 0
+		@media #{$xlarge-up}
+			width: 70%
 		.regular
 			color: $dark-grey
 			margin-top: 20px
@@ -302,11 +328,16 @@
 			color: $light-brown
 			position: relative
 			margin-top: 20px
+			width: 120px
+			height: 40px
+			padding: 5px
 .advantages-icons-container
 	background-color: $blue-grey
 	width: 100%
 	margin: 20px 0 20px 0
 	padding: 20px
+	@media #{$small-only}
+		margin: 20px 0 0 0 
 	@media #{$xxlarge-up}
 		margin: 70px 20px 50px 0
 	.icon-frame
@@ -315,6 +346,9 @@
 		height: 110px
 		margin-bottom: 20px
 		display: inline-block
+		@media #{$small-only}
+			width: 80px
+			height: 80px
 	.icon
 		background-size: contain
 		background-position: center
@@ -324,6 +358,10 @@
 		height: 110px
 		position: relative
 		+scale(0)
+		@media #{$small-only}
+			+scale(1)
+			width: 80px
+			height: 80px
 	.appear1
 		+transition(1s)
 	.appear2
@@ -345,6 +383,8 @@
 			font-size: 2em
 			text-transform: uppercase
 			color: $brown
+			@media #{$small-only}
+				font-size: 1.5em
 			span
 				font-size: 0.5em
 				text-transform: uppercase
@@ -352,7 +392,8 @@
 		.this-subtitle
 			font-size: 1.125em
 			color: $dark-grey
-
+			@media #{$small-only}
+				font-size: 1em
 //                                V I D E O
 
 .video-container
@@ -491,6 +532,8 @@
 		border: 1px solid $light-grey
 		margin-top: 40px
 		position: relative
+		@media #{$small-only}
+			height: 320px
 		.map
 			position: absolute
 			margin-top: 30px
@@ -512,6 +555,7 @@
 		position: absolute
 		left: 30px
 		bottom: 30px
+		color: #fff
 		.date, .views
 			display: inline-block
 			margin-right: 10px
@@ -592,6 +636,8 @@
 	background-color: $brown
 	color: #fff
 	margin-top: 5px
+	@media #{$small-only}
+		line-height: 55px
 	.logo
 		display: inline-block
 		position: relative
@@ -599,8 +645,10 @@
 		margin-right: 10px
 	a
 		margin-right: 20px
-	.font14
+	p
 		display: inline-block
+		@media #{$small-only}
+			font-size: 0.75em
 	.go-left
 		float: left !important
 		@media #{$small-only}

@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   controller :pages do
     get "about-us", action: "about_us"
     get "collections", action: "collections"
-    get "collection_one", action: "collection_one"
+    get "collection-one", action: "collection_one"
     get "help", action: "help"
     get "publications", action: "publications"
     get "publication-one", action: "publication_one"
+    get "door-one", action: "door_one"
     get "contact-us", action: "contact_us"
   end
 

@@ -19,6 +19,10 @@ class PagesController < ApplicationController
 
   end
 
+  def door_one
+
+  end
+
   def help
 
   end

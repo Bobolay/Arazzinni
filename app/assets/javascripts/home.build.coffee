@@ -29,3 +29,6 @@
 #= require collection-navigation
 
 #= require collection-door
+
+#= require vendor/owl.carousel.min
+#= require owl-carousel

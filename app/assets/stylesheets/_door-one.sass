@@ -1,0 +1,113 @@
+.door-one-wrapper
+	.navigation-left-container, .navigation-right-container
+		position: fixed
+		top: 50%
+		+translate(0,-50%)
+		width: 120px
+		padding: 50px 10px
+		cursor: pointer
+		.door-image
+			height: 200px
+			background-size: contain
+			background-repeat: no-repeat
+			background-position: center
+		.door-name
+			text-transform: uppercase
+			color: $dark-grey
+			font-size: 1.5625em
+			font-weight: 600
+			line-height: 21px
+			margin-top: 10px
+			+transition(0.15s)
+		.door-wood
+			font-size: 1.25em
+			color: $dark-grey
+			font-weight: 100
+			line-height: 20px
+			margin-top: 10px
+		&:hover
+			.door-name
+				color: $brown
+	.navigation-left-container
+		left: 0
+		border-right: 1px solid $dark-grey
+	.navigation-right-container
+		right: 0
+		border-left: 1px solid $dark-grey
+	.bottom-navigation-container
+		position: fixed
+		bottom: 0
+		height: 120px
+		width: 100%
+		// background: $blue-grey
+		&:after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 30px
+			bottom: 0
+			background: $blue-grey
+		.owl-carousel
+			height: 100%
+			width: 90%
+			margin-left: 5%
+			.owl-stage-outer
+				height: 100%
+				overflow: hidden
+			.owl-stage
+				height: 100%
+			.owl-item
+				height: 100%
+				+translate(0,20%)
+				+transition(0.25s)
+				cursor: pointer
+				.door-name
+					color: $grey
+					text-transform: uppercase
+					line-height: 15px
+					height: 40px
+					display: table-cell
+					vertical-align: bottom
+					padding-bottom: 5px
+				.image
+					background-size: cover
+					background-position: top
+					height: 100px
+					position: relative
+					&:before
+						position: absolute
+						content: ''
+						height: 100%
+						width: 2px
+						background: $light-grey
+						top: 0
+						left: -21px
+					&:after
+						position: absolute
+						content: ''
+						height: 100%
+						width: 2px
+						background: $light-grey
+						top: 0
+						right: -21px
+				&:hover
+					+translate(0,0)
+					.door-name
+						color: $brown
+			.owl-nav
+				position: absolute
+				width: 100%
+				height: 30px
+				top: 50%
+				.owl-prev
+					position: absolute
+					left: -60px
+					width: 30px
+					height: 30px
+					background: red
+				.owl-next
+					position: absolute
+					right: -60px
+					width: 30px
+					height: 30px
+					background: green

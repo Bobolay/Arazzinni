@@ -24,3 +24,11 @@ $(document).ready ->
     infiniteLoop: true
     onSlideBefore: (element, oldIndex, newIndex)->
         change_slide(newIndex)
+
+$(document).ready ->
+  $('.bxslider-door').bxSlider
+    minSlides: 3
+    maxSlider: 10
+    slideWidth: 100
+    slideMargin: 10
+    pager: false

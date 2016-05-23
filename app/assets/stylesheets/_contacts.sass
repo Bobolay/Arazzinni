@@ -2,6 +2,8 @@
 	height: 400px
 	width: 100%
 	position: relative
+	@media #{$small-only}
+		height: 200px
 // #marker-popup
 // 	background-color: red
 // 	width: 100px
@@ -15,6 +17,13 @@
 		margin: 50px 0 0 0
 		&:after
 			+after(190px,$brown)
+		@media #{$small-only}
+			margin: 30px 0 0 0
+	.shadow-text
+		top: 0
+		margin-top: -10px
+		font-size: 17vw
+
 .coordinates
 	margin-bottom: 20px
 	padding-right: 10px
@@ -22,14 +31,19 @@
 	float: left
 	@media #{$small-only}
 		width: 100%
+		margin-bottom: 10px
 	@media #{$medium-only}
 		width: 50%
 	.svg-coordinates
 		float: left
 		height: 50px
 		margin-right: 10px
+		padding-top: 7px
 	span
 		font-size: 1.25em
+		@media #{$small-only}
+			font-size: 1em
+			vertical-align: middle
 	.social
 		margin-top: 20px
 		a
@@ -46,10 +60,20 @@
 	border: 1px solid $light-grey
 	max-width: 650px
 	margin-bottom: 50px
+	@media #{$small-only}
+		padding: 15px
+		margin-top: 30px
+		margin-bottom: 5px
 	.text-near-form
+		.subtitle
+			@media #{$small-only}
+				font-size: 1.5em
+				line-height: 30px
 		.regular
-			margin-top: 30px
-			margin-bottom: 30px
+			margin: 30px 0
+			@media #{$small-only}
+				margin: 20px 0
+				line-height: 24px
 	.contacts-form
 		form
 			padding: 0

@@ -10,13 +10,16 @@
 		@extend .section-title
 		color: $brown
 		margin: 0 0 0 30px
+		&:after
+			bottom: -5px
+		@media #{$small-only}
+			// margin: 30px 0 0 30px
+			font-size: 2em		
+			margin: 0
 		@media #{$medium-up}
 			opacity: 0
 			+translate(0,-300%)
 			+transition(0.7s)
-		@media #{$small-only}
-			margin: 30px 0 0 30px
-			font-size: 1.5em
 		&:after
 			border: 1px solid $brown
 		&.appeared
@@ -28,6 +31,11 @@
 		top: -25px
 		left: 50px
 		line-height: 100px
+		@media #{$small-only}
+			left: 0
+			font-size: 15vw
+			top: 0
+			margin-top: -30px
 		@media #{$medium-up}
 			opacity: 0
 			+transition(1s)
@@ -110,6 +118,8 @@
 		border: 1px solid $brown
 		margin-bottom: 20px
 		padding: 20px
+		@media #{$small-only}
+			margin-bottom: 5px
 		@media #{$medium-up}
 			opacity: 0
 			+translate(200%,0)
@@ -125,6 +135,9 @@
 			width: 110px
 			height: 110px
 			display: inline-block
+			@media #{$small-only}
+				width: 80px
+				height: 80px
 		.icon
 			background-size: contain
 			background-position: center
@@ -134,9 +147,10 @@
 			height: 110px
 			position: relative
 			+scale(0)
-			// left: 50%
-			// top: 50%
-			// transform: translate(-50%, -50%)
+			@media #{$small-only}
+				+scale(1)
+				width: 80px
+				height: 80px
 		.appear1
 			+transition(1.5s)
 		.appear2
@@ -149,8 +163,6 @@
 			+transition(.7s)
 			+transition-delay(.6s)
 		.appeared
-			// width: 110px
-			// height: 110px
 			+scale(1)
 		.text-container
 			display: inline-block
@@ -162,6 +174,8 @@
 				font-size: 2em
 				text-transform: uppercase
 				color: $brown
+				@media #{$small-only}
+					font-size: 1.75em
 				span
 					font-size: 0.5em
 					text-transform: uppercase
@@ -169,6 +183,8 @@
 			.this-subtitle
 				font-size: 1.125em
 				color: $dark-grey
+				@media #{$small-only}
+					font-size: 1em
 
 	.door-container
 		position: relative
@@ -198,6 +214,7 @@
 		border: 1px solid $dark-grey
 		padding: 0 30px
 		max-width: 600px
+		margin-bottom: 5px
 		@media #{$medium-up}
 			opacity: 0
 			+transition(1s)

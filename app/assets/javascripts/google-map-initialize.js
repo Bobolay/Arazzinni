@@ -49,7 +49,7 @@ function initialize() {
     var image = '/assets/icons/map-icon.svg'
     var marker = new google.maps.Marker({
         map: map,
-        draggable: true,
+        draggable: false,
         position: new google.maps.LatLng(40.6097477, -74.2979765),
         icon: image
     });

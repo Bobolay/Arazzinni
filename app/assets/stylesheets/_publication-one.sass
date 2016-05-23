@@ -4,6 +4,8 @@
 	.section-container
 		height: 40vh
 		position: relative
+		@media #{$small-only}
+			height: initial
 	.section-title
 		color: $brown
 		margin: 0
@@ -11,11 +13,20 @@
 		+translate(0,-50%)
 		&:after
 			+after(200px,$brown)
+		@media #{$small-only}
+			font-size: 1.75em
+			line-height: 30px
+			margin-top: 50px
+			top: 0
+			+translate(0,0)
 	.shadow-text
 		font-size: 8vw
 		position: absolute
 		bottom: 0
 		top: initial
+		@media #{$small-only}
+			font-size: 12vw
+			position: relative
 	.regular-big
 		line-height: 24px
 		margin-top: 30px
@@ -30,6 +41,8 @@
 		li
 			padding-left: 2em
 			margin-top: 10px
+			@media #{$small-only}
+				padding-left: 1em
 			&:before
 				content: "\002022"
 				color: $brown

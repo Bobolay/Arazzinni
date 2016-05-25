@@ -11,12 +11,11 @@ $(document).ready(function(){
       },
       640:{
           items:5,
-          nav:false
+          nav:true
       },
       1024:{
           items:10,
-          nav:true,
-          loop:false
+          nav:true
       }
     }
 	})

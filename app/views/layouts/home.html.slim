@@ -9,6 +9,7 @@ html
   body
     = render "header"
     = yield
-    = render "footer"
+    - if @render_footer != false
+        = render "footer"
     script src="http://maps.googleapis.com/maps/api/js"
     = javascript_include_tag "home.build", 'data-turbolinks-track' => true

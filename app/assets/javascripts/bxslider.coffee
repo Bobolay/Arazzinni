@@ -26,9 +26,33 @@ $(document).ready ->
         change_slide(newIndex)
 
 $(document).ready ->
-  $('.bxslider-door').bxSlider
-    minSlides: 3
-    maxSlider: 10
-    slideWidth: 100
-    slideMargin: 10
-    pager: false
+  $('.bxslider').bxSlider
+    pagerCustom: '#bx-pager'
+    controls: false
+    infiniteLoop: false
+    hideControlOnEnd: true
+    speed: 1000
+    pause: 10000
+    auto: true
+    infiniteLoop: true
+    onSlideBefore: (element, oldIndex, newIndex)->
+        change_slide(newIndex)
+
+$(document).ready ->
+    slider = $('.bxslider-door').bxSlider
+        pagerCustom: '#bx-pager'
+        controls: false
+        infiniteLoop: false
+        hideControlOnEnd: true
+        speed: 1000
+        pause: 10000
+        auto: true
+        infiniteLoop: true
+        onSlideBefore: (element, oldIndex, newIndex)->
+            change_slide(newIndex)
+    $('.door-slider-arrow-left').click ->
+      current = slider.getCurrentSlide()
+      slider.goToPrevSlide(current) - 1
+    $('.door-slider-arrow-right').click ->
+      current = slider.getCurrentSlide()
+      slider.goToNextSlide(current) + 1

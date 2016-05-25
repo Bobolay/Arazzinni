@@ -8,7 +8,7 @@
 		.door-image style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
 		.door-name galvina g1
 		.door-wood Black Apricot
-		.arrow-to-the-left = inline_svg "icons/door-arrow-to-the-right.svg"
+		.arrow-to-the-right = inline_svg "icons/door-arrow-to-the-right.svg"
 	.bottom-navigation-container
 		.owl-carousel
 			.door-item
@@ -71,6 +71,97 @@
 			.door-item
 				p.door-name mia interior door
 				.image style="background-image: url(#{asset_path('sampleDoors/sample-door6.jpg')})"
-			.owl-arrow-left
-
-			.owl-arrow-right
+	.middle-wrapper
+		.row.collapse
+			.xxlarge-8.xxlarge-centered.xlarge-9.xlarge-centered.large-11.large-centered.medium-12.small-12.columns.clearfix
+				.side-nav-container
+					ul.side-nav
+						li
+							| door info
+							span = inline_svg "icons/information-outline.svg"
+						li
+							| gallery
+							span = inline_svg "icons/image-filter-none.svg"
+						li
+							| specifications
+							span = inline_svg "icons/file-document.svg"
+						li
+							| door frame
+							span = inline_svg "icons/pencil.svg"
+						li
+							| hardware
+							span = inline_svg "icons/sitemap.svg"
+				.door-info
+					.main-info
+						p.menu-title royal
+						p.under-title Solid Wood Alder Collection
+						.attributes-container	
+							.interior
+								= inline_svg "icons/interior.svg"
+								span.atributes Interior
+							.traditional
+								= inline_svg "icons/traditional.svg"
+								span.atributes Traditional
+							.price
+								= inline_svg "icons/price.svg"
+								span.atributes $955
+						p.regular Wood frame is made of solid pine planks, connected on micro-studs. Lined with MDF and covered with African Black Apricot veneer. Accented with silver stripe moldings. Frosted glass, used for door inlay is tempered and mounted using raised moldings, made of solid wood and veneered. Finished with three layers of varnish with interim grinding and polish. Semi-gloss.
+						.social-container
+							.social
+							 = inline_svg "icons/social-fb.svg"
+							 span.description Share
+							.social
+							 = inline_svg "icons/social-fb.svg"
+							 span.description Pin it
+							.social
+							 = inline_svg "icons/social-fb.svg"
+							 span.description Save
+						a.buy-button
+							| buy
+							.animated-frame
+								.left-border
+								.right-border
+						a.technical href="" technical specifications
+					.door-show
+						.door-colors-container
+							.color-block
+								p.color cream white
+								.color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
+							.color-block
+								p.color brown patina
+								.color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+							.color-block
+								p.color acacia
+								.color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+						.door-image style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
+				.gallery
+					.slider-container	
+						ul.bxslider-door
+							li
+								.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-183.jpg')})"
+							li
+								.img-container style="background-image: url(#{asset_path('main/Smart-pro.jpg')})"
+							li
+								.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-48.jpg')})"
+							li
+								.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-133.jpg')})"
+						.squares#bx-pager
+							a#button1 data-slide-index="0" href=""
+							a#button2 data-slide-index="1" href=""
+							a#button3 data-slide-index="2" href=""
+							a#button4 data-slide-index="3" href=""
+						.door-slider-arrow-left = inline_svg "icons/bottom-nav-arrow-left-white.svg"
+						.door-slider-arrow-right = inline_svg "icons/bottom-nav-arrow-right-white.svg"
+				.specifications
+				.door-frame
+				.hardware.show-it
+					.unit-container
+						p.title privacy
+						p.under-title Dark Bronze
+						p.price &#36;50
+						.pick-colors
+							.color style="background: red"
+							.color style="background: yellow"
+							.color style="background: green"
+						.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
+						.add-to-cart = inline_svg "icons/supermarket39.svg"

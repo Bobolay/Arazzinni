@@ -1,11 +1,15 @@
 .door-one-wrapper
 	.navigation-left-container, .navigation-right-container
 		position: fixed
+		z-index: 3
 		top: 50%
 		+translate(0,-50%)
 		width: 120px
 		padding: 50px 10px
 		cursor: pointer
+		display: none
+		@media #{$xlarge-up}
+			display: block
 		.door-image
 			height: 200px
 			background-size: contain
@@ -37,8 +41,8 @@
 	.bottom-navigation-container
 		position: fixed
 		bottom: 0
-		height: 120px
-		width: 100%
+		height: 150px
+		width: calc(100% - 10px)
 		// background: $blue-grey
 		&:after
 			content: ''
@@ -49,16 +53,20 @@
 			background: $blue-grey
 		.owl-carousel
 			height: 100%
-			width: 90%
-			margin-left: 5%
+			width: 100%
 			.owl-stage-outer
 				height: 100%
 				overflow: hidden
+				margin: 0 70px
+				z-index: 2
 			.owl-stage
+				height: 100%
+			.owl-controls
+				width: 100%
 				height: 100%
 			.owl-item
 				height: 100%
-				+translate(0,20%)
+				+translate(0,40%)
 				+transition(0.25s)
 				cursor: pointer
 				.door-name
@@ -72,7 +80,7 @@
 				.image
 					background-size: cover
 					background-position: top
-					height: 100px
+					height: 150px
 					position: relative
 					&:before
 						position: absolute
@@ -101,13 +109,293 @@
 				top: 50%
 				.owl-prev
 					position: absolute
-					left: -60px
-					width: 30px
-					height: 30px
-					background: red
+					left: 0
+					width: 40px
+					height: 40px
+					background-image: url(#{asset_path('icons/bottom-nav-arrow-left.svg')})
+					background-repeat: no-repeat
+					background-position: center
+					border: 1px solid #bdbdbd
 				.owl-next
 					position: absolute
-					right: -60px
+					right: 0
+					width: 40px
+					height: 40px
+					background-image: url(#{asset_path('icons/bottom-nav-arrow-right.svg')})
+					background-repeat: no-repeat
+					background-position: center
+					border: 1px solid #bdbdbd
+	.middle-wrapper
+		position: absolute
+		width: 100%
+		top: 50%
+		+translate(0,-50%)
+		.side-nav-container
+			width: 190px
+			height: 600px
+			float: left
+			display: inline
+			.side-nav
+				list-style: none
+				overflow: hidden
+				position: relative
+				top: 50%
+				+translate(0,-50%)
+				li
+					position: relative
+					text-transform: uppercase
+					color: $light-grey
+					text-align: right
+					margin: 5px 0
+					height: 30px
+					+transition(0.25s)
+					cursor: pointer
+					&:after
+						content: ''
+						position: absolute
+						height: 1px
+						background: $light-grey
+						width: 30px
+						right: 0px
+						top: 50%
+						+transition(0.25s)
+					span
+						display: inline-block
+						margin-left: 10px
+						margin-right: 20px
+					svg
+						border: 1px solid $light-grey
+						fill: $light-grey
+						background-color: #fff
+						width: 20px
+						height: 20px
+						padding: 3px
+						position: relative
+						z-index: 2
+						top: 5px
+						+transition(0.25s)
+					&:hover, &.active
+						font-size: 1.125em
+						color: $brown
+						&:after
+							background: $brown
+						svg
+							+scale(1.2)
+							border: 1px solid $brown
+							fill: $brown
+		.door-info, .gallery, .specifications, .door-frame, .hardware
+			position: relative
+			width: calc(100% - 190px)
+			height: 600px
+			border: 1px solid $brown
+			padding: 30px 50px
+			display: none
+			&.show-it
+				display: inline
+				float: left
+			.main-info
+				float: left
+				width: 60%
+				height: 100%
+			.menu-title
+				color: $brown
+				font-weight: 600
+				&:after
+					content: ''
+					position: absolute
+					left: 0
+					bottom: -5px
+					width: 100px
+					height: 3px
+					background: $brown
+			.under-title
+				margin: 10px 0
+				font-size: 0.875em
+				opacity: 0.7
+			.attributes-container
+				+clearfix
+				margin: 20px 0 10px
+				.interior, .traditional, .price
+					float: left
+					margin: 0 20px 15px 0
+					@media #{$small-only}
+						margin: 0 10px 10px 0
+				.atributes
+					margin-left: 10px
+					font-size: 1.125em
+					@media #{$small-only}
+						font-size: 1em
+				svg
+					position: relative
+					vertical-align: middle
+					fill: $brown
+			.regular
+				color: $grey
+				width: 90%
+				margin: 10px 0
+				font-size: 1em
+				line-height: 21.6px
+			.social-container
+				+clearfix
+				margin-top: 20px
+				.social	
+					border: 1px solid $brown
+					height: 20px
+					width: 60px
+					float: left
+					margin-right: 10px
+					cursor: pointer
+					svg
+						background: $brown
+						width: 20px
+						height: 18px
+					.description
+						color: $brown
+						background: #fff
+						font-size: 0.75em
+						vertical-align: top
+			.buy-button
+				color: #fff
+				display: inline-block
+				text-transform: uppercase
+				font-size: 1.125em
+				background: $brown
+				font-weight: 100
+				line-height: 40px
+				width: 130px
+				margin-top: 50px
+				margin-right: 30px
+				text-align: center
+				position: relative
+				cursor: pointer
+				.animated-frame
+					top: 3px
+					right: 3px
+					bottom: 3px
+					left: 3px
+				&:hover
+					.animated-frame
+						.left-border, .right-border, &:before, &:after
+							+translate(0,0)
+			.technical
+				text-transform: uppercase
+				display: inline-block
+				color: $brown
+				margin-top: 50px
+				line-height: 30px
+				border-bottom: 1px solid $brown
+		.door-show
+			float: left
+			width: 40%
+			height: 100%
+			.door-colors-container
+				position: absolute
+				top: 50%
+				+translate(0,-50%)
+			.color-block
+				margin-bottom: 10px
+				width: 40px
+				line-height: 12px
+			.color
+				font-size: 0.75em
+				text-transform: uppercase
+				color: $grey
+				margin-bottom: 5px
+			.color-texture
+				width: 40px
+				height: 40px
+				background-position: center
+				background-size: cover
+			.door-image
+				position: absolute
+				right: -20px
+				top: -20px
+				width: 300px
+				height: 640px
+				background-size: contain
+				background-repeat: no-repeat
+				background-position: center
+		.gallery
+			padding: 10px
+			.slider-container
+				width: 100%
+				height: 110%
+				position: relative
+				top: -5%
+				.bx-wrapper
+					height: 100%
+				.bx-viewport
+					height: 100%
+				.bxslider-door
+					height: 100%
+					list-style: none
+				li
+					height: 100%
+				.img-container
+					background-position: center
+					background-size: cover
+					height: 100%
+			.squares
+				left: 50%
+				right: initial
+				+translate(-50%,0)
+				a
+					border: 1px solid #fff
+					&.active
+						background-color: #fff
+			.door-slider-arrow-left, .door-slider-arrow-right
+				position: absolute
+				top: 50%
+				width: 30px
+				height: 30px
+				border: 1px solid #fff
+				padding: 5px
+				cursor: pointer
+				svg
+					width: 20px
+					height: 20px
+			.door-slider-arrow-left
+				left: 20px
+			.door-slider-arrow-right
+				right: 20px
+		.specifications
+		.door-name
+		.hardware
+			.title
+				font-size: 1.375em
+				text-transform: uppercase
+				color: $dark-grey
+				font-weight: 600
+			.price
+				font-size: 1.75em
+				color: $brown	
+			.pick-colors
+				+clearfix
+				margin-top: 30px
+				.color
+					float: left
 					width: 30px
 					height: 30px
-					background: green
+					margin-right: 10px
+					cursor: pointer
+			.add-to-cart
+				position: absolute
+				fill: $brown
+				background-color: #fff
+				border: 1px solid $brown
+				padding: 10px
+				top: 50%
+				right: -15px
+				width: 50px
+				height: 50px
+				cursor: pointer
+				+transition(0.25s)
+				+translate(0, -50%)
+				svg
+					vertical-align: middle
+				&:hover
+					background-color: $brown
+					fill: #fff
+				@media #{$medium-up}
+					right: 0
+					+translate(50%,-50%)

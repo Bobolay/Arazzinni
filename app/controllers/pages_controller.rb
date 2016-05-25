@@ -20,7 +20,7 @@ class PagesController < ApplicationController
   end
 
   def door_one
-
+    @render_footer = false
   end
 
   def help

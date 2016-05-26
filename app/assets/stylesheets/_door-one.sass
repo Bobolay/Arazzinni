@@ -181,6 +181,11 @@
 					background-position: center
 					border: 1px solid #bdbdbd
 	.middle-wrapper
+		@media #{$small-only}
+			width: 100vw
+			position: relative
+			left: -10px
+			overflow: hidden
 		@media #{$medium-up}
 			position: absolute
 			width: calc(100% - 10px)
@@ -252,10 +257,23 @@
 				display: inline
 				float: left
 			@media #{$small-only}
-				width: 100%
+				position: relative
+				width: calc(100% - 20px)
 				padding: 10px 20px
-				height: auto
+				height: calc(100vh - 120px)
+				left: 10px
 		.door-info	
+			.door-image-mobile
+				width: 300px
+				height: 90%
+				background-size: contain
+				position: absolute
+				background-repeat: no-repeat
+				z-index: 4
+				left: 80%
+				top: 5%
+				@media #{$medium-up}
+					display: none
 			.main-info
 				float: left
 				width: 60%
@@ -387,7 +405,7 @@
 					display: none
 				.color-block
 					margin-bottom: 5px
-					width: 40px
+					width: 45px
 					line-height: 12px
 					display: inline-block
 					margin-right: 10px

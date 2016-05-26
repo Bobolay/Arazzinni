@@ -71,6 +71,18 @@
 			.door-item
 				p.door-name mia interior door
 				.image style="background-image: url(#{asset_path('sampleDoors/sample-door6.jpg')})"
+	.mobile-nav-container
+		ul.side-nav
+			li
+				span = inline_svg "icons/information-outline.svg"
+			li
+				span = inline_svg "icons/image-filter-none.svg"
+			li
+				span = inline_svg "icons/file-document.svg"
+			li
+				span = inline_svg "icons/pencil.svg"
+			li
+				span = inline_svg "icons/sitemap.svg"
 	.middle-wrapper
 		.row.collapse
 			.xxlarge-8.xxlarge-centered.xlarge-9.xlarge-centered.large-11.large-centered.medium-12.small-12.columns.clearfix
@@ -91,7 +103,7 @@
 						li
 							| hardware
 							span = inline_svg "icons/sitemap.svg"
-				.door-info
+				.door-info.show-it
 					.main-info
 						p.menu-title royal
 						p.under-title Solid Wood Alder Collection
@@ -116,12 +128,26 @@
 							.social
 							 = inline_svg "icons/social-fb.svg"
 							 span.description Save
+						.door-show-mobile
+							.door-colors-container
+								.color-block
+									p.color cream white
+									.color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
+								.color-block
+									p.color brown patina
+									.color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+								.color-block
+									p.color acacia
+									.color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+							.door-image style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
 						a.buy-button
 							| buy
 							.animated-frame
 								.left-border
 								.right-border
-						a.technical href="" technical specifications
+						a.technical href=""
+							p.mobile-text info
+							p.desktop-text technical specifications
 					.door-show
 						.door-colors-container
 							.color-block
@@ -154,14 +180,57 @@
 						.door-slider-arrow-right = inline_svg "icons/bottom-nav-arrow-right-white.svg"
 				.specifications
 				.door-frame
-				.hardware.show-it
-					.unit-container
-						p.title privacy
-						p.under-title Dark Bronze
-						p.price &#36;50
-						.pick-colors
-							.color style="background: red"
-							.color style="background: yellow"
-							.color style="background: green"
-						.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
-						.add-to-cart = inline_svg "icons/supermarket39.svg"
+				.hardware
+					.row
+						.large-6.medium-12.small-12.columns
+							.unit-container
+								.text
+									p.title privacy
+									p.under-title Dark Bronze
+									p.price &#36;50
+									.pick-colors
+										.color style="background: #876036"
+										.color style="background: #747474"
+										.color style="background: #BCBCBC"
+								.img-container
+									.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
+								.add-to-cart = inline_svg "icons/supermarket39.svg"
+						.large-6.medium-12.small-12.columns
+							.unit-container
+								.text
+									p.title privacy
+									p.under-title Dark Bronze
+									p.price &#36;50
+									.pick-colors
+										.color style="background: #876036"
+										.color style="background: #747474"
+										.color style="background: #BCBCBC"
+								.img-container
+									.hardware-img style="background-image: url(#{asset_path('hardware/plan-3.jpg')})"
+								.add-to-cart = inline_svg "icons/supermarket39.svg"
+						.large-6.medium-12.small-12.columns
+							.unit-container
+								.text
+									p.title privacy
+									p.under-title Dark Bronze
+									p.price &#36;50
+									.pick-colors
+										.color style="background: #876036"
+										.color style="background: #747474"
+										.color style="background: #BCBCBC"
+								.img-container
+									.hardware-img style="background-image: url(#{asset_path('hardware/plan-5.jpg')})"
+								.add-to-cart = inline_svg "icons/supermarket39.svg"
+						.large-6.medium-12.small-12.columns
+							.unit-container
+								.text
+									p.title privacy
+									p.under-title Dark Bronze
+									p.price &#36;50
+									.pick-colors
+										.color style="background: #876036"
+										.color style="background: #747474"
+										.color style="background: #BCBCBC"
+								.img-container
+									.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
+								.add-to-cart = inline_svg "icons/supermarket39.svg"

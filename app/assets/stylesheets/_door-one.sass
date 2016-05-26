@@ -1,4 +1,6 @@
 .door-one-wrapper
+	position: relative
+	height: calc(100vh - 80px)
 	.navigation-left-container, .navigation-right-container
 		position: fixed
 		z-index: 3
@@ -37,13 +39,66 @@
 		border-right: 1px solid $dark-grey
 	.navigation-right-container
 		right: 0
-		border-left: 1px solid $dark-grey
+		border-left: 1px soldid $dark-grey
+	.mobile-nav-container
+		width: calc(100% - 10px)
+		position: absolute
+		bottom: 0
+		@media #{$medium-up}
+			display: none
+		.side-nav
+			display: inline-block
+			list-style: none
+			position: relative
+			left: 50%
+			+translate(-50%,0)
+			li
+				position: relative
+				margin: 5px 0
+				height: 30px
+				+transition(0.25s)
+				cursor: pointer
+				display: inline-block
+				&:after
+					content: ''
+					position: absolute
+					width: 1px
+					background: $light-grey
+					height: 20px
+					bottom: -15px
+					left: 20px
+					+transition(0.25s)
+				span
+					display: inline-block
+					margin-left: 10px
+					margin-right: 20px
+				svg
+					border: 1px solid $light-grey
+					fill: $light-grey
+					background-color: #fff
+					width: 20px
+					height: 20px
+					padding: 3px
+					position: relative
+					z-index: 2
+					top: 5px
+					+transition(0.25s)
+				&:hover, &.active
+					font-size: 1.125em
+					color: $brown
+					&:after
+						background: $brown
+					svg
+						+scale(1.2)
+						border: 1px solid $brown
+						fill: $brown
 	.bottom-navigation-container
 		position: fixed
 		bottom: 0
 		height: 150px
 		width: calc(100% - 10px)
-		// background: $blue-grey
+		@media #{$small-only}
+			display: none
 		&:after
 			content: ''
 			position: absolute
@@ -126,15 +181,18 @@
 					background-position: center
 					border: 1px solid #bdbdbd
 	.middle-wrapper
-		position: absolute
-		width: 100%
-		top: 50%
-		+translate(0,-50%)
+		@media #{$medium-up}
+			position: absolute
+			width: calc(100% - 10px)
+			top: 50%
+			+translate(0,-50%)
 		.side-nav-container
 			width: 190px
 			height: 600px
 			float: left
 			display: inline
+			@media #{$small-only}
+				display: none
 			.side-nav
 				list-style: none
 				overflow: hidden
@@ -193,10 +251,18 @@
 			&.show-it
 				display: inline
 				float: left
+			@media #{$small-only}
+				width: 100%
+				padding: 10px 20px
+				height: auto
+		.door-info	
 			.main-info
 				float: left
 				width: 60%
 				height: 100%
+				@media #{$small-only}
+					width: 100%
+					float: none
 			.menu-title
 				color: $brown
 				font-weight: 600
@@ -208,10 +274,17 @@
 					width: 100px
 					height: 3px
 					background: $brown
+				@media #{$small-only}
+					font-size: 1.75em
+					&:after
+						width: 85px
+						bottom: -2px
 			.under-title
 				margin: 10px 0
 				font-size: 0.875em
 				opacity: 0.7
+				@media #{$small-only}
+					margin: 5px 0
 			.attributes-container
 				+clearfix
 				margin: 20px 0 10px
@@ -219,12 +292,13 @@
 					float: left
 					margin: 0 20px 15px 0
 					@media #{$small-only}
-						margin: 0 10px 10px 0
+						margin: 0 5px 5px 0
 				.atributes
 					margin-left: 10px
 					font-size: 1.125em
 					@media #{$small-only}
-						font-size: 1em
+						font-size: 0.875em
+						margin-left: 5px
 				svg
 					position: relative
 					vertical-align: middle
@@ -235,9 +309,13 @@
 				margin: 10px 0
 				font-size: 1em
 				line-height: 21.6px
+				@media #{$small-only}
+					display: none
 			.social-container
 				+clearfix
 				margin-top: 20px
+				@media #{$small-only}
+					display: none
 				.social	
 					border: 1px solid $brown
 					height: 20px
@@ -277,6 +355,9 @@
 					.animated-frame
 						.left-border, .right-border, &:before, &:after
 							+translate(0,0)
+				@media #{$small-only}
+					margin-top: 40px
+					margin-top: 20px
 			.technical
 				text-transform: uppercase
 				display: inline-block
@@ -284,10 +365,50 @@
 				margin-top: 50px
 				line-height: 30px
 				border-bottom: 1px solid $brown
+				.mobile-text
+					@media #{$medium-up}
+						display: none
+				.desktop-text	
+					@media #{$small-only}
+						display: none
+			.door-show-mobile
+				position: relative
+				margin-top: 20px
+				&:after
+					content: ''
+					position: absolute
+					top: -10px
+					left: -20px
+					right: -20px
+					height: 100px
+					background: $blue-grey
+					opacity: 0.7
+				@media #{$medium-up}
+					display: none
+				.color-block
+					margin-bottom: 5px
+					width: 40px
+					line-height: 12px
+					display: inline-block
+					margin-right: 10px
+					position: relative
+					z-index: 2
+				.color
+					font-size: 0.75em
+					text-transform: uppercase
+					color: $grey
+					margin-bottom: 5px
+				.color-texture
+					width: 40px
+					height: 40px
+					background-position: center
+					background-size: cover
 		.door-show
 			float: left
 			width: 40%
 			height: 100%
+			@media #{$small-only}
+				display: none
 			.door-colors-container
 				position: absolute
 				top: 50%
@@ -361,41 +482,70 @@
 		.specifications
 		.door-name
 		.hardware
-			.title
-				font-size: 1.375em
-				text-transform: uppercase
-				color: $dark-grey
-				font-weight: 600
-			.price
-				font-size: 1.75em
-				color: $brown	
-			.pick-colors
-				+clearfix
-				margin-top: 30px
-				.color
-					float: left
-					width: 30px
-					height: 30px
-					margin-right: 10px
+			.unit-container
+				position: relative
+				height: 250px
+				border: 1px solid $light-grey
+				margin-bottom: 30px
+				margin-right: 15px
+				.text
+					margin: 30px 0 0 150px
+				.title
+					font-size: 1.375em
+					text-transform: uppercase
+					color: $dark-grey
+					font-weight: 600
+					display: inline-block
+					border-bottom: 2px solid $dark-grey
+				.under-title
+					margin: 5px 0
+				.price
+					font-size: 1.75em
+					color: $brown	
+					margin: 10px 0
+				.pick-colors
+					+clearfix
+					margin-top: 30px
+					.color
+						float: left
+						width: 30px
+						height: 30px
+						margin-right: 10px
+						cursor: pointer
+				.add-to-cart
+					position: absolute
+					fill: $brown
+					background-color: #fff
+					border: 1px solid $brown
+					padding: 10px
+					top: 50%
+					right: -15px
+					width: 50px
+					height: 50px
 					cursor: pointer
-			.add-to-cart
-				position: absolute
-				fill: $brown
-				background-color: #fff
-				border: 1px solid $brown
-				padding: 10px
-				top: 50%
-				right: -15px
-				width: 50px
-				height: 50px
-				cursor: pointer
-				+transition(0.25s)
-				+translate(0, -50%)
-				svg
-					vertical-align: middle
-				&:hover
-					background-color: $brown
-					fill: #fff
-				@media #{$medium-up}
-					right: 0
-					+translate(50%,-50%)
+					+transition(0.25s)
+					+translate(0, -50%)
+					svg
+						vertical-align: middle
+					&:hover
+						background-color: $brown
+						fill: #fff
+					@media #{$medium-up}
+						right: 0
+						+translate(50%,-50%)
+				.img-container
+					position: absolute
+					height: 120px
+					width: 120px
+					left: 0
+					top: 50%
+					+translate(0,-50%)
+					overflow: hidden
+				.hardware-img
+					position: absolute
+					height: 100%
+					width: 100%
+					background-size: contain
+					background-repeat: no-repeat
+					background-position: center
+					left: -15px

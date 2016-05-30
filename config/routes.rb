@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get "publication-one", action: "publication_one"
     get "door-one", action: "door_one"
     get "contact-us", action: "contact_us"
+    get "not-found", action: "error"
+    get "cart", action: "cart"
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

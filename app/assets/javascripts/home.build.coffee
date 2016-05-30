@@ -32,3 +32,5 @@
 
 #= require vendor/owl.carousel.min
 #= require owl-carousel
+
+#= require door-one-scroll

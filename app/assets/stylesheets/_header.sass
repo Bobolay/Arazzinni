@@ -98,6 +98,8 @@ $header-bg-color: white
 			opacity: 1
 		.menu-title
 			color: $brown
+			@media #{$small-only}
+				display: none
 			&:after
 				content: ''
 				position: absolute
@@ -110,6 +112,10 @@ $header-bg-color: white
 	.navigation
 		list-style: none
 		padding-top: 30px
+		li
+			&.hide
+				@media #{$medium-up}
+					display: none
 		a
 			color: $light-grey
 			font-size: 1.75em
@@ -119,7 +125,6 @@ $header-bg-color: white
 			cursor: pointer
 			&:hover
 				color: $brown
-
 	.securement
 		list-style: none
 		padding-top: 30px

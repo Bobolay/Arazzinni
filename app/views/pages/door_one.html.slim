@@ -103,7 +103,7 @@
 						li
 							| hardware
 							span = inline_svg "icons/sitemap.svg"
-				.door-info.show-it
+				.scrolled-block.door-info
 					.door-image-mobile style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
 					.main-info
 						p.menu-title royal
@@ -160,8 +160,8 @@
 								p.color acacia
 								.color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
 						.door-image style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
-				.gallery
-					.slider-container	
+				.scrolled-block.gallery.show-it
+					.slider-container
 						ul.bxslider-door
 							li
 								.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-183.jpg')})"
@@ -178,9 +178,9 @@
 							a#button4 data-slide-index="3" href=""
 						.door-slider-arrow-left = inline_svg "icons/bottom-nav-arrow-left-white.svg"
 						.door-slider-arrow-right = inline_svg "icons/bottom-nav-arrow-right-white.svg"
-				.specifications
-				.door-frame
-				.hardware
+				/ .scrolled-block.specifications
+				/ .scrolled-block.door-frame
+				.scrolled-block.hardware
 					.row
 						.large-6.medium-12.small-12.columns
 							.unit-container
@@ -209,7 +209,7 @@
 									.hardware-img style="background-image: url(#{asset_path('hardware/plan-3.jpg')})"
 								.add-to-cart = inline_svg "icons/supermarket39.svg"
 						.large-6.medium-12.small-12.columns
-							.unit-container
+							.unit-container.hide
 								.text
 									p.title privacy
 									p.under-title Dark Bronze
@@ -222,7 +222,7 @@
 									.hardware-img style="background-image: url(#{asset_path('hardware/plan-5.jpg')})"
 								.add-to-cart = inline_svg "icons/supermarket39.svg"
 						.large-6.medium-12.small-12.columns
-							.unit-container
+							.unit-container.hide
 								.text
 									p.title privacy
 									p.under-title Dark Bronze

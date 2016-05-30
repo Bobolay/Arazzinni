@@ -1,0 +1,44 @@
+.not-found-wrapper
+	background-color: $dark-grey
+	width: calc(100vw - 10px)
+	height: calc(100vh - 10px)
+	display: flex
+	justify-content: center
+	align-items: center
+	@media #{$small-only}
+		padding: 20px
+	@media #{$medium-only}
+		padding: 50px
+	.section-title
+		color: #B76F2C
+		margin-top: 0
+		margin-left: 0
+		&:after
+			content: ''
+			position: absolute
+			bottom: -7px
+			left: 0
+			width: 100px
+			border: 1px solid #B76F2C
+	.shadow-text
+		color: #fff
+		top: 0
+		margin-top: -30px
+		@media #{$small-only}
+			font-size: 15vw
+		@media #{$large-up}
+			margin-top: -60px
+	.regular
+		color: $blue-grey
+		width: 100%
+		@media #{$medium-only}
+			width: 80%
+		@media #{$large-up}
+			width: 50%
+			margin-top: -30px
+	.regular-big
+		color: #B76F2C
+		text-transform: uppercase
+		border-bottom: 1px solid #B76F2C
+		display: inline-block
+		margin-top: 20px

@@ -189,7 +189,7 @@
 		@media #{$medium-up}
 			position: absolute
 			width: calc(100% - 10px)
-			top: 50%
+			top: 45%
 			+translate(0,-50%)
 		.side-nav-container
 			width: 190px
@@ -246,14 +246,39 @@
 							+scale(1.2)
 							border: 1px solid $brown
 							fill: $brown
-		.door-info, .gallery, .specifications, .door-frame, .hardware
+		// .door-info, .gallery, .specifications, .door-frame, .hardware
+		.scrolled-block
 			position: relative
 			width: calc(100% - 190px)
 			height: 600px
 			border: 1px solid $brown
 			padding: 30px 50px
 			display: none
+			opacity: 1
+			+transition(0.5s)
 			&.show-it
+				+translate(0,0)
+				opacity: 1
+				display: inline
+				float: left
+			&.go-up
+				+translate(0,-25%)
+				opacity: 0
+				display: inline
+				float: left
+			&.go-down
+				+translate(0,25%)
+				opacity: 0
+				display: inline
+				float: left
+			&.from-up
+				+translate(0,-25%)
+				opacity: 0
+				display: inline
+				float: left
+			&.from-down
+				+translate(0,25%)
+				opacity: 0
 				display: inline
 				float: left
 			@media #{$small-only}
@@ -461,6 +486,12 @@
 				height: 110%
 				position: relative
 				top: -5%
+				@media #{$small-only}
+					width: 120%
+					height: 70%
+					left: -10%
+					top: 15%
+					position: relative
 				.bx-wrapper
 					height: 100%
 				.bx-viewport
@@ -500,12 +531,17 @@
 		.specifications
 		.door-name
 		.hardware
+			.hide
+				display: none
+				@media #{$large-up}
+					display: block
 			.unit-container
 				position: relative
 				height: 250px
 				border: 1px solid $light-grey
 				margin-bottom: 30px
 				margin-right: 15px
+				max-width: 400px
 				.text
 					margin: 30px 0 0 150px
 				.title

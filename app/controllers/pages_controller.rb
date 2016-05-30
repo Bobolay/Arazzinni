@@ -39,6 +39,16 @@ class PagesController < ApplicationController
 
   end
 
+  def cart
+
+  end
+
+  def error
+    @render_header = false
+    @render_footer = false
+
+  end
+
   private
 
   def set_page_instance

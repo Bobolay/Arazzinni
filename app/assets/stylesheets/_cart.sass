@@ -1,0 +1,129 @@
+.cart-wrapper
+	hr
+		border-top: #fff
+		margin-top: 20px
+	.title
+		text-transform: uppercase
+		margin-top: 30px
+		color: $brown
+		font-size: 1.625em
+		border-bottom: 1px solid $dark-grey
+		padding-bottom: 5px
+	form
+		padding: 0
+		input
+			padding-bottom: 5px
+		label
+			color: $light-grey
+		.above-textarea
+			color: $light-grey
+		textarea
+			border: 1px solid $light-grey
+		button
+			color: #fff
+			display: inline-block
+			text-transform: uppercase
+			font-size: 1em
+			background: $brown
+			font-weight: 100
+			line-height: 40px
+			width: 150px
+			margin-top: 50px
+			margin-right: 30px
+			text-align: center
+			position: relative
+			cursor: pointer
+			.animated-frame
+				top: 3px
+				right: 3px
+				bottom: 3px
+				left: 3px
+			&:hover
+				.animated-frame
+					.left-border, .right-border, &:before, &:after
+						+translate(0,0)
+			@media #{$small-only}
+				margin-top: 40px
+				margin-top: 20px
+		.go-ahead
+			text-transform: uppercase
+			display: inline-block
+			color: $brown
+			margin-top: 50px
+			line-height: 30px
+			border-bottom: 1px solid $brown
+	.cart-item
+		+clearfix
+		margin-top: 20px
+		position: relative
+		.delete-item
+			width: 26px
+			height: 26px
+			border-radius: 26px
+			background-color: #fff
+			position: absolute
+			left: -12px
+			top: -7px
+			text-align: center
+			border: 1px solid $brown
+			opacity: 0
+			cursor: pointer
+			+transition(0.1s)
+		.item-img
+			display: inline-block
+			float: left
+			background-size: contain
+			background-repeat: no-repeat
+			width: 50px
+			height: 100px
+			margin-right: 30px
+			margin-top: 5px
+		.item-description
+			display: inline-block
+			float: left
+			.regular
+				color: $brown
+				margin-bottom: 10px
+				max-width: 330px
+			.parameters-container
+				display: flex
+				justify-content: space-between
+				font-size: 0.875em
+				align-items: center
+			.quantity-container
+				float: left
+				span
+					display: inline-block
+					width: 30px
+					height: 30px
+					text-align: center
+					border: 1px solid $light-grey
+					color: $brown
+					font-size: 1.125em
+					cursor: pointer
+				p
+					display: inline-block
+					width: 30px
+					height: 30px
+					text-align: center
+					color: $brown
+					font-size: 1.25em
+			.price
+				font-size: 1.25em
+				font-weight: 600
+				color: $grey
+				width: 50px
+				text-align: right
+		&:hover
+			.delete-item
+				opacity: 1
+	.bill-container
+		border-top: 1px solid $dark-grey
+		margin-top: 20px
+		padding-top: 20px
+		color: $grey
+		.bill
+			display: flex
+			justify-content: space-between
+			.price
+				color: $brown

@@ -7,7 +7,8 @@ html
     = csrf_meta_tags
 
   body
-    = render "header"
+    - if @render_header != false
+        = render "header"
     = yield
     - if @render_footer != false
         = render "footer"

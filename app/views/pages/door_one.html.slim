@@ -103,134 +103,201 @@
 						li
 							| hardware
 							span = inline_svg "icons/sitemap.svg"
-				.scrolled-block.door-info
-					.door-image-mobile style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
-					.main-info
-						p.menu-title royal
-						p.under-title Solid Wood Alder Collection
-						.attributes-container	
-							.interior
-								= inline_svg "icons/interior.svg"
-								span.atributes Interior
-							.traditional
-								= inline_svg "icons/traditional.svg"
-								span.atributes Traditional
-							.price
-								= inline_svg "icons/price.svg"
-								span.atributes $955
-						p.regular Wood frame is made of solid pine planks, connected on micro-studs. Lined with MDF and covered with African Black Apricot veneer. Accented with silver stripe moldings. Frosted glass, used for door inlay is tempered and mounted using raised moldings, made of solid wood and veneered. Finished with three layers of varnish with interim grinding and polish. Semi-gloss.
-						.social-container
-							.social
-							 = inline_svg "icons/social-fb.svg"
-							 span.description Share
-							.social
-							 = inline_svg "icons/social-fb.svg"
-							 span.description Pin it
-							.social
-							 = inline_svg "icons/social-fb.svg"
-							 span.description Save
-						.door-show-mobile
-							.door-colors-container
-								.color-block
-									p.color cream white
-									.color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
-								.color-block
-									p.color brown patina
-									.color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
-								.color-block
-									p.color acacia
-									.color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
-						a.buy-button
-							| buy
-							.animated-frame
-								.left-border
-								.right-border
-						a.technical href=""
-							p.mobile-text info
-							p.desktop-text technical specifications
-					.door-show
-						.door-colors-container
-							.color-block
-								p.color cream white
-								.color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
-							.color-block
-								p.color brown patina
-								.color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
-							.color-block
-								p.color acacia
-								.color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
-						.door-image style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
-				.scrolled-block.gallery.show-it
-					.slider-container
-						ul.bxslider-door
-							li
-								.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-183.jpg')})"
-							li
-								.img-container style="background-image: url(#{asset_path('main/Smart-pro.jpg')})"
-							li
-								.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-48.jpg')})"
-							li
-								.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-133.jpg')})"
-						.squares#bx-pager
-							a#button1 data-slide-index="0" href=""
-							a#button2 data-slide-index="1" href=""
-							a#button3 data-slide-index="2" href=""
-							a#button4 data-slide-index="3" href=""
-						.door-slider-arrow-left = inline_svg "icons/bottom-nav-arrow-left-white.svg"
-						.door-slider-arrow-right = inline_svg "icons/bottom-nav-arrow-right-white.svg"
-				/ .scrolled-block.specifications
-				/ .scrolled-block.door-frame
-				.scrolled-block.hardware
-					.row
-						.large-6.medium-12.small-12.columns
-							.unit-container
-								.text
-									p.title privacy
-									p.under-title Dark Bronze
-									p.price &#36;50
-									.pick-colors
-										.color style="background: #876036"
-										.color style="background: #747474"
-										.color style="background: #BCBCBC"
-								.img-container
-									.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
-								.add-to-cart = inline_svg "icons/supermarket39.svg"
-						.large-6.medium-12.small-12.columns
-							.unit-container
-								.text
-									p.title privacy
-									p.under-title Dark Bronze
-									p.price &#36;50
-									.pick-colors
-										.color style="background: #876036"
-										.color style="background: #747474"
-										.color style="background: #BCBCBC"
-								.img-container
-									.hardware-img style="background-image: url(#{asset_path('hardware/plan-3.jpg')})"
-								.add-to-cart = inline_svg "icons/supermarket39.svg"
-						.large-6.medium-12.small-12.columns
-							.unit-container.hide
-								.text
-									p.title privacy
-									p.under-title Dark Bronze
-									p.price &#36;50
-									.pick-colors
-										.color style="background: #876036"
-										.color style="background: #747474"
-										.color style="background: #BCBCBC"
-								.img-container
-									.hardware-img style="background-image: url(#{asset_path('hardware/plan-5.jpg')})"
-								.add-to-cart = inline_svg "icons/supermarket39.svg"
-						.large-6.medium-12.small-12.columns
-							.unit-container.hide
-								.text
-									p.title privacy
-									p.under-title Dark Bronze
-									p.price &#36;50
-									.pick-colors
-										.color style="background: #876036"
-										.color style="background: #747474"
-										.color style="background: #BCBCBC"
-								.img-container
-									.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
-								.add-to-cart = inline_svg "icons/supermarket39.svg"
+				.scroll-container
+					.big-frame
+					.block-container
+						.scrolled-block.door-info
+							.door-image-mobile style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
+							.main-info
+								p.menu-title royal
+								p.under-title Solid Wood Alder Collection
+								.attributes-container	
+									.interior
+										= inline_svg "icons/interior.svg"
+										span.atributes Interior
+									.traditional
+										= inline_svg "icons/traditional.svg"
+										span.atributes Traditional
+									.price
+										= inline_svg "icons/price.svg"
+										span.atributes $955
+								p.regular Wood frame is made of solid pine planks, connected on micro-studs. Lined with MDF and covered with African Black Apricot veneer. Accented with silver stripe moldings. Frosted glass, used for door inlay is tempered and mounted using raised moldings, made of solid wood and veneered. Finished with three layers of varnish with interim grinding and polish. Semi-gloss.
+								.social-container
+									.social
+									 = inline_svg "icons/social-fb.svg"
+									 span.description Share
+									.social
+									 = inline_svg "icons/social-fb.svg"
+									 span.description Pin it
+									.social
+									 = inline_svg "icons/social-fb.svg"
+									 span.description Save
+								.door-show-mobile
+									.door-colors-container
+										.color-block
+											p.color cream white
+											.color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
+										.color-block
+											p.color brown patina
+											.color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+										.color-block
+											p.color acacia
+											.color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+								a.buy-button
+									| buy
+									.animated-frame
+										.left-border
+										.right-border
+								a.technical href=""
+									p.mobile-text info
+									p.desktop-text technical specifications
+							.door-show
+								.door-colors-container
+									.color-block
+										p.color cream white
+										.color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
+									.color-block
+										p.color brown patina
+										.color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+									.color-block
+										p.color acacia
+										.color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+								.door-image-container
+									.door-image.visible style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
+									.door-image style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
+									.door-image style="background-image: url(#{asset_path('sampleDoors/sample-door1.jpg')})"
+						.scrolled-block.gallery
+							.slider-container
+								ul.bxslider-door
+									li
+										.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-183.jpg')})"
+									li
+										.img-container style="background-image: url(#{asset_path('main/Smart-pro.jpg')})"
+									li
+										.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-48.jpg')})"
+									li
+										.img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-133.jpg')})"
+								.squares#bx-pager
+									a#button1 data-slide-index="0" href=""
+									a#button2 data-slide-index="1" href=""
+									a#button3 data-slide-index="2" href=""
+									a#button4 data-slide-index="3" href=""
+								.door-slider-arrow-left = inline_svg "icons/bottom-nav-arrow-left-white.svg"
+								.door-slider-arrow-right = inline_svg "icons/bottom-nav-arrow-right-white.svg"
+						.scrolled-block.specifications
+							#arrow-up = inline_svg "icons/specifications-arrow-up.svg"
+							.scrolled-container
+								.whitening-top
+								.whitening-bottom
+								.row
+									.xlarge-6.large-12.medium-12.small-12.columns
+										.text-block
+											p.left-text Door Type:
+											p.right-text Interior
+										.text-block
+											p.left-text Possible Configurations:
+											p.right-text Single (Swing), Double (Swing)
+										.text-block
+											p.left-text Door Style:
+											p.right-text Traditional
+										.text-block
+											p.left-text Prefinished:
+											p.right-text Yes
+										.text-block
+											p.left-text Finish:
+											p.right-text Cream White (Painted, Lacquered)
+										.text-block
+											p.left-text Gloss Level Finish:
+											p.right-text Semigloss (60%)
+										.text-block
+											p.left-text Door Slab Widths Range:
+											p.right-text 17 13/16", 23 13/16", 27 13/16"
+									.xlarge-6.large-12.medium-12.small-12.columns
+										.text-block
+											p.left-text Door Slab Thickness:
+											p.right-text 19/16"
+										.text-block
+											p.left-text Jamb Thickness:
+											p.right-text 3 7/8"
+										.text-block
+											p.left-text Wall Covered by Jamb:
+											p.right-text 3 7/8" to 4 7/8"
+										.text-block
+											p.left-text Door Casing Width:
+											p.right-text 2 13/16"
+										.text-block
+											p.left-text Middle Panel Construction:
+											p.right-text Solid Wood Alder
+										.text-block
+											p.left-text Stile Construction:
+											p.right-text Solid Wood Core
+										.text-block
+											p.left-text Glass Lite:
+											p.right-text No
+							#arrow-down = inline_svg "icons/specifications-arrow-down.svg"
+							a.installation href=""
+								span = inline_svg "icons/specifications-gear.svg"
+								span installation instructions
+						.scrolled-block.door-frame
+							.draft-wrapper
+								.draft style="background-image: url(#{asset_path('draft/door-frame-1.jpg')})"
+								.draft style="background-image: url(#{asset_path('draft/door-frame-2.jpg')})"
+								.draft style="background-image: url(#{asset_path('draft/door-frame-3.jpg')})"
+							.draft-wrapper
+								.draft style="background-image: url(#{asset_path('draft/door-frame-4.jpg')})"
+								.draft style="background-image: url(#{asset_path('draft/door-frame-5.jpg')})"
+								.draft style="background-image: url(#{asset_path('draft/door-frame-6.jpg')})"
+						.scrolled-block.hardware
+							.row
+								.large-6.medium-12.small-12.columns
+									.unit-container
+										.text
+											p.title privacy
+											p.under-title Dark Bronze
+											p.price &#36;50
+											.pick-colors
+												.color style="background: #876036"
+												.color style="background: #747474"
+												.color style="background: #BCBCBC"
+										.img-container
+											.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
+										.add-to-cart = inline_svg "icons/supermarket39.svg"
+								.large-6.medium-12.small-12.columns
+									.unit-container
+										.text
+											p.title privacy
+											p.under-title Dark Bronze
+											p.price &#36;50
+											.pick-colors
+												.color style="background: #876036"
+												.color style="background: #747474"
+												.color style="background: #BCBCBC"
+										.img-container
+											.hardware-img style="background-image: url(#{asset_path('hardware/plan-3.jpg')})"
+										.add-to-cart = inline_svg "icons/supermarket39.svg"
+								.large-6.medium-12.small-12.columns
+									.unit-container.hide
+										.text
+											p.title privacy
+											p.under-title Dark Bronze
+											p.price &#36;50
+											.pick-colors
+												.color style="background: #876036"
+												.color style="background: #747474"
+												.color style="background: #BCBCBC"
+										.img-container
+											.hardware-img style="background-image: url(#{asset_path('hardware/plan-5.jpg')})"
+										.add-to-cart = inline_svg "icons/supermarket39.svg"
+								.large-6.medium-12.small-12.columns
+									.unit-container.hide
+										.text
+											p.title privacy
+											p.under-title Dark Bronze
+											p.price &#36;50
+											.pick-colors
+												.color style="background: #876036"
+												.color style="background: #747474"
+												.color style="background: #BCBCBC"
+										.img-container
+											.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
+										.add-to-cart = inline_svg "icons/supermarket39.svg"

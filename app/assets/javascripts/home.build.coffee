@@ -34,3 +34,7 @@
 #= require owl-carousel
 
 #= require door-one-scroll
+
+#= require specifications-scroll
+
+#= require vendor/jquery-scrollto

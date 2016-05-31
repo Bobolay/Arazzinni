@@ -182,10 +182,9 @@
 					border: 1px solid #bdbdbd
 	.middle-wrapper
 		@media #{$small-only}
-			width: 100vw
+			width: calc(100vw - 20px)
 			position: relative
-			left: -10px
-			overflow: hidden
+			// overflow: hidden
 		@media #{$medium-up}
 			position: absolute
 			width: calc(100% - 10px)
@@ -251,45 +250,40 @@
 			width: calc(100% - 190px)
 			height: 80vh
 			float: left
+			@media #{$small-only}
+				width: 100%
+				float: none
 		.big-frame
 			position: absolute
-			height: 80%
+			height: 90%
 			width: 100%
-			top: 50%
-			+translate(0,-50%)
 			border: 1px solid $brown
+			z-index: 3
+			@media #{$medium-up}
+				height: 80%
+				top: 50%
+				+translate(0,-50%)
 		.block-container
 			overflow: hidden
 			width: 100%
 			height: 100%
 			padding: 0 30px
+			@media #{$small-only}
+				padding: 0 10px
 		.scrolled-block
-			margin-top: 12vh
+			margin: 12vh 0
 			width: 100%
 			height: 600px
 			@media #{$small-only}
 				position: relative
-				width: calc(100% - 20px)
-				padding: 10px 20px
+				margin: 0
 				height: calc(100vh - 120px)
-				left: 10px
+			&.active
+				// margin: 12vh 0 0 0
 		.door-info
 			display: flex
 			align-items: centers
-			.door-image-mobile
-				width: 300px
-				height: 90%
-				background-size: contain
-				position: absolute
-				background-repeat: no-repeat
-				z-index: 4
-				left: 80%
-				top: 5%
-				@media #{$medium-up}
-					display: none
 			.main-info
-				@media #{$small-only}
-					width: 100%
 			.menu-title
 				color: $brown
 				font-weight: 600
@@ -385,6 +379,7 @@
 				@media #{$small-only}
 					margin-top: 40px
 					margin-top: 20px
+					width: 100px
 			.technical
 				text-transform: uppercase
 				display: inline-block
@@ -401,6 +396,8 @@
 			.door-show-mobile
 				position: relative
 				margin-top: 20px
+				z-index: 3
+				left: 11px
 				&:after
 					content: ''
 					position: absolute
@@ -419,7 +416,7 @@
 					display: inline-block
 					margin-right: 10px
 					position: relative
-					z-index: 2
+					z-index: 6
 				.color
 					font-size: 0.75em
 					text-transform: uppercase
@@ -438,10 +435,12 @@
 			display: flex
 			align-items: center
 			@media #{$small-only}
-				display: none
+				// display: none
 			.door-colors-container
 				position: relative
 				z-index: 5
+				@media #{$small-only}
+					display: none
 			.color-block
 				margin-bottom: 10px
 				width: 40px
@@ -464,6 +463,10 @@
 				position: relative
 				width: 300px
 				height: 600px
+				@media #{$small-only}
+					width: 100px
+					height: 300px
+					z-index: 5
 				.door-image
 					position: absolute
 					background-size: contain
@@ -472,9 +475,12 @@
 					width: 100%
 					height: 100%
 					opacity: 0
+					z-index: 2
 					+transition(0.15s)
 					&.visible
 						opacity: 1
+					@media #{$small-only}
+						width: 150%
 		.gallery
 			padding: 10px
 			.slider-container
@@ -525,7 +531,6 @@
 			.door-slider-arrow-right
 				right: 20px
 		.specifications
-			display: none
 			text-align: center
 			#arrow-up, #arrow-down
 				position: relative
@@ -538,25 +543,25 @@
 				position: relative
 				max-height: 80%
 				height: auto
-				overflow: auto
-				&::-webkit-scrollbar
-					display: none
+				overflow: hidden
 			.whitening-top
-				position: fixed
-				top: 50px
+				position: absolute
+				top: 0
 				left: 0
 				height: 100px
 				width: 100%
 				background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0))
+				display: none
 				@media #{$small-only}
 					display: none
 			.whitening-bottom
-				position: fixed
-				bottom: 110px
+				position: absolute
+				bottom: 0
 				left: 0
 				height: 100px
 				width: 100%
 				background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1))
+				display: none
 				@media #{$small-only}
 					display: none
 			.text-block

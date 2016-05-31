@@ -1,5 +1,5 @@
 $('.door-colors-container').on("click", ".color-block", function(){
-	$container = $(this).closest('.door-show')
+	$container = $(this).closest('.door-show, .block-container')
 	var $i = $(this).index();
 	console.log($i)
 	$container.find(".door-image-container").children().removeClass("visible")

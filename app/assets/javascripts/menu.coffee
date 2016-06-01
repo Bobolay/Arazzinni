@@ -26,3 +26,13 @@ $(".close-button").on "click", ()->
   setTimeout (->
       $(".navigation-wrapper, .menu-collection-container").removeClass("show-it")
     ), 0
+
+is_touch_screen = 'ontouchstart' of document.documentElement
+
+$('.cart').on "click", ()->
+  $('.cart-popup').addClass('show-it')
+  $('body').addClass("fixed")
+
+$('.close-popup').on "click", ()->
+  $('.cart-popup').removeClass('show-it')
+  $('body').removeClass("fixed")

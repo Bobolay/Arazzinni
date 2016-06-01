@@ -253,9 +253,11 @@
 			@media #{$small-only}
 				width: 100%
 				float: none
+			@media only screen and (max-width: 320px)
+				height: 75vh
 		.big-frame
 			position: absolute
-			height: 90%
+			height: 100%
 			width: 100%
 			border: 1px solid $brown
 			z-index: 3
@@ -282,7 +284,7 @@
 				// margin: 12vh 0 0 0
 		.door-info
 			display: flex
-			align-items: centers
+			// align-items: center
 			.main-info
 			.menu-title
 				color: $brown

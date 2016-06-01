@@ -1,48 +1,45 @@
 .cart-wrapper
 	.row
-		.xlarge-8.xlarge-centered.large-10.large-centered.medium-12.small-12.columns
+		.xxlarge-8.xxlarge-centered.xlarge-10.xlarge-centered.large-11.large-centered.medium-12.small-12.columns
 			.xlarge-6.large-6.medium-12.small-12.columns
 				.left-container
 					form
 						p.title customer information
-						.group
-							input type="text"
-								span.bar
-							label First name
-						.group
-							input type="text"
-								span.bar
-							label Last name
-						.group
-							input type="text"
-								span.bar
-							label Email
-						.group
-							input type="text"
-								span.bar
-							label Phone
+						.group-container
+							.group.go-left
+								input type="text"
+									span.bar
+								label First name
+							.group.go-right
+								input type="text"
+									span.bar
+								label Last name
+						.group-container	
+							.group.go-left
+								input type="text"
+									span.bar
+								label Email
+							.group.go-right
+								input type="text"
+									span.bar
+								label Phone
 						p.title delivery
-						.group
-							input type="text"
-								span.bar
-							label Country
-						.group
-							input type="text"
-								span.bar
-							label City
+						.group-container	
+							.group.go-left
+								input type="text"
+									span.bar
+								label Country
+							.group.go-right
+								input type="text"
+									span.bar
+								label City
 						.group
 							input type="text"
 								span.bar
 							label Address
 						p.above-textarea Comment
 						.group
-							textarea rows="5"
-						button type="submit"
-							| order confirm
-							.animated-frame
-								.left-border
-								.right-border
-						a.go-ahead href="" continue shopping
+							textarea rows="7"
 			.xlarge-6.large-6.medium-12.small-12.columns
 				.right-container
 					p.title customer information
@@ -57,7 +54,7 @@
 								p Price: $750
 							.quantity-container
 								span.minus -
-								p.quantity 2
+								span.quantity 2
 								span.plus +
 							.price
 								p $1500
@@ -73,7 +70,7 @@
 								p Price: $783
 							.quantity-container
 								span.minus -
-								p.quantity 1
+								span.quantity 1
 								span.plus +
 							.price
 								p $830
@@ -89,7 +86,7 @@
 								p Price: $926
 							.quantity-container
 								span.minus -
-								p.quantity 5
+								span.quantity 5
 								span.plus +
 							.price
 								p $4530
@@ -100,4 +97,12 @@
 					.bill
 						p Shipping:
 						p.price $140
-					.bill
+					.bill.total
+						p Total:
+						p.price $7000
+			button type="submit"
+				| order confirm
+				.animated-frame
+					.left-border
+					.right-border
+			a.go-ahead href="" continue shopping

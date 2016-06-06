@@ -18,7 +18,6 @@ $(".menu-button").on "click", ()->
   setTimeout (->
       $(".navigation-wrapper, .menu-collection-container").addClass("show-it")
     ), 200
-
 $(".close-button").on "click", ()->
   $('.menu-wrapper').toggleClass("opened")
   $('body').removeClass("fixed")
@@ -26,6 +25,20 @@ $(".close-button").on "click", ()->
   setTimeout (->
       $(".navigation-wrapper, .menu-collection-container").removeClass("show-it")
     ), 0
+
+
+
+$.clickOut(".contact-info-popup",
+  ()->
+    #console.log "close call-me-popup"
+    $(".contact-info-popup").removeClass('show-info')
+  {except: ".phone"}
+)
+
+$('.phone').on "click", (e)->
+  $('.contact-info-popup').toggleClass('show-info')
+
+
 
 is_touch_screen = 'ontouchstart' of document.documentElement
 

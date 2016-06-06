@@ -1,5 +1,21 @@
 .header-container
-	.header-fixed
+	.header-fixed.notification-wrap
+		.contact-info-popup.notification-container
+			.svg-coordinates = inline_svg "icons/contacts-phone.svg"
+			p.phone-numbers
+				| (866) 55-doors
+			p.phone-numbers
+				| (866) 531-8594
+			p.info Or leave your phone number and we will call you back
+			form
+				.group
+					input type="text"
+						span.bar
+					label.info-title Enter Your phone number
+				.main-button href="" 
+					| Сall me back
+					.left-border
+					.right-border
 		a.logo-container href=root_path
 			.header-logo-picture = inline_svg "header/logo-art.svg"
 			.header-logo-inscription = inline_svg "header/logo-arazzinni.svg"
@@ -69,7 +85,8 @@
 							.left-border
 							.right-border
 					a.go-ahead href="" continue shopping
-			a.phone href=contact_us_path = inline_svg "icons/telephone60.svg"
+			.phone.notification-link
+				= inline_svg "icons/telephone60.svg"
 			.menu-button = inline_svg "icons/menu55.svg"
 			.menu-wrapper
 				.close-button

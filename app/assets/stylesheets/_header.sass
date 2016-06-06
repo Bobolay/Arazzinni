@@ -12,6 +12,15 @@ $header-bg-color: white
 	+transition-property(all)
 	+transition-duration(1s)
 	transform: translateY(-#{$header-height})
+	&:before
+		content: ''
+		width: 350px
+		position: absolute
+		top: 0
+		right: 0
+		background-color: #fff
+		height: 70px
+		z-index: 1
 .header-container
 	position: relative
 	z-index: 10
@@ -33,11 +42,15 @@ $header-bg-color: white
 	float: left
 	margin-left: 10px
 	margin-top: 9px
+	position: relative
+	z-index: 5
 .header-logo-inscription
 	@media #{$small-only}
 		display: none
 .icons-right-side
 	float: right
+	position: relative
+	z-index: 3
 .cart, .phone, .menu-button
 	float: left
 	fill: $brown
@@ -46,6 +59,7 @@ $header-bg-color: white
 	height: 60px
 	margin-left: 5px
 	transition: .15s
+	position: relative
 	svg
 		position: relative
 		top: 50%
@@ -117,6 +131,36 @@ $header-bg-color: white
 		span
 			margin-left: 20px
 			color: $brown
+
+.contact-info-popup
+	width: 300px
+	background-color: #fff
+	position: absolute
+	right: 0
+	top: 70px
+	+transition(0.5s)
+	+translate(0,-100%)
+	padding: 10px 30px
+	&.show-info
+		+translate(0,0)
+	.svg-coordinates
+		position: absolute
+		top: 25px
+	.phone-numbers
+		font-size: 1.125em
+		color: $brown
+		font-weight: 600
+		padding-left: 40px
+	.info
+		margin-top: 10px
+		line-height: 20px
+	form
+		padding: 0
+	.main-button
+		display: block
+		margin: 20px auto
+
+
 .menu-button
 	cursor: pointer
 .menu-wrapper

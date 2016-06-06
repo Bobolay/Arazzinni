@@ -1,6 +1,7 @@
 #= require jquery
 
 #= require jquery_ujs
+#= require global
 
 #= require vendor/jquery-easing
 
@@ -20,6 +21,8 @@
 
 #= require vendor/jquery.scrolldelta
 #= require components/fixed_header
+
+#= require clickout
 #= require menu
 #= require scroll-banner
 
@@ -33,8 +36,7 @@
 #= require vendor/owl.carousel.min
 #= require owl-carousel
 
-#= require door-one-scroll
+#= require delay
+#= require door-one
 
 #= require specifications-scroll
-
-#= require vendor/jquery-scrollto

@@ -273,20 +273,17 @@
 			@media #{$small-only}
 				padding: 0 10px
 		.scrolled-block
-			// margin: 12vh 0
 			width: 100%
 			height: 600px
 			margin-bottom: 200px
 			@media #{$small-only}
 				position: relative
-				margin: 0
 				height: calc(100vh - 120px)
-			&.active
-				// margin: 12vh 0 0 0
 		.door-info
 			display: flex
-			// align-items: center
+			// padding: 30px 0
 			.main-info
+				padding: 30px 0
 			.menu-title
 				color: $brown
 				font-weight: 600
@@ -323,6 +320,10 @@
 					@media #{$small-only}
 						font-size: 0.875em
 						margin-left: 5px
+				.price
+					.atributes
+						position: relative
+						top: 4px
 				svg
 					position: relative
 					vertical-align: middle
@@ -380,8 +381,7 @@
 						.left-border, .right-border, &:before, &:after
 							+translate(0,0)
 				@media #{$small-only}
-					margin-top: 40px
-					margin-top: 20px
+					margin-top: 30px
 					width: 100px
 			.technical
 				text-transform: uppercase
@@ -390,6 +390,10 @@
 				margin-top: 50px
 				line-height: 30px
 				border-bottom: 1px solid $brown
+				position: relative
+				z-index: 9
+				@media #{$small-only}
+					margin-top: 30px
 				.mobile-text
 					@media #{$medium-up}
 						display: none
@@ -476,9 +480,11 @@
 					background-repeat: no-repeat
 					background-position: center
 					width: 100%
-					height: 100%
+					height: 110%
+					top: -5%
+					left: 10%
 					opacity: 0
-					z-index: 2
+					z-index: 10
 					+transition(0.15s)
 					&.visible
 						opacity: 1
@@ -494,9 +500,9 @@
 				// z-index: 10
 				@media #{$small-only}
 					width: 120%
-					height: 70%
+					height: 90%
 					left: -10%
-					top: 15%
+					top: 5%
 					position: relative
 				.bx-wrapper
 					height: 100%
@@ -539,19 +545,25 @@
 		.specifications
 			text-align: center
 			padding: 30px 0
+			@media #{$small-only}
+				padding: 10px 0
 			#arrow-up, #arrow-down
 				position: relative
 				z-index: 10
 				cursor: pointer
 				+transition(0.25s)
-				margin-top: 10px
+				// margin-top: 10px
 				&.faded
 					opacity: 0.25
+			#arrow-down
+				margin-top: 10px
 			.scrolled-container
 				position: relative
 				max-height: 80%
 				height: auto
 				overflow: hidden
+				@media #{$small-only}
+					max-height: 70%
 			.whitening-top
 				position: absolute
 				top: 0
@@ -592,6 +604,7 @@
 						text-align: left
 						font-size: 0.75em
 						max-width: 40%
+						text-align: right
 			.installation
 				color: $brown
 				text-transform: uppercase
@@ -705,6 +718,10 @@
 					background-repeat: no-repeat
 					background-position: center
 					left: -15px
+					opacity: 0
+					+transition(0.15s)
+					&.show-it
+						opacity: 1
 
 	.door-config-popup-step-1, .door-config-popup-step-2, .door-config-popup-step-3, .door-config-popup-step-4, .door-config-popup-step-5
 		display: none

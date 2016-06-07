@@ -73,7 +73,7 @@
 				.image style="background-image: url(#{asset_path('sampleDoors/sample-door6.jpg')})"
 	.mobile-nav-container
 		ul.side-nav
-			li
+			li.active
 				span = inline_svg "icons/information-outline.svg"
 			li
 				span = inline_svg "icons/image-filter-none.svg"
@@ -88,7 +88,7 @@
 			.xxlarge-8.xxlarge-centered.xlarge-9.xlarge-centered.large-11.large-centered.medium-12.small-12.columns.clearfix
 				.side-nav-container
 					ul.side-nav
-						li
+						li.active
 							| door info
 							span = inline_svg "icons/information-outline.svg"
 						li
@@ -259,7 +259,9 @@
 												.color style="background: #747474"
 												.color style="background: #BCBCBC"
 										.img-container
-											.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
+											.hardware-img.show-it style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
+											.hardware-img style="background-image: url(#{asset_path('hardware/hand-2.jpg')})"
+											.hardware-img style="background-image: url(#{asset_path('hardware/hand-3.jpg')})"
 										.add-to-cart = inline_svg "icons/supermarket39.svg"
 								.large-6.medium-12.small-12.columns
 									.unit-container
@@ -272,19 +274,8 @@
 												.color style="background: #747474"
 												.color style="background: #BCBCBC"
 										.img-container
-											.hardware-img style="background-image: url(#{asset_path('hardware/plan-3.jpg')})"
-										.add-to-cart = inline_svg "icons/supermarket39.svg"
-								.large-6.medium-12.small-12.columns
-									.unit-container.hide
-										.text
-											p.title privacy
-											p.under-title Dark Bronze
-											p.price &#36;50
-											.pick-colors
-												.color style="background: #876036"
-												.color style="background: #747474"
-												.color style="background: #BCBCBC"
-										.img-container
+											.hardware-img.show-it style="background-image: url(#{asset_path('hardware/plan-3.jpg')})"
+											.hardware-img style="background-image: url(#{asset_path('hardware/plan-4.jpg')})"
 											.hardware-img style="background-image: url(#{asset_path('hardware/plan-5.jpg')})"
 										.add-to-cart = inline_svg "icons/supermarket39.svg"
 								.large-6.medium-12.small-12.columns
@@ -298,6 +289,23 @@
 												.color style="background: #747474"
 												.color style="background: #BCBCBC"
 										.img-container
+											.hardware-img.show-it style="background-image: url(#{asset_path('hardware/plan-5.jpg')})"
+											.hardware-img style="background-image: url(#{asset_path('hardware/plan-1.jpg')})"
+											.hardware-img style="background-image: url(#{asset_path('hardware/plan-2.jpg')})"
+										.add-to-cart = inline_svg "icons/supermarket39.svg"
+								.large-6.medium-12.small-12.columns
+									.unit-container.hide
+										.text
+											p.title privacy
+											p.under-title Dark Bronze
+											p.price &#36;50
+											.pick-colors
+												.color style="background: #876036"
+												.color style="background: #747474"
+												.color style="background: #BCBCBC"
+										.img-container
+											.hardware-img.show-it style="background-image: url(#{asset_path('hardware/hand-5.jpg')})"
+											.hardware-img style="background-image: url(#{asset_path('hardware/hand-3.jpg')})"
 											.hardware-img style="background-image: url(#{asset_path('hardware/hand-1.jpg')})"
 										.add-to-cart = inline_svg "icons/supermarket39.svg"
 	.door-config-popup-step-1.step

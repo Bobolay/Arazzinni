@@ -39,4 +39,4 @@
 #= require delay
 #= require door-one
 
-#= require specifications-scroll
+#= require specification-scroll

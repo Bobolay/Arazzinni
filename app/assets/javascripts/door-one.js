@@ -1,3 +1,11 @@
+var block_height = 600
+// console.log(block_height)
+var container_height = $('.scroll-container').height()
+// console.log(container_height)
+var top_margin = (container_height-block_height )/2
+// console.log(top_margin)
+$('.scrolled-block').css("marginTop", top_margin)
+
 func = function(e){
     var $container = $(".block-container")
 
@@ -14,18 +22,21 @@ func = function(e){
         $target = $active.next()
     }
     if ($target.length){
-        image_height = 600
-        frame_height = $('.big-frame').css('height')
-        top = (image_height - frame_height ) / 2 * -1
-        $('.scrolled-block').css("marginTop", top)
+        // var block_height = 600
+        // console.log(block_height)
+        // var container_height = $('.scroll-container').height()
+        // console.log(container_height)
+        // var top_margin = (container_height-block_height )/2
+        // console.log(top_margin)
+        // $('.scrolled-block').css("marginTop", top_margin)
         $active.removeClass('active')
         $target.addClass('active')
         var $top = $target.offset().top
         var top_with_compensation = $top - $container.children().first().offset().top
-        //$('.block-container').animate({scrollTop:$top})
+        $('.block-container').animate({scrollTop:top_with_compensation})
         console.log('top:',top_with_compensation)
 
-         $('.block-container').scrollTop(top_with_compensation)
+         // $('.block-container').scrollTop(top_with_compensation)
     }
 }
 

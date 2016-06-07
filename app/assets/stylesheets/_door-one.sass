@@ -276,6 +276,7 @@
 			// margin: 12vh 0
 			width: 100%
 			height: 600px
+			margin-bottom: 200px
 			@media #{$small-only}
 				position: relative
 				margin: 0
@@ -490,6 +491,7 @@
 				height: 110%
 				position: relative
 				top: -5%
+				// z-index: 10
 				@media #{$small-only}
 					width: 120%
 					height: 70%
@@ -511,6 +513,7 @@
 					height: 100%
 			.squares
 				left: 50%
+				z-index: 10
 				right: initial
 				+translate(-50%,0)
 				a
@@ -525,6 +528,7 @@
 				border: 1px solid #fff
 				padding: 5px
 				cursor: pointer
+				z-index: 10
 				svg
 					width: 20px
 					height: 20px
@@ -534,11 +538,13 @@
 				right: 20px
 		.specifications
 			text-align: center
+			padding: 30px 0
 			#arrow-up, #arrow-down
 				position: relative
-				z-index: 2
+				z-index: 10
 				cursor: pointer
 				+transition(0.25s)
+				margin-top: 10px
 				&.faded
 					opacity: 0.25
 			.scrolled-container
@@ -593,6 +599,7 @@
 				top: 20px
 				padding: 10px 5px
 				border-bottom: 1px solid $brown
+				z-index: 10
 				svg
 					position: relative
 					top: 5px
@@ -622,6 +629,7 @@
 					&:first-child
 						flex-grow: 2
 		.hardware
+			padding: 30px 0
 			.hide
 				display: none
 				@media #{$large-up}
@@ -651,6 +659,8 @@
 				.pick-colors
 					+clearfix
 					margin-top: 30px
+					position: relative
+					z-index: 10
 					.color
 						float: left
 						width: 30px
@@ -668,6 +678,7 @@
 					width: 50px
 					height: 50px
 					cursor: pointer
+					z-index: 10
 					+transition(0.25s)
 					+translate(0, -50%)
 					svg

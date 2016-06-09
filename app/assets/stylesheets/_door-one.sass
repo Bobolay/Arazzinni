@@ -696,6 +696,8 @@
 					border-bottom: 2px solid $dark-grey
 				.under-title
 					margin: 5px 0
+					@media #{$small-only}
+						margin: 0
 				.price
 					font-size: 1.75em
 					color: $brown	
@@ -797,6 +799,13 @@
 				background-color: #fff
 				line-height: 40px
 				text-align: center
+				@media #{$small-only}
+					width: 30px
+					height: 30px
+					bottom: -15px
+					svg
+						position: relative
+						top: -5px
 			&.choosen
 				opacity: 1
 				border: 1px solid $brown
@@ -810,6 +819,9 @@
 			padding: 50px 20px
 			width: 100%
 			position: relative
+			@media #{$small-only}
+				height: 100vh
+				padding: 40px 20px
 			@media #{$medium-up}
 				top: 50%
 				+translate(0,-50%)
@@ -851,6 +863,8 @@
 			padding: 10px 0
 			@media #{$small-only}
 				font-size: 1em
+				height: 40px
+				padding: 5px 0
 		.step-by-step-nav
 			list-style: none
 			margin: 20px 0
@@ -858,12 +872,16 @@
 			position: relative
 			z-index: 3
 			display: flex
+			@media #{$small-only}
+				margin: 10px 0
+				height: 30px
 			li
 				height: 100%
 				text-align: center
-				// cursor: pointer
 			p
 				line-height: 35px
+				@media #{$small-only}
+					line-height: 30px
 			.current-step
 				color: #fff
 				background-color: $brown
@@ -871,6 +889,8 @@
 				text-transform: uppercase
 				width: 80px
 				margin-left: 2px
+				@media #{$small-only}
+					font-size: 1em
 			.step-description
 				color: $dark-grey
 				text-transform: uppercase
@@ -878,10 +898,6 @@
 				flex-grow: 1
 				@media #{$small-only}
 					display: none
-				// p
-				// 	@media #{$medium-only}
-				// 		line-height: 16px
-				// 		font-size: 0.75em
 			.next-step
 				color: #fff
 				background-color: $brown
@@ -898,13 +914,15 @@
 				opacity: 0.7
 				color: #fff
 				+transition(0.1s)
-				// &:hover
-				// 	background-color: $brown
-				// 	opacity: 1
+				@media #{$small-only}
+					width: 30px
+					font-size: 0.875em
 			.confirm
 				width: 100px
 				text-transform: uppercase
 				font-size: 1.125em
+				@media #{$small-only}
+					font-size: 1em
 		.prev-step
 			text-transform: uppercase
 			font-size: 1.125em
@@ -916,9 +934,9 @@
 			bottom: 55px
 			right: 200px
 			@media #{$small-only}
-				right: 50px
-				bottom: 105px
-		.frame-carousel
+				right: 32px
+				bottom: 75px
+		.frame-carousel-1
 			position: relative
 			z-index: 3
 			padding: 0 50px
@@ -926,10 +944,15 @@
 				padding: 0 20px
 			.choose
 				height: 400px
+				@media #{$small-only}
+					height: 50vh
 				.image
 					position: relative
 					height: 60%
 					padding: 30px
+					@media #{$small-only}
+						height: 40%
+						padding: 20px
 				.version
 					position: absolute
 					color: #fff
@@ -948,6 +971,8 @@
 					bottom: 10px
 					left: 50%
 					+translate(-50%,0)
+					@media #{$small-only}
+						bottom: 0
 				.img
 					width: 100%
 					height: 100%
@@ -958,6 +983,9 @@
 					font-size: 0.875em
 					line-height: 14px
 					padding: 20px
+					@media #{$small-only}
+						font-size: 0.75em
+						padding: 25px
 					ol
 						margin-left: 15px
 						li
@@ -983,6 +1011,10 @@
 					background-position: center
 					border: 1px solid #bdbdbd
 					background-color: #fff
+					@media #{$small-only}
+						width: 30px
+						height: 30px
+						left: 5px
 				.owl-next
 					position: absolute
 					right: 0
@@ -993,11 +1025,17 @@
 					background-position: center
 					border: 1px solid #bdbdbd
 					background-color: #fff
+					@media #{$small-only}
+						width: 30px
+						height: 30px
+						right: 5px
 		.total
 			text-transform: uppercase
 			font-size: 1.125em
 			position: absolute
 			bottom: 50px
+			@media #{$small-only}
+				bottom: 30px
 			span
 				margin-left: 10px
 				color: $brown
@@ -1005,6 +1043,9 @@
 			position: absolute
 			right: 20px
 			bottom: 50px
+			@media #{$small-only}
+				bottom: 30px
+				right: 0
 	.door-config-popup-step-2
 		.hingle-name
 			color: $brown
@@ -1034,9 +1075,9 @@
 				background-repeat: no-repeat
 				margin: 0 auto
 			@media #{$small-only}
-				height: 350px
+				height: 50vh
 	.door-config-popup-step-3
-		.frame-carousel
+		.frame-carousel-1, .frame-carousel-2
 			.choose
 				height: 180px
 				margin: 30px 10px

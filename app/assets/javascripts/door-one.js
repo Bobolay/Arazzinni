@@ -61,27 +61,27 @@ $(window).bind('mousewheel', function(e){
 
 $(document).ready(function(){
     $('.buy-button').on("click", function(){
-        $('.step').first().addClass('current');
-        $('.frame-carousel').owlCarousel({
-            loop:false,
-            margin:30,
-            responsiveClass:true,
-            navText: [""],
-            responsive:{
-              0:{
-                  items:1,
-                  nav:true
-              },
-              640:{
-                  items:1,
-                  nav:true
-              },
-              1024:{
-                  items:3,
-                  nav:true
-              }
-            }
-        })
+      $('.step').first().addClass('current');
+      $('.frame-carousel-1').owlCarousel({
+        loop:false,
+        margin:30,
+        responsiveClass:true,
+        navText: [""],
+        responsive:{
+          0:{
+              items:1,
+              nav:true
+          },
+          640:{
+              items:1,
+              nav:true
+          },
+          1024:{
+              items:3,
+              nav:true
+          }
+        }
+      })
     })
 
     $('.close-popup').on("click", function(){
@@ -98,6 +98,26 @@ $(document).ready(function(){
         $next_step = $('.step.current').next()
         $('.step.current').removeClass('current')
         $next_step.addClass('current')
+        $('.frame-carousel-2').owlCarousel({
+          loop:false,
+          margin:30,
+          responsiveClass:true,
+          navText: [""],
+          responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            640:{
+                items:1,
+                nav:true
+            },
+            1024:{
+                items:3,
+                nav:true
+            }
+          }
+        })
     });
 
     $choosen = $('.choose');

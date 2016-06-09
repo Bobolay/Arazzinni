@@ -1,7 +1,6 @@
 .header-container
 	.header-fixed.notification-wrap
 		.contact-info-popup.notification-container
-			.svg-coordinates = inline_svg "icons/contacts-phone.svg"
 			p.phone-numbers
 				| (866) 55-doors
 			p.phone-numbers
@@ -14,8 +13,6 @@
 					label.info-title Enter Your phone number
 				.main-button href="" 
 					| Сall me back
-					.left-border
-					.right-border
 		a.logo-container href=root_path
 			.header-logo-picture = inline_svg "header/logo-art.svg"
 			.header-logo-inscription = inline_svg "header/logo-arazzinni.svg"
@@ -117,7 +114,7 @@
 										li 
 											a Delivery and payment
 							.xlarge-9.large-8.medium-7.small-12.columns
-								.menu-collection-container
+								a.menu-collection-container href=collection_one_path
 									.photo-container
 										.photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-43.jpg')})"
 									.text-container
@@ -128,7 +125,7 @@
 										.menu-subtitle
 											| 28 
 											span items
-								.menu-collection-container
+								a.menu-collection-container href=collection_one_path
 									.photo-container
 										.photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-136.jpg')})"
 									.text-container
@@ -139,7 +136,7 @@
 										.menu-subtitle
 											| 24 
 											span items
-								.menu-collection-container
+								a.menu-collection-container href=collection_one_path
 									.photo-container
 										.photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-7.jpg')})"
 									.text-container
@@ -150,7 +147,7 @@
 										.menu-subtitle
 											| 54 
 											span items
-								.menu-collection-container
+								a.menu-collection-container href=collection_one_path
 									.photo-container
 										.photo style="background-image: url(#{asset_path('main/Wallapepr-1.jpg')})"
 									.text-container

@@ -94,11 +94,26 @@
 			opacity: 0.1
 			font-weight: 600
 			margin-top: 20px
+		.social-container
+			+clearfix
+			display: inline-block
 		.social
 			display: inline-block
-			width: 50px
-			height: 50px
-			margin: 10px
+			float: left
+			width: 60px
+			height: 60px
+			margin-right: 10px
+			cursor: pointer
+			+transition(0.1s)
+			svg
+				position: relative
+				top: 13px
+				fill: #fff
+				stroke: $brown
+			&:hover
+				background-color: $brown
+				svg
+					stroke: #fff
 	.nav-container
 		width: 100%
 		height: 1px
@@ -110,6 +125,8 @@
 		&:hover
 			.photo
 				+scale(1.05)
+			.regular-big
+				color: $brown
 		@media only screen and (min-width: 1200px)
 			display: inline-block
 		&.fixed
@@ -146,3 +163,6 @@
 			display: inline-block
 			padding-top: 0
 			width: 100%
+			&:hover
+				.unit-name
+					color: $brown

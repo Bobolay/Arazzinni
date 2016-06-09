@@ -5,7 +5,9 @@ $('.door-colors-container').on("click", ".color-block", function(){
 	$container.find(".door-image").eq($i).addClass("visible")
 });
 
-$('.pick-colors').on("click", ".color", function(){
+$('.pick-colors').on("click", ".color", function(event){
+	// event.stopPropagation();
+	event.preventDefault();
 	$container = $(this).closest('.frame')
 	var $i = $(this).index();
 	$container.find(".door").removeClass("show-it")

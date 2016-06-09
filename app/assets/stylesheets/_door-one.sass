@@ -336,6 +336,8 @@
 				line-height: 21.6px
 				@media #{$small-only}
 					display: none
+				@media #{$medium-only}
+					font-size: 0.75em
 			.social-container
 				+clearfix
 				margin-top: 20px
@@ -395,10 +397,12 @@
 				@media #{$small-only}
 					margin-top: 30px
 				.mobile-text
-					@media #{$medium-up}
+					@media #{$large-up}
 						display: none
 				.desktop-text	
 					@media #{$small-only}
+						display: none
+					@media #{$medium-only}
 						display: none
 			.door-show-mobile
 				position: relative
@@ -474,6 +478,8 @@
 					width: 100px
 					height: 300px
 					z-index: 5
+				@media #{$medium-only}
+					width: 200px
 				.door-image
 					position: absolute
 					background-size: contain
@@ -490,6 +496,10 @@
 						opacity: 1
 					@media #{$small-only}
 						width: 150%
+					@media #{$medium-only}
+						background-position: left
+						background-size: cover
+						left: 15%
 		.gallery
 			padding: 10px
 			.slider-container

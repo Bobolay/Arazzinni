@@ -404,3 +404,11 @@ a
 		.animated-frame
 			.left-border, .right-border, &:before, &:after
 				+translate(0,0)
+
+.mobile-link
+	position: absolute
+	width: 100%
+	height: 100%
+	// z-index: 11
+	@media #{$small-only}
+		z-index: 11

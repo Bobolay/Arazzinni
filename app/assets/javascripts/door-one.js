@@ -133,3 +133,13 @@ $(document).ready(function(){
         $(this).addClass('choosen');
     });
 });
+
+// $(document).ready(function(){
+//   $('.doors').on('click', function(){
+//     var touch = 'ontouchstart' in document.documentElement;
+//     if(!touch){
+//       // alert('as')
+//       window.location.href='../../views/pages/door_one.html.slim'
+//     }
+//   })
+// })

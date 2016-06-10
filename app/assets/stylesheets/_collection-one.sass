@@ -190,6 +190,7 @@
 					right: 0
 					bottom: 0
 					background-color: #fff
+					width: 20px
 		.frame
 			display: block
 			position: relative
@@ -211,6 +212,7 @@
 					position: relative
 					line-height: 21px
 					margin-bottom: 20px
+					+transition(0.25s)
 					&:after
 						+after(100px,$dark-grey)
 				.specs
@@ -272,6 +274,8 @@
 					+translate(50%,-50%)
 			&:hover
 				border: 1px solid $brown
+				.title-name
+					color: $brown
 	.photo-frame
 		width: 100%
 		height: 50vh

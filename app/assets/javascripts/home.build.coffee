@@ -14,6 +14,8 @@
 #= require vendor/jquery.slimscroll
 #= require fullpage
 
+#= require vendor/mousewheel
+
 #= require form.js
 
 #= require vendor/richmarker.js

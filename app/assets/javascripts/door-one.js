@@ -52,9 +52,11 @@ $('.mobile-nav-container, .side-nav-container').on("click", "li", function(){
 });
 
 
-$(window).bind('wheel mousewheel', function(e){
-    delay("wheel mousewheel", function(){
-        func(e.originalEvent.wheelDelta > 0)
+$(window).bind('mousewheel', function(e){
+    delay("mousewheel", function(){
+        // delta = e.originalEvent.hasOwnProperty("wheelDelta") ? e.originalEvent.wheelDelta : e.originalEvent.detail * -1
+        var delta = e.deltaY
+        func(delta > 0)
     }, 200)
 });
 

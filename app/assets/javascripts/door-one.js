@@ -52,8 +52,8 @@ $('.mobile-nav-container, .side-nav-container').on("click", "li", function(){
 });
 
 
-$(window).bind('mousewheel', function(e){
-    delay("mousewheel", function(){
+$(window).bind('wheel mousewheel', function(e){
+    delay("wheel mousewheel", function(){
         func(e.originalEvent.wheelDelta > 0)
     }, 200)
 });
@@ -100,28 +100,29 @@ $(document).ready(function(){
         $next_step = $('.step.current').next()
         $('.step.current').removeClass('current')
         $next_step.addClass('current')
-        
-        $('.frame-carousel-2').owlCarousel({
-          loop:false,
-          margin:30,
-          responsiveClass:true,
-          navText: [""],
-          responsive:{
-            0:{
-                items:1,
-                nav:true
-            },
-            640:{
-                items:1,
-                nav:true
-            },
-            1024:{
-                items:3,
-                nav:true
-            }
+    });
+    
+    $('body').on('click', '.owl-2', function(){
+      $('.frame-carousel-2').owlCarousel({
+        loop:false,
+        margin:30,
+        responsiveClass:true,
+        navText: [""],
+        responsive:{
+          0:{
+              items:1,
+              nav:true
+          },
+          640:{
+              items:1,
+              nav:true
+          },
+          1024:{
+              items:3,
+              nav:true
           }
-        })
-
+        }
+      })
     });
 
     $choosen = $('.choose');

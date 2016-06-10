@@ -87,6 +87,9 @@ $header-bg-color: white
 		padding: 20px
 		width: 100%
 		position: relative
+		@media #{$small-only}
+			height: 100%
+			padding: 10px 20px
 		@media #{$medium-up}
 			top: 50%
 			+translate(0,-50%)
@@ -118,10 +121,14 @@ $header-bg-color: white
 		padding: 10px 50px
 		position: relative
 		border-bottom: 1px solid $dark-grey
+		@media #{$small-only}
+			padding: 0 50px
 		.svg
 			position: absolute
 			left: 0
 			top: 11px
+			@media #{$small-only}
+				top: 1px
 	.total
 		text-align: right
 		font-size: 1.25em

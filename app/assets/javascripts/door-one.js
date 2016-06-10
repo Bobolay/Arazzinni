@@ -62,6 +62,7 @@ $(window).bind('mousewheel', function(e){
 $(document).ready(function(){
     $('.buy-button').on("click", function(){
       $('.step').first().addClass('current');
+      
       $('.frame-carousel-1').owlCarousel({
         loop:false,
         margin:30,
@@ -94,10 +95,12 @@ $(document).ready(function(){
         $('.step.current').removeClass('current')
         $prev_step.addClass('current')
     });
+
     $('body').on('click', '.next-step', function(){
         $next_step = $('.step.current').next()
         $('.step.current').removeClass('current')
         $next_step.addClass('current')
+        
         $('.frame-carousel-2').owlCarousel({
           loop:false,
           margin:30,
@@ -118,6 +121,7 @@ $(document).ready(function(){
             }
           }
         })
+
     });
 
     $choosen = $('.choose');

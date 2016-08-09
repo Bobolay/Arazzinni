@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "contact-us", action: "contact_us"
     get "not-found", action: "error"
     get "cart", action: "cart"
+    get "stub", action: "stub"
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

@@ -1,0 +1,71 @@
+.stub-wrapper
+  height: calc(100vh - 10px)
+  @media #{$small-only}
+    height: calc(100vh - 20px)
+  .photo-container
+    width: calc(100% - 20px)
+    position: absolute
+    height: inherit
+    float: left
+    background-size: cover
+    background-position: center
+    opacity: 0.5
+    @media #{$large-up}
+      width: calc(100% - 10px)
+      position: relative
+      width: 45%
+      opacity: 1
+  .stub-container
+    width: 100%
+    height: inherit
+    float: left
+    position: relative
+    @media #{$large-up}
+      width: 55%
+  .text
+    position: relative
+    top: 50%
+    width: 240px
+    margin: 0 auto
+    +translate(0,-50%)
+    @media #{$medium-only}
+      width: 400px
+    @media #{$large-up}
+      padding-left: 100px
+      height: 500px
+      width: 600px
+      margin: initial
+    .stub-top
+      svg
+        width: 140px
+      @media #{$small-only}
+        svg
+          width: 100px
+      p
+        font-size: 1.125em
+        line-height: 1.5rem
+        margin-top: 20px
+    .stub-middle
+      p
+        font-size: 1em
+        color: $grey
+        margin: 25px 0
+        max-width: 400px
+        @media #{$medium-up}
+          padding: 50px 0
+    .stub-bottom
+      padding-top: 30px
+      @media #{$large-up}
+        border-top: 1px solid $blue-grey
+      .text1
+        color: $grey
+        padding-left: 30px
+        position: relative
+        span
+          position: absolute
+          left: 0
+          top: 0
+      .text2
+        color: $brown
+        font-size: 1.25em
+        padding-left: 30px

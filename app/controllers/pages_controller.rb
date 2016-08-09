@@ -43,6 +43,11 @@ class PagesController < ApplicationController
 
   end
 
+  def stub
+    @render_header = false
+    @render_footer = false
+  end
+
   def error
     @render_header = false
     @render_footer = false

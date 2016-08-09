@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  domains "ua" do
+    root to: "pages#stub", as: "stub_root"
+  end
+
   root to: "pages#index"
 
   controller :pages do
@@ -12,7 +16,7 @@ Rails.application.routes.draw do
     get "contact-us", action: "contact_us"
     get "not-found", action: "error"
     get "cart", action: "cart"
-    get "stub", action: "stub"
+
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -22,3 +26,4 @@ Rails.application.routes.draw do
 
   match "*url", to: "application#render_not_found", via: [:get, :post, :path, :put, :update, :delete]
 end
+

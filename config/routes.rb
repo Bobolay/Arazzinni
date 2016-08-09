@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  domains "ua", "com.ua", "arazzinni.com.ua" do
+  domains "ua", "com.ua", "arazzinni.com.ua", "voroninstudio.eu" do
     root to: "pages#stub", as: "stub_root"
   end
 

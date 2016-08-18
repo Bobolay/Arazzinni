@@ -1,0 +1,41 @@
+.large-3.medium-6.columns.product
+  .square
+    .doors
+      a.mobile-link href="door_one_path"
+      .frame-black
+      .door-container
+        .door-shadow-frame
+          .door-shadow
+        .door-itself style="background-image: url(#{asset_path('sampleDoors/sample-door1.jpg')})"
+      .text
+        - if product.best_offer?
+        .product-offer
+          = t("best-offer")
+        .unit-name
+          = product.name
+        .wood-type
+          = product.label
+        table
+          tr
+            td = inline_svg "icons/interior.svg"
+            td
+              span.regular Interior
+          tr
+            td = inline_svg "icons/traditional.svg"
+            td
+              span.regular Traditional
+          tr
+            td = inline_svg "icons/price.svg"
+            td
+              span.regular
+                = formatted_price(product.base_price)
+      .hover-text
+        .unit-name
+          = product.name
+        .wood-type
+          = product.label
+        p.regular As it comes from the name, this collection features high durability of door finish, thank's to innovative composite materials. All backed up by sturdy construction of the door slab and parts.
+        a.button-white href=product.url
+          = t("view")
+          .left-border
+          .right-border

@@ -1,0 +1,61 @@
+.scrolled-block.door-info.active
+  .main-info
+    p.menu-title
+      = product.name
+    p.under-title
+      = product.label
+    .attributes-container
+      .interior
+        = inline_svg "icons/interior.svg"
+        span.atributes Interior
+      .traditional
+        = inline_svg "icons/traditional.svg"
+        span.atributes Traditional
+      .price
+        = inline_svg "icons/price.svg"
+        span.atributes $955
+    = raw product.description
+    .social-container
+      .social
+        = inline_svg "icons/door-info-1.svg"
+        span.description Share
+      .social
+        = inline_svg "icons/door-info-2.svg"
+        span.description Pin it
+      .social
+        = inline_svg "icons/door-info-3.svg"
+        span.description Save
+    .door-show-mobile
+      .door-colors-container
+        .color-block
+          p.color cream white
+          .color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
+        .color-block
+          p.color brown patina
+          .color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+        .color-block
+          p.color acacia
+          .color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+    a.buy-button
+      = t("buy")
+      .animated-frame
+        .left-border
+        .right-border
+    a.technical href=""
+      p.mobile-text info
+      p.desktop-text technical specifications
+  .door-show
+    .door-colors-container
+      .color-block
+        p.color cream white
+        .color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
+      .color-block
+        p.color brown patina
+        .color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
+      .color-block
+        p.color acacia
+        .color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+    .door-image-container
+      .door-image.visible style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
+      .door-image style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
+      .door-image style="background-image: url(#{asset_path('sampleDoors/sample-door1.jpg')})"

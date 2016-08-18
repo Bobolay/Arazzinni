@@ -91,4 +91,12 @@ gem 'cms', github: "pkorenev/cms"
 
 gem 'require_reloader'
 
-gem 'thin'
+gem 'puma'
+
+gem 'globalize'
+gem 'rails_admin_globalize_field'
+gem "figaro"
+gem 'russian'
+
+gem 'rails-i18n'
+gem 'rails_admin-i18n'

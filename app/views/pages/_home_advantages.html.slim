@@ -1,0 +1,48 @@
+.advantages
+  .row.collapse
+    .large-6.medium-6.columns
+      .picture-frame
+        .photo style="background-image: url(#{asset_path('main/1_svet_3.jpg')})"
+      .why-arazzinni
+        .subtitle
+          = t("home.about.title")
+        = t("home.about.text")
+        a.button-brown href="about_us_path"
+          = t("learn-more")
+          .left-border
+          .right-border
+    .large-6.medium-6.columns
+      .advantages-icons-container
+        .row.collapse
+          - 4.times do |i|
+            .xxlarge-6.large-12.medium-12.columns
+              .icon-frame
+                .icon.appear1 style="background-image: url(#{asset_path("main/advantages#{i+1}.png")})"
+              .text-container
+                .this-title
+                  = t("home.advantages.#{i}.title")
+                .this-subtitle
+                  = t("home.advantages.#{i}.subtitle")
+          /.xxlarge-6.large-12.medium-12.columns
+            .icon-frame
+              .icon.appear2 style="background-image: url(#{asset_path('main/advantages2.png')})"
+            .text-container
+              .this-title
+                | 5000+
+              .this-subtitle successful projects
+          /.xxlarge-6.large-12.medium-12.columns
+            .icon-frame
+              .icon.appear3 style="background-image: url(#{asset_path('main/advantages3.png')})"
+            .text-container
+              .this-title
+                | over 5
+                span years
+              .this-subtitle on market
+          /.xxlarge-6.large-12.medium-12.columns
+            .icon-frame
+              .icon.appear4 style="background-image: url(#{asset_path('main/advantages4.png')})"
+            .text-container
+              .this-title
+                | 4
+                span manufacturing
+              .this-subtitle plants in europe

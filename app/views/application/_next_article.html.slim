@@ -1,0 +1,13 @@
+.xlarge-2.large-1.medium-1.columns
+  .nav-container
+    a.navigation-right href=""
+      .square
+        .photo style="background-image: url(#{article.image.url(:thumb)})"
+        .animated-frame
+          .left-border
+          .right-border
+      p.regular-big
+        = article.name
+      p
+        = formatted_date(article.released_on)
+      .arrow-to-the-left = inline_svg "icons/arrow-to-the-right.svg"

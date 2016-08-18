@@ -1,0 +1,29 @@
+.boxes-wrapper.arazzinni-publications
+  .row.collapse
+    .large-4.medium-6.columns
+      .square-section
+        .section-name
+          .frame-white
+          .section-title
+            | arazzinni
+            br
+            | publications
+    - @articles.each do |article|
+      .large-4.medium-6.columns.article
+        .square
+          a.mobile-link href=article.url
+          .publication style="background-image: url(#{asset_path('main/chipboard.jpg')})"
+          a.animated-frame href=article.url
+            .left-border
+            .right-border
+          .subtitle-bold
+            = article.name
+          .under-subtitle-atributes
+            .date
+              .svg-block = inline_svg "icons/calendar.svg"
+              span.text
+                = article.released_on.to_s
+            .views
+              .svg-block = inline_svg "icons/views.svg"
+              span.text
+                = 123

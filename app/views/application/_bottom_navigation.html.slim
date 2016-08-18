@@ -1,0 +1,9 @@
+- if @products.length > 1
+  .bottom-navigation-container
+    .owl-carousel
+      - @products.each do |product|
+        - if product.id != @product.id
+          .door-item
+            p.door-name
+              = product.name
+            .image style="background-image: url(#{product.avatar.url(:avatar)})"

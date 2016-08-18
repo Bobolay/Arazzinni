@@ -1,0 +1,12 @@
+.boxes-wrapper
+  .row.collapse
+    .large-3.medium-6.columns
+      .square-section
+        .section-name
+          .frame-white
+          .section-title
+            | arazzinni
+            br
+            | best
+    - @featured_products.each do |product|
+      = render "home_product", product: product

@@ -1,0 +1,34 @@
+.publication-wrapper
+  .row.underlined.collapse
+    .xlarge-8.xlarge-centered.large-9.large-centered.medium-10.medium-centered.columns
+      .section-container
+        h1.section-title
+          = @article.name
+        - if @article.respond_to?(:released_on)
+          p.shadow-text
+            = formatted_date(@article.released_on)
+
+  .row.underlined.collapse
+    - if @article_navigation != false
+      = render "prev_article", article: @article.prev(@articles)
+      .xlarge-8.large-10.medium-10.small-12.columns
+        = raw @article.content
+
+      = render "next_article", article: @article.prev(@articles)
+    - else
+      .xlarge-8.large-10.medium-10.small-12.columns.medium-centered
+        = raw @article.content
+
+  .row.underlined.collapse
+    .xlarge-8.xlarge-centered.large-9.large-centered.medium-10.medium-centered.columns
+      .share-container
+        p.share share
+        .social-container
+          a.social
+            = inline_svg "icons/publication-social-facebook.svg"
+          a.social
+            = inline_svg "icons/publication-social-twitter.svg"
+          a.social
+            = inline_svg "icons/publication-social-google.svg"
+  - if @article_navigation != false
+    = render "article_mobile_navigation", resource: @article

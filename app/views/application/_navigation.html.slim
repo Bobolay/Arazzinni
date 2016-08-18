@@ -1,0 +1,12 @@
+- [:prev, :next].each do |k|
+  - direction = k == :prev ? :left : :right
+  - another_resource = resource.send(k, @products)
+  div class="navigation-#{direction}-container"
+    .door-image style="background-image: url(#{another_resource.avatar.url(:avatar)})"
+    .door-name
+      = another_resource.name
+    .door-wood
+      = another_resource.label
+    div class="arrow-to-the-#{direction}"
+      = inline_svg "icons/door-arrow-to-the-#{direction}.svg"
+

@@ -1,56 +1,56 @@
 #googleMap
 / #marker-popup
 .row.collapse
-	.large-10.large-centered.medium-11.medium-centered.columns
-		.row.collapse
-			.large-12.medium-12.columns
-				.contacts-inscription
-					.section-title contacts
-					.shadow-text contacts
-		.row.collapse
-			.large-4.medium-12.columns
-				.coordinates
-					.svg-coordinates = inline_svg "icons/contacts-geo.svg"
-					span 970 New Brunswick Ave Rahway, NJ 07065
-				.coordinates
-					.svg-coordinates = inline_svg "icons/contacts-phone.svg"
-					span
-						| (866) 55-DOORS
-						br
-						| (866) 531-8594
-				.coordinates	
-					.svg-coordinates = inline_svg "icons/contacts-mail.svg"
-					span
-						| info@arazzinni.com
-				.coordinates
-					p.subtitle follow us
-					.social
-						a.fb href="" = inline_svg "icons/contacts-social-fb.svg"
-						a.twitter href="" = inline_svg "icons/contacts-social-twitter.svg"
-						a.google href="" = inline_svg "icons/contacts-social-google.svg"
-						a.linkedin href="" = inline_svg "icons/contacts-social-linkedin.svg"
-			.large-8.medium-12.columns
-				.contacts-form-container
-					.row.collapse
-						.large-5.medium-12.small-12.columns
-							.text-near-form
-								p.subtitle can't find what you were looking for?
-								p.regular We can custom build doors to suit Your design needs!
-						.large-7.medium-12.small-12.columns
-							.contacts-form	
-								form
-									.group
-										input type="text"
-											span.bar
-										label Name
-									.group
-										input type="text"
-											span.bar
-										label Phone
-									p.above-textarea Message
-									.group
-										textarea rows="7"
-									a.button-brown href="" 
-										| view
-										.left-border
-										.right-border
+  .large-10.large-centered.medium-11.medium-centered.columns
+    .row.collapse
+      .large-12.medium-12.columns
+        .contacts-inscription
+          .section-title contacts
+          .shadow-text contacts
+    .row.collapse
+      .large-4.medium-12.columns
+        .coordinates
+          .svg-coordinates = inline_svg "icons/contacts-geo.svg"
+          span 970 New Brunswick Ave Rahway, NJ 07065
+        .coordinates
+          .svg-coordinates = inline_svg "icons/contacts-phone.svg"
+          span
+            | (866) 55-DOORS
+            br
+            | (866) 531-8594
+        .coordinates
+          .svg-coordinates = inline_svg "icons/contacts-mail.svg"
+          span
+            | info@arazzinni.com
+        .coordinates
+          p.subtitle follow us
+          .social
+            a.fb href="" = inline_svg "icons/contacts-social-fb.svg"
+            a.twitter href="" = inline_svg "icons/contacts-social-twitter.svg"
+            a.google href="" = inline_svg "icons/contacts-social-google.svg"
+            a.linkedin href="" = inline_svg "icons/contacts-social-linkedin.svg"
+      .large-8.medium-12.columns
+        .contacts-form-container
+          .row.collapse
+            .large-5.medium-12.small-12.columns
+              .text-near-form
+                p.subtitle can't find what you were looking for?
+                p.regular We can custom build doors to suit Your design needs!
+            .large-7.medium-12.small-12.columns
+              .contacts-form
+                form
+                  .group
+                    input type="text"
+                      span.bar
+                    label Name
+                  .group
+                    input type="text"
+                      span.bar
+                    label Phone
+                  p.above-textarea Message
+                  .group
+                    textarea rows="7"
+                  a.button-brown href=""
+                    = t("view")
+                    .left-border
+                    .right-border

@@ -1,0 +1,31 @@
+
+.row.collapse
+  .medium-8.medium-centered.small-12.small-centered.columns
+    .nav-mobile
+      .row
+        - [:prev, :next].each do |k|
+          - direction = k == :prev ? :left : :right
+          - another_resource = resource.send(k, @articles)
+          .medium-6.small-6.columns
+            a class="navigation-#{direction}" href=another_resource.url
+              .square
+                .photo style="background-image: url(#{another_resource.image.url(:thumb)})"
+                .animated-frame
+                  .left-border
+                  .right-border
+              p.unit-name
+                = another_resource.name
+              p
+                = formatted_date(another_resource.released_on)
+              div class="arrow-to-the-#{direction}" = inline_svg "icons/arrow-to-the-#{direction}.svg"
+
+        /.medium-6.small-6.columns
+          a.navigation-right href=""
+            .square
+              .photo style="background-image: url(#{asset_path('main/GFQvGsVvong.jpg')})"
+              .animated-frame
+                .left-border
+                .right-border
+            p.unit-name before applying the first coat of finish
+            p 9 september
+            .arrow-to-the-left = inline_svg "icons/arrow-to-the-right.svg"

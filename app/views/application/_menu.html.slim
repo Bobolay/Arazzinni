@@ -1,0 +1,69 @@
+.menu-button = inline_svg "icons/menu55.svg"
+.menu-wrapper
+  .close-button
+    = t("close")
+    span = inline_svg "icons/close-cross.svg"
+  .row
+    .xxlarge-10.xxlarge-centered.xlarge-11.xlarge-centered.large-11.large-centered.medium-12.small-12.columns
+      .row
+        .xlarge-3.large-4.medium-5.small-12.columns
+          .navigation-wrapper
+            a.menu-title href="collections_path" collections
+            ul.navigation
+              - Cms.config.provided_locales.each do |locale|
+              - main_menu_items.each do |menu_item|
+                li class=("hide" if menu_item[:hide]) class=("active" if menu_item[:active]) class=("has-active" if menu_item[:has_active])
+                  a href=(menu_item[:url] || "#")
+                    = menu_item[:name]
+
+            ul.securement
+              - main_menu_static_pages.each do |menu_item|
+                li class=("hide" if menu_item[:hide]) class=("active" if menu_item[:active]) class=("has-active" if menu_item[:has_active])
+                  a href=(menu_item[:url] || "#")
+                    = menu_item[:name]
+
+        .xlarge-9.large-8.medium-7.small-12.columns
+          a.menu-collection-container href=url_for(Article.first)
+            .photo-container
+              .photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-43.jpg')})"
+            .text-container
+              .menu-title
+                | smart pro
+                span 1
+                .moving-arrow = inline_svg "icons/menu-arrow.svg"
+              .menu-subtitle
+                | 28
+                span items
+          a.menu-collection-container href="collection_one_path"
+            .photo-container
+              .photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-136.jpg')})"
+            .text-container
+              .menu-title
+                | high endurance
+                span 2
+                .moving-arrow = inline_svg "icons/menu-arrow.svg"
+              .menu-subtitle
+                | 24
+                span items
+          a.menu-collection-container href="collection_one_path"
+            .photo-container
+              .photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-7.jpg')})"
+            .text-container
+              .menu-title
+                | exotic wood veneer
+                span 3
+                .moving-arrow = inline_svg "icons/menu-arrow.svg"
+              .menu-subtitle
+                | 54
+                span items
+          a.menu-collection-container href="collection_one_path"
+            .photo-container
+              .photo style="background-image: url(#{asset_path('main/Wallapepr-1.jpg')})"
+            .text-container
+              .menu-title
+                | hardware
+                span 4
+                .moving-arrow = inline_svg "icons/menu-arrow.svg"
+              .menu-subtitle
+                | 15
+                span items

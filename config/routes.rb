@@ -1,22 +1,42 @@
 Rails.application.routes.draw do
-  domains "ua", "com.ua", "arazzinni.com.ua" do
-    root to: "pages#stub", as: "stub_root"
-  end
+  scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
+    devise_for :users
+    mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+    resources :articles, only: [:index, :show]
+    scope "collections" do
+      root to: "collections#index", as: :collections
+      scope ":id" do
+        root to: "collections#show", as: :collection
 
-  root to: "pages#index"
+        scope ":product_id" do
+          root to: "products#show", as: :collection_product
+        end
+      end
+    end
 
-  controller :pages do
-    get "about-us", action: "about_us"
-    get "collections", action: "collections"
-    get "collection-one", action: "collection_one"
-    get "help", action: "help"
-    get "publications", action: "publications"
-    get "publication-one", action: "publication_one"
-    get "door-one", action: "door_one"
-    get "contact-us", action: "contact_us"
-    get "not-found", action: "error"
-    get "cart", action: "cart"
 
+    domains "ua", "com.ua", "arazzinni.com.ua" do
+      root to: "pages#stub", as: "stub_root"
+    end
+
+    root to: "pages#index"
+
+    controller "static_pages" do
+      %w(certificate delivery_and_payment guaranty).each do |static_page_key|
+        get static_page_key, action: static_page_key, as: static_page_key
+      end
+
+
+    end
+
+    controller :pages do
+      get "about-us", action: "about_us"
+      get "collections", action: "collections"
+      get "collection-one", action: "collection_one"
+      get "contact-us", action: "contact_us"
+      get "cart", action: "cart"
+
+    end
   end
 
   # mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

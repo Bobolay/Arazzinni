@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  domains "ua", "com.ua", "arazzinni.com.ua" do
+    root to: "pages#stub", as: "stub_root"
+  end
+
   scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
     devise_for :users
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -15,9 +19,7 @@ Rails.application.routes.draw do
     end
 
 
-    domains "ua", "com.ua", "arazzinni.com.ua" do
-      root to: "pages#stub", as: "stub_root"
-    end
+
 
     root to: "pages#index"
 

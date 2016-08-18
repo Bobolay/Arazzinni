@@ -11,9 +11,10 @@
         .group
           input type="text"
             span.bar
-          label.info-title Enter Your phone number
+          label.info-title
+            = t("call-me-back-form.fields.phone")
         .main-button href=""
-          | Сall me back
+          = t("call-me-back-form.buttons.call-me-back")
     a.logo-container href=root_path
       .header-logo-picture = inline_svg "header/logo-art.svg"
       .header-logo-inscription = inline_svg "header/logo-arazzinni.svg"

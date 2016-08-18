@@ -52,4 +52,8 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def root_without_locale
+    redirect_to root_path(locale: I18n.locale)
+  end
 end

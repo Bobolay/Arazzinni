@@ -1,0 +1,32 @@
+.large-4.medium-6.columns
+  .square
+    a.mobile-link href="collection_one_path"
+    .number
+      = collection.id
+    .name
+      = collection.name
+    .quantity-items
+      = t("items-count", count: 28)
+    .collection style="background-image: url(#{asset_path('main/Smart-pro-1.jpg')})"
+      .hover-text
+        p.subtitle-bold high endurance collection&trade;
+        .block
+          .svg = inline_svg "icons/audio49.svg"
+          span.text Sound Resistant
+        .block
+          .svg = inline_svg "icons/closed42.svg"
+          span.text SmartCore&trade;
+        .block
+          .svg = inline_svg "icons/hammer40.svg"
+          span.text SmartPreHung&trade;
+        .block
+          .svg = inline_svg "icons/favourite24.svg"
+          span.text 5 year warranty
+        p.regular As it comes from the name, this collection features high durability of door finish, thank's to innovative composite materials. All backed up by sturdy construction of the door slab and parts. Extra layer of endurance is added.
+        a.button-white href="collection_one_path"
+          = t("view")
+          .left-border
+          .right-border
+        .animated-frame
+          .left-border
+          .right-border

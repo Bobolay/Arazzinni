@@ -27,15 +27,8 @@ module ApplicationHelper
   end
 
   def formatted_date(date, locale = I18n.locale)
-    month_names = { uk: %w(січня лютого березня квітня травня червня липня серпня вересня жовтня листопада грудня),
-                    ru: %w(января февраля марта апреля мая июня июля августа сентября октября ноября декабря),
-                    en: %w(january february march april may june jule august september october november december),
-                    pl: %w(styczego lutego mar kwietnia maj czerw lip sierp wrzes pazdzier listopad grud)
-
-    }
-    date_time = date
-    month_number = date_time.month
-    month_name = month_names[locale.to_sym][month_number - 1]
+    month_number = date.month
+    month_name = Cms.t("genitive_month_names.#{month_number - 1}")
     "#{date.day} #{month_name}"
   end
 end

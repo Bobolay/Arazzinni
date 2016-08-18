@@ -1,0 +1,18 @@
+.large-4.medium-6.columns.article
+  .square
+    a.mobile-link href=article.url
+    .publication style="background-image: url(#{article.image.url(:large)})"
+    a.animated-frame href=article.url
+      .left-border
+      .right-border
+    .subtitle-bold
+      = article.name
+    .under-subtitle-atributes
+      .date
+        .svg-block = inline_svg "icons/calendar.svg"
+        span.text
+          = formatted_date(article.released_on)
+      .views
+        .svg-block = inline_svg "icons/views.svg"
+        span.text
+          = 123

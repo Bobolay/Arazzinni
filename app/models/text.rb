@@ -2,6 +2,16 @@ class Text < ActiveRecord::Base
   attr_accessible *attribute_names
   globalize :content
 
+  def self.create_with_translations(key, translations = {})
+    text = Text.new(key: key)
+    if translations.present?
+      translations.each do |locale, content|
+        text.translations << text.translations.new(locale: locale, content: content)
+      end
+      text.save
+    end
+  end
+
   def self.load_translations(force = false)
     if force || !self.class_variable_defined?(:@@_texts)
       texts = self.all.joins(:translations).where(text_translations: {locale: I18n.locale}).pluck("key", "text_translations.content")

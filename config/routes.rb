@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  domains "ua", "com.ua", "arazzinni.com.ua" do
+  host "arazzinni.com.ua" do
     root to: "pages#stub", as: "stub_root"
   end
+
+
+  root as: "root_without_locale", to: "application#root_without_locale"
+  get "admin", to: redirect("/#{I18n.default_locale}/admin")
 
   scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
     devise_for :users
@@ -19,7 +23,9 @@ Rails.application.routes.draw do
     end
 
 
-
+    scope "cart", controller: "cart" do
+      root action: :index, as: :cart
+    end
 
     root to: "pages#index"
 
@@ -32,12 +38,8 @@ Rails.application.routes.draw do
     end
 
     controller :pages do
-      get "about-us", action: "about_us"
-      get "collections", action: "collections"
-      get "collection-one", action: "collection_one"
-      get "contact-us", action: "contact_us"
-      get "cart", action: "cart"
-
+      get "about", action: "about"
+      get "contacts", action: "contacts"
     end
   end
 

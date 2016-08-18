@@ -32,38 +32,4 @@
                 span 1
                 .moving-arrow = inline_svg "icons/menu-arrow.svg"
               .menu-subtitle
-                | 28
-                span items
-          a.menu-collection-container href="collection_one_path"
-            .photo-container
-              .photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-136.jpg')})"
-            .text-container
-              .menu-title
-                | high endurance
-                span 2
-                .moving-arrow = inline_svg "icons/menu-arrow.svg"
-              .menu-subtitle
-                | 24
-                span items
-          a.menu-collection-container href="collection_one_path"
-            .photo-container
-              .photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-7.jpg')})"
-            .text-container
-              .menu-title
-                | exotic wood veneer
-                span 3
-                .moving-arrow = inline_svg "icons/menu-arrow.svg"
-              .menu-subtitle
-                | 54
-                span items
-          a.menu-collection-container href="collection_one_path"
-            .photo-container
-              .photo style="background-image: url(#{asset_path('main/Wallapepr-1.jpg')})"
-            .text-container
-              .menu-title
-                | hardware
-                span 4
-                .moving-arrow = inline_svg "icons/menu-arrow.svg"
-              .menu-subtitle
-                | 15
-                span items
+                = t("items-count", count: 28)

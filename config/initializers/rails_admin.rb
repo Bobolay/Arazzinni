@@ -53,8 +53,27 @@ RailsAdmin.config do |config|
   config.include_models Article, Text, Product
 
   config.model Text do
-    field :key
-    field :translations, :globalize_tabs
+    edit do
+      field :key
+      field :translations, :globalize_tabs
+    end
+
+    list do
+      field :key
+      field :translations do
+        pretty_value do
+          o = @bindings[:object]
+          translation_locales = Hash[I18n.available_locales.map{|locale| [locale, (t = o.translations_by_locale[locale]) && t.content.present?] }]
+          translation_locales.map{|locale, translated| color = translated ? 'green' : 'red'; "<span style='color: #{color}'>#{locale}</span>" }.join(", ").html_safe
+          # o.translations_by_locale
+          # if o.promotional_price?
+          #   "<strike style='color: gray'>#{original_price}</strike><font color='orange' style='margin-left: 5px'>#{o.promotional_price}</font>".html_safe
+          # else
+          #   original_price
+          # end
+        end
+      end
+    end
   end
 
   config.model_translation Text do

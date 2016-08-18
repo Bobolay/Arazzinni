@@ -5,13 +5,17 @@
     .row.collapse
       .large-12.medium-12.columns
         .contacts-inscription
-          .section-title contacts
-          .shadow-text contacts
+          .section-title
+            = ("contacts.title")
+          .shadow-text
+            = t("contacts.title")
     .row.collapse
       .large-4.medium-12.columns
         .coordinates
           .svg-coordinates = inline_svg "icons/contacts-geo.svg"
-          span 970 New Brunswick Ave Rahway, NJ 07065
+          span
+            = t("contacts.address")
+            |970 New Brunswick Ave Rahway, NJ 07065
         .coordinates
           .svg-coordinates = inline_svg "icons/contacts-phone.svg"
           span
@@ -23,7 +27,8 @@
           span
             | info@arazzinni.com
         .coordinates
-          p.subtitle follow us
+          p.subtitle
+            = t("follow-us")
           .social
             a.fb href="" = inline_svg "icons/contacts-social-fb.svg"
             a.twitter href="" = inline_svg "icons/contacts-social-twitter.svg"

@@ -4,9 +4,11 @@ class PagesController < ApplicationController
   def index
     set_page_metadata(:home)
     @featured_products = Product.published.featured
+    @articles = Article.published.sort_by_newest.first(5)
+    @collections = Article.all
   end
 
-  def about_us
+  def about
 
   end
 

@@ -1,7 +1,9 @@
 .map-wrapper
   .row
     .large-6.large-centered.medium-8.medium-centered.columns
-      .subtitle worldwide shipping
-      p.regular Since our inception in 2009, we have sold more than 20,000 doors across the country. In 2015, we will expand our reach globally to Eastern European, Middle Eastern and Canadian markets. We are confident in our projected growth as we continue to offer customers the best price, quality and service.
+      .subtitle
+        = t("home.map.title")
+      p.regular
+        = t("home.map.description")
       .map-frame
         .map = inline_svg "icons/map.svg"

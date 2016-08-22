@@ -7,9 +7,10 @@ html
     = csrf_meta_tags
 
   body
-    - if @render_header != false
-      = render "header"
-    = yield
+    .page-wrap style="min-height: calc(100vh - 80px);"
+      - if @render_header != false
+        = render "header"
+      = yield
     - if @render_footer != false
       = render "footer"
     script src="http://maps.googleapis.com/maps/api/js"

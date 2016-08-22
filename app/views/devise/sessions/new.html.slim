@@ -1,0 +1,27 @@
+.row
+  .large-12.medium-12.columns
+    .contacts-inscription
+      .section-title
+        | admin
+      .shadow-text
+        | admin
+.row
+  .large-3.medium-4.columns.medium-centered
+    .contacts-form-container
+      .row.collapse
+        .large-12.medium-12.small-12.columns
+          .contacts-form
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .group.focus
+                input type="text" name="user[email]"
+                span.bar
+                label email
+              .group.focus
+                input name="user[password]" type="password"
+                span.bar
+                label password
+
+              button.button-brown type="submit"
+                |&nbsp;&nbsp;go&nbsp;&nbsp;
+                .left-border
+                .right-border

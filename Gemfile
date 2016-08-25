@@ -100,6 +100,3 @@ gem 'russian'
 
 gem 'rails-i18n'
 gem 'rails_admin-i18n'
-
-gem 'rails_admin_book', path: "/media/data/pasha/gems/rails_admin_book"
-#gem 'rails_admin_props', path: "/media/data/pasha/gems/rails_admin_props"

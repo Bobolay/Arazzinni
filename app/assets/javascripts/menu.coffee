@@ -46,6 +46,16 @@ $('.cart').on "click", ()->
   $('.cart-popup').addClass('show-it')
   $('body').addClass("fixed")
 
-$('.close-popup').on "click", ()->
-  $('.cart-popup').removeClass('show-it')
+$document.on "click", '.close-popup', ()->
+  $(this).closest(".popup").removeClass('show-it')
   $('body').removeClass("fixed")
+
+
+$document.on "click", "[popup-link]", (e)->
+  e.preventDefault()
+  popup_key = $(this).attr("popup-link")
+  $popup = $(".#{popup_key}-popup")
+  $popup.addClass("show-it")
+  $('body').addClass("fixed")
+
+

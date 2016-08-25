@@ -1,0 +1,10 @@
+h1
+  |Attributes
+
+table border="1"
+  thead
+    |Name
+  - @model_info.attribute_names.each do |attr_name|
+    tr
+      td
+        = attr_name

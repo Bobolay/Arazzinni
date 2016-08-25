@@ -11,10 +11,10 @@
   .row.underlined.collapse
     - if @article_navigation != false
       = render "prev_article", article: @article.prev(@articles)
-      .xlarge-8.large-10.medium-10.small-12.columns
+      .xlarge-8.large-10.medium-10.small-12.columns.article-content
         = raw @article.content
 
-      = render "next_article", article: @article.prev(@articles)
+      = render "next_article", article: @article.next(@articles)
     - else
       .xlarge-8.large-10.medium-10.small-12.columns.medium-centered
         = raw @article.content

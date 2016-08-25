@@ -20,70 +20,7 @@
       .header-logo-inscription = inline_svg "header/logo-arazzinni.svg"
     .icons-right-side
       a.cart = inline_svg "icons/supermarket39.svg"
-      .cart-popup
-        .cart-wrapper
-          .cart-frame
-          .close-popup = inline_svg "icons/close-popup.svg"
-          p.cart-title
-            | Cart
-            span.svg = inline_svg "icons/popup-cart.svg"
-          .cart-item
-            .delete-item title="Прибрати з корзини" = inline_svg "icons/close-cross-cart-item.svg"
-            .item-img style="background-image: url(#{asset_path('sampleDoors/sample-door1.jpg')})"
-            .item-description
-              p.regular Arazzinni Mirella Bianco Nobile Modern Interior Door
-              .parameters-container
-                .parameters
-                  p Color: White dog
-                  p Price: $750
-                .quantity-container
-                  span.minus -
-                  span.quantity 2
-                  span.plus +
-                .price
-                  p $1500
-          hr
-          .cart-item
-            .delete-item title="Прибрати з корзини" = inline_svg "icons/close-cross-cart-item.svg"
-            .item-img style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
-            .item-description
-              p.regular Arazzinni Unica Vetro 2 Gray Oak Modern Interior Door
-              .parameters-container
-                .parameters
-                  p Color: Brown dog
-                  p Price: $783
-                .quantity-container
-                  span.minus -
-                  span.quantity 1
-                  span.plus +
-                .price
-                  p $830
-          hr
-          .cart-item
-            .delete-item title="Прибрати з корзини" = inline_svg "icons/close-cross-cart-item.svg"
-            .item-img style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
-            .item-description
-              p.regular Arazzinni Unica Vetro 2 Gray Oak Modern Interior Door
-              .parameters-container
-                .parameters
-                  p Color: Brown dog
-                  p Price: $926
-                .quantity-container
-                  span.minus -
-                  span.quantity 5
-                  span.plus +
-                .price
-                  p $4530
-          .total
-            p
-              | Total:
-              span $6860
-          a.checkout href="cart_path"
-            | checkout now
-            .animated-frame
-              .left-border
-              .right-border
-          a.go-ahead href="" continue shopping
+      = render "cart_popup"
       .phone.notification-link
         = inline_svg "icons/telephone60.svg"
       = render "menu"

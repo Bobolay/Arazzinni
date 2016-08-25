@@ -1,0 +1,17 @@
+h1
+  |Associations
+
+
+
+table border="1"
+  thead
+    th
+      |Name
+    th
+      |Type
+  - @model_info.reflections.each do |reflection_name, reflection_definition|
+    tr
+      td
+        = reflection_name
+      td
+        = reflection_definition.class.name.split("::").last.gsub(/Reflection\Z/, "").underscore

@@ -1,0 +1,29 @@
+h1
+  |Columns
+
+
+
+table border="1"
+  thead
+    th
+      |Name
+    th
+      |Cast type
+    th
+      |Allow null
+    th
+      |Default
+    th
+      |Sql type
+  - @model_info.columns.each do |column|
+    tr
+      td
+        = column.name
+      td
+        = column.cast_type.class.name.split("::").last.underscore
+      td
+        =  "<span style='color: #{column.null ? 'green' : 'red' }'>#{column.null}<span>".html_safe
+      td
+        = (v = column.default).present? ? v : "&nbsp;&mdash;&nbsp;".html_safe
+      td
+        = column.sql_type

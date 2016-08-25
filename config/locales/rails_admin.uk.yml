@@ -1,0 +1,10 @@
+uk:
+  admin:
+    actions:
+      props:
+        menu: "Редагувати динамічні параметри"
+        breadcrumb: "Редагувати динамічні параметри"
+
+      edit_model:
+        menu: "Редагувати модель"
+        breadcrumb: "Редагувати модель"

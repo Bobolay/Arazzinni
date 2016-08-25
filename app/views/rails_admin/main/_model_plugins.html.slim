@@ -1,0 +1,41 @@
+
+
+h1
+  |Plugins
+
+  - if @model_info.respond_to?(:translates?)
+    - if @model_info.translates?
+      h4
+        |translates
+      table border="1"
+        thead
+          th
+            |Attribute name
+        tbody
+          - @model_info.translated_attribute_names.each do |attr_name|
+            tr
+              td
+                = attr_name
+
+    - if defined?(Paperclip)
+      h4
+        |Paperclip
+
+      - if @model_info.respond_to?(:attachment_definitions)
+        table border="1"
+          thead
+            th
+              |Attribute name
+            th
+              |Styles
+          tbody
+            - @model_info.attachment_definitions.each do |attr_name, definition|
+              tr
+                td
+                  = attr_name
+                td
+                  ul style="list-style: none;padding: 0"
+                    - definition[:styles].each do |style_key, style_definition|
+                      li
+                        = style_key
+                        |: #{style_definition}

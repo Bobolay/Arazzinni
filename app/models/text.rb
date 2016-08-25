@@ -13,22 +13,32 @@ class Text < ActiveRecord::Base
   end
 
   def self.load_translations(force = false)
-    if force || !self.class_variable_defined?(:@@_texts)
+
+    if force || !self.class_variable_defined?(storage_variable_name)
       texts = self.all.joins(:translations).where(text_translations: {locale: I18n.locale}).pluck("key", "text_translations.content")
-      self.class_variable_set(:@@_texts, texts)
+      self.class_variable_set(storage_variable_name, texts)
     end
   end
 
   def self.get_translations
     self.load_translations
-    class_variable_get(:@@_texts)
+    class_variable_get(storage_variable_name)
   end
 
-  def self.t(key, *args)
-    str = (self.get_translations.select{|t| t[0] == key.to_s }.first)
-    if str.present?
-      return translated = str[1]
+  def self.storage_variable_name
+    :"@@_texts_#{I18n.locale}"
+  end
+
+  def self.t(*args)
+    keys = args.take_while{|arg| arg.is_a?(String) || arg.is_a?(Symbol) }
+
+    keys.each do |key|
+      str = (self.get_translations.select{|t| t[0] == key.to_s }.first)
+      if str.present?
+        return translated = str[1]
+      end
     end
+
 
     nil
   end

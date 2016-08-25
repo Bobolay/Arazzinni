@@ -5,12 +5,10 @@
         a.section-name href="collections_path"
           .frame-white
           .section-title
-            | arazzinni
-            br
-            | collections
-
-    - @collections.each do |collection|
-      = render "collection_square", collection: collection
+            = t("home.collections.title")
+    - if @collections.respond_to?(:each)
+      - @collections.each do |collection|
+        = render "collection_square", collection: collection
 
     .large-4.medium-6.columns
       .square

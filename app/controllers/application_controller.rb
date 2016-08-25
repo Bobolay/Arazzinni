@@ -14,12 +14,28 @@ class ApplicationController < ActionController::Base
   include Cms::Helpers::NavigationHelper
   include Cms::Helpers::ActionView::UrlHelper
 
-  before_action :reload_translations, if: :development?
+  if Rails.env.development?
+    before_action :reload_translations
+  end
+
   before_action :set_locale, unless: :admin_panel?
   before_action :set_admin_locale, if: :admin_panel?
   # before_action :initialize_rooms, unless: :admin_panel?
   # before_action :initialize_social_networks, unless: :admin_panel?
   # before_action :initialize_map, unless: :admin_panel?
+  if Rails.env.development?
+    before_action do
+      if admin_panel?
+
+        RailsAdminDynamicConfig.configure_rails_admin(false)
+      end
+    end
+  end
+
+  # before_action do
+  #   render inline: MyClass.test
+  #   false
+  # end
 
   def reload_translations
     Text.load_translations(true)

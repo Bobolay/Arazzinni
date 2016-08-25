@@ -1,0 +1,21 @@
+/= render "model_columns"
+
+/= render "model_associations"
+
+/= render "model_attributes"
+
+/= render "model_plugins"
+
+table
+  thead
+    th
+      |Name
+  tbody
+    - @model_info.properties.each do |prop|
+      /.prop
+        .prop-column
+      tr
+        td
+          = prop[:name]
+        td
+          = prop[:type]

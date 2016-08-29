@@ -100,3 +100,5 @@ gem 'russian'
 
 gem 'rails-i18n'
 gem 'rails_admin-i18n'
+
+gem 'bulk_insert'

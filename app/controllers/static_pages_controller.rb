@@ -23,5 +23,8 @@ class StaticPagesController < ApplicationController
   def set_page_instance
     set_page_metadata(action_name)
     @article = @page_instance
+    if @article.nil?
+      render_not_found
+    end
   end
 end

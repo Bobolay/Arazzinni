@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pkorenev/cms.git
-  revision: 6ab7318d07c43ff12c666d9782aa855e79f9f520
+  revision: 01126386a7237eced367efdc1ac1f01c5dce8534
   specs:
     cms (0.1.2)
       paperclip
@@ -46,11 +46,14 @@ GEM
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
     arel (6.0.3)
+    bcrypt (3.1.10)
     bcrypt (3.1.10-x64-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bower-rails (0.10.0)
     builder (3.2.2)
+    bulk_insert (1.2.1)
+      activerecord (>= 4.1.0)
     byebug (8.2.2)
     ckeditor (4.1.6)
       cocaine
@@ -66,8 +69,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    concurrent-ruby (1.0.1)
-    daemons (1.2.3)
+    concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     devise (3.5.6)
       bcrypt (~> 3.0)
@@ -79,15 +81,19 @@ GEM
     enumerize (1.1.1)
       activesupport (>= 3.2)
     erubis (2.7.0)
-    eventmachine (1.2.0.1-x64-mingw32)
     execjs (2.6.0)
     faker (1.4.3)
       i18n (~> 0.5)
     ffaker (2.1.0)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-rails (4.5.0.1)
       railties (>= 3.2, < 5.1)
-    globalid (0.3.6)
+    globalid (0.3.7)
       activesupport (>= 4.1.0)
+    globalize (5.0.1)
+      activemodel (>= 4.2.0, < 4.3)
+      activerecord (>= 4.2.0, < 4.3)
     haml (4.0.7)
       tilt
     haml-rails (0.9.0)
@@ -124,29 +130,35 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    mime-types (3.0)
+    mime-types (3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0221)
-    mimemagic (0.3.0)
-    mini_portile2 (2.0.0)
-    minitest (5.8.4)
+    mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
+    mini_portile2 (2.1.0)
+    minitest (5.9.0)
     multi_json (1.11.2)
     nested_form (0.3.2)
-    nokogiri (1.6.7.2-x64-mingw32)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
+    nokogiri (1.6.8-x64-mingw32)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     orm_adapter (0.5.0)
-    paperclip (4.3.5)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
+    paperclip (5.1.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
       mime-types
-      mimemagic (= 0.3.0)
+      mimemagic (~> 0.3.0)
+    pkg-config (1.1.7)
     placeholdit (0.0.5)
     pluck_to_hash (0.1.3)
       activerecord (>= 4.0.2)
       activesupport (>= 4.0.2)
     protected_attributes (1.1.3)
       activemodel (>= 4.0.1, < 5.0)
+    puma (3.6.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -176,6 +188,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (4.0.9)
+      i18n (~> 0.7)
+      railties (~> 4.0)
     rails_admin (0.8.1)
       builder (~> 3.1)
       coffee-rails (~> 4.0)
@@ -190,6 +205,11 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 1.0)
       sass-rails (>= 4.0, < 6)
+    rails_admin-i18n (1.10.3)
+    rails_admin_globalize_field (0.4.0)
+      globalize (>= 5.0)
+      rails (>= 4.2)
+      rails_admin (>= 0.6.2)
     rails_admin_nestable (0.3.2)
       coffee-rails
       haml-rails
@@ -200,7 +220,7 @@ GEM
       activesupport (= 4.2.6)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (11.1.2)
+    rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
     remotipart (1.2.1)
@@ -209,6 +229,8 @@ GEM
       railties (>= 4.2.0, < 5)
     ruby_parser (3.8.1)
       sexp_processor (~> 4.1)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     safe_yaml (1.0.4)
     sass (3.4.22)
     sass-rails (5.0.4)
@@ -230,19 +252,16 @@ GEM
       activesupport (>= 3.1, < 5.0)
       railties (>= 3.1, < 5.0)
       slim (~> 3.0)
-    sprockets (3.5.2)
+    sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.4)
+    sprockets-rails (3.1.1)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.3.11)
     sqlite3 (1.3.11-x64-mingw32)
     temple (0.7.6)
-    thin (1.6.4)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0, >= 1.0.4)
-      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -263,11 +282,13 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
   acts-as-taggable-on
   bower-rails
+  bulk_insert
   byebug
   ckeditor
   cms!
@@ -276,6 +297,8 @@ DEPENDENCIES
   enumerize
   faker
   ffaker
+  figaro
+  globalize
   htmlcompressor
   inline_svg
   jbuilder (~> 2.0)
@@ -285,21 +308,25 @@ DEPENDENCIES
   placeholdit
   pluck_to_hash
   protected_attributes
+  puma
   quiet_assets
   rack-page_caching
   rails (= 4.2.6)
+  rails-i18n
   rails_admin
+  rails_admin-i18n
+  rails_admin_globalize_field
   rails_admin_nestable
   require_reloader
+  russian
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   slim-rails
   sqlite3
-  thin
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.11.2
+   1.12.5

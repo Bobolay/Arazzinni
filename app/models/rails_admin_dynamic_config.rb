@@ -1,3 +1,13 @@
+def host?(*hosts)
+
+
+  if hosts.blank? || !defined?(REQUEST_HOST)
+    return true
+  end
+
+  hosts.include? REQUEST_HOST
+end
+
 module RailsAdminDynamicConfig
   class << self
     def configure_rails_admin(initial = true)
@@ -226,6 +236,56 @@ module RailsAdminDynamicConfig
           field :custom_url
         end
 
+
+        # CATALOG
+
+        config.include_models Catalog::Product
+        config.include_models Catalog::ProductInfo::Door, Catalog::ProductInfo::Processor
+        config.include_models Catalog::Products::Door, Catalog::Products::Processor
+
+        %w(door processor).each do |class_key|
+          config.model "Catalog::Products::#{class_key.camelize}" do
+            field :published
+            field :category
+            field :price
+            field :image
+            field :translations, :globalize_tabs
+            field :product_info
+          end
+        end
+
+        config.model_translation Catalog::Product do
+          field :locale, :hidden
+          field :name
+          field :content
+        end
+
+        config.model Catalog::ProductInfo::Door do
+          field :door_type
+          field :prefinished
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation Catalog::ProductInfo::Door do
+          field :locale, :hidden
+          field :possible_configurations
+        end
+
+        config.model Catalog::ProductInfo::Processor do
+          field :socket_type
+          field :cores_quantity
+          field :clock_speed
+          field :processor_quantity
+        end
+
+        if !host?("localhost")
+          hidden_models = [Catalog::Product, Catalog::Products::Door, Catalog::Products::Processor, Catalog::ProductInfo, Catalog::ProductInfo::Door, Catalog::ProductInfo::Processor, Category, Parameter, Product]
+          hidden_models.each do |model|
+            config.model model do
+              visible false
+            end
+          end
+        end
       end
     end
   end

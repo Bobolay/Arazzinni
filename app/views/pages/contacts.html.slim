@@ -15,7 +15,6 @@
           .svg-coordinates = inline_svg "icons/contacts-geo.svg"
           span
             = t("contacts.address")
-            |970 New Brunswick Ave Rahway, NJ 07065
         .coordinates
           .svg-coordinates = inline_svg "icons/contacts-phone.svg"
           span
@@ -39,23 +38,10 @@
           .row.collapse
             .large-5.medium-12.small-12.columns
               .text-near-form
-                p.subtitle can't find what you were looking for?
-                p.regular We can custom build doors to suit Your design needs!
+                p.subtitle
+                  = t("#{@page_key}.contact-form.title", "contact-form.title")
+                p.regular
+                  = t("#{@page_key}.contact-form.title", "contact-form.title")
             .large-7.medium-12.small-12.columns
               .contacts-form
-                form
-                  .group
-                    input type="text"
-                      span.bar
-                    label Name
-                  .group
-                    input type="text"
-                      span.bar
-                    label Phone
-                  p.above-textarea Message
-                  .group
-                    textarea rows="7"
-                  a.button-brown href=""
-                    = t("view")
-                    .left-border
-                    .right-border
+                = render "contact_form"

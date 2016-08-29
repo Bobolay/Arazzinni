@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :set_page_instance, except: [:index]
 
   def index
-    set_page_metadata(:home)
+    set_page_instance(:home)
     @featured_products = Product.published.featured
     @articles = Article.published.sort_by_newest.first(5)
     @collections = []
@@ -29,7 +29,8 @@ class PagesController < ApplicationController
 
   private
 
-  def set_page_instance
-     set_page_metadata(action_name)
+  def set_page_instance(key = action_name)
+     set_page_metadata(key)
+     @page_key = key.to_sym
   end
 end

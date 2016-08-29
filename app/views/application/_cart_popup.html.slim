@@ -3,7 +3,7 @@
     .cart-frame
     .close-popup = inline_svg "icons/close-popup.svg"
     p.cart-title
-      | Cart
+      = t("cart.header")
       span.svg = inline_svg "icons/popup-cart.svg"
     .cart-item
       .delete-item title="Прибрати з корзини" = inline_svg "icons/close-cross-cart-item.svg"
@@ -54,11 +54,12 @@
             p $4530
     .total
       p
-        | Total:
+        = t("cart.total")
         span $6860
     a.checkout href="cart_path"
-      | checkout now
+      = t("checkout")
       .animated-frame
         .left-border
         .right-border
-    a.go-ahead href="" continue shopping
+    a.go-ahead href=""
+      = t("continue-shopping")

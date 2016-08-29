@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  socket_type: MyString
+  cores_quantity: 1
+  clock_speed: 1.5
+  processor_quantity: 1
+
+two:
+  socket_type: MyString
+  cores_quantity: 1
+  clock_speed: 1.5
+  processor_quantity: 1

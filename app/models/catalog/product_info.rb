@@ -1,0 +1,3 @@
+module Catalog::ProductInfo
+
+end

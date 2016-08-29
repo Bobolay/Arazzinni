@@ -1,0 +1,24 @@
+form
+  .group
+    input type="text"
+      span.bar
+    label
+      = t("#{@page_key}.contact-form.fields.name", "contact-form.fields.name")
+  .group
+    input type="text"
+      span.bar
+    label
+      = t("#{@page_key}.contact-form.fields.email", "contact-form.fields.email")
+  .group
+    input type="text"
+      span.bar
+    label
+      = t("#{@page_key}.contact-form.fields.phone", "contact-form.fields.phone")
+  p.above-textarea
+    = t("#{@page_key}.contact-form.fields.message", "contact-form.fields.message")
+  .group
+    textarea rows="7"
+  a.button-brown href=""
+    = t("#{@page_key}.contact-form.send", "contact-form.send", "send")
+    .left-border
+    .right-border

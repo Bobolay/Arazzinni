@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  door_type: MyString
+  prefinished: false
+  possible_configurations: MyText
+
+two:
+  door_type: MyString
+  prefinished: false
+  possible_configurations: MyText

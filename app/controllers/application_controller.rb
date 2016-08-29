@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     before_action :reload_translations
   end
 
+  before_action :initialize_request_host
   before_action :set_locale, unless: :admin_panel?
   before_action :set_admin_locale, if: :admin_panel?
   # before_action :initialize_rooms, unless: :admin_panel?
@@ -72,4 +73,9 @@ class ApplicationController < ActionController::Base
   def root_without_locale
     redirect_to root_path(locale: I18n.locale)
   end
+
+  def initialize_request_host
+    Object.const_set("REQUEST_HOST", request.host)
+  end
+
 end

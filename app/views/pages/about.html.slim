@@ -70,31 +70,9 @@
               .door = inline_svg "about-us/door.svg"
           .large-6.medium-12.columns
             .form-container
-              form
-                .subtitle
-                  = t("contact_form.title")
+              .subtitle
+                = t("#{@page_key}.contact-form.title", "contact-form.title")
+
                 p.regular
-                  = t("contact_form.description")
-                .group
-                  input type="text"
-                    span.bar
-                  label
-                    = t("contact-form.fields.name")
-                .group
-                  input type="text"
-                    span.bar
-                  label
-                    = t("contact-form.fields.email")
-                .group
-                  input type="text"
-                    span.bar
-                  label
-                    = t("contact-form.fields.phone")
-                p.above-textarea
-                  = t("contact-form.fields.message")
-                .group
-                  textarea rows="7"
-                a.button-brown href=""
-                  = t("send")
-                  .left-border
-                  .right-border
+                  = t("#{@page_key}.contact-form.description", "contact-form.description")
+              = render "contact_form"

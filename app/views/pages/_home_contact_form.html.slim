@@ -1,0 +1,16 @@
+.form-wrapper
+  .row.collapse
+    .large-8.large-centered.medium-10.medium-centered.columns
+      .row.collapse
+        .large-6.medium-6.columns
+          .door-container
+            .first-door style="background-image: url(#{asset_path('main/above-footer1.jpg')})"
+            .second-door style="background-image: url(#{asset_path('main/above-footer2.jpg')})"
+            .third-door style="background-image: url(#{asset_path('main/above-footer3.jpg')})"
+        .large-6.medium-12.columns
+          .form-container
+            form
+              .subtitle
+                = t("contact-form.title", "home.contact-form.title")
+                = t("home.contact-form.description", "contact-form.description")
+            = render "contact_form"

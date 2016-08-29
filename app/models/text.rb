@@ -34,8 +34,8 @@ class Text < ActiveRecord::Base
 
     keys.each do |key|
       str = (self.get_translations.select{|t| t[0] == key.to_s }.first)
-      if str.present?
-        return translated = str[1]
+      if str.present? && str[1].present?
+        return str[1]
       end
     end
 

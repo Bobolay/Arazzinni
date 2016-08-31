@@ -110,14 +110,34 @@ module RailsAdminDynamicConfig
           field :seo_tags
         end
 
+        config.include_models PageInfo::Contacts
+
         config.model Pages::Contacts do
           field :translations, :globalize_tabs
           field :seo_tags
+          field :page_info
         end
 
         config.model Pages::Contacts::Translation do
           field :locale, :hidden
           field :address
+        end
+
+        config.model PageInfo::Contacts do
+          visible false
+          field :translations, :globalize_tabs
+          field :emails
+          field :phones
+          field :map_coordinates
+        end
+
+        config.model_translation PageInfo::Contacts do
+          field :locale, :hidden
+          field :address
+          field :title
+          field :large_title
+          field :form_title
+          field :form_description
         end
 
 

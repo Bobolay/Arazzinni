@@ -8,23 +8,30 @@
           .section-title
             = t("contacts.title")
           .shadow-text
-            = t("contacts.title")
+            = t("contacts.large_title", "contacts.title")
     .row.collapse
       .large-4.medium-12.columns
         .coordinates
           .svg-coordinates = inline_svg "icons/contacts-geo.svg"
           span
             = t("contacts.address")
-        .coordinates
-          .svg-coordinates = inline_svg "icons/contacts-phone.svg"
-          span
-            | (866) 55-DOORS
-            br
-            | (866) 531-8594
-        .coordinates
-          .svg-coordinates = inline_svg "icons/contacts-mail.svg"
-          span
-            | info@arazzinni.com
+        /= t("contacts.phones").respond_to?(:each).inspect
+        - if (phones = t("contacts.phones")).respond_to?(:each)
+          .coordinates
+            .svg-coordinates = inline_svg "icons/contacts-phone.svg"
+            div
+              - phones.each do |phone|
+                a href=phone_url(phone)
+                  = phone
+                br
+
+        - if (emails = t("contacts.emails")).respond_to?(:each)
+          .coordinates
+            .svg-coordinates = inline_svg "icons/contacts-mail.svg"
+            div
+              - emails.each do |email|
+                a href=email_url(email)
+                  = email
         .coordinates
           p.subtitle
             = t("follow-us")
@@ -39,9 +46,9 @@
             .large-5.medium-12.small-12.columns
               .text-near-form
                 p.subtitle
-                  = t("#{@page_key}.contact-form.title", "contact-form.title")
+                  = t("contacts.form_title", "#{@page_key}.contact-form.title", "contact-form.title")
                 p.regular
-                  = t("#{@page_key}.contact-form.title", "contact-form.title")
+                  = t("contacts.form_description", "#{@page_key}.contact-form.title", "contact-form.description")
             .large-7.medium-12.small-12.columns
               .contacts-form
                 = render "contact_form"

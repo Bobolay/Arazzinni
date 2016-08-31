@@ -118,11 +118,6 @@ module RailsAdminDynamicConfig
           field :page_info
         end
 
-        config.model Pages::Contacts::Translation do
-          field :locale, :hidden
-          field :address
-        end
-
         config.model PageInfo::Contacts do
           visible false
           field :translations, :globalize_tabs
@@ -139,9 +134,6 @@ module RailsAdminDynamicConfig
           field :form_title
           field :form_description
         end
-
-
-
 
         config.model Article do
           field :published

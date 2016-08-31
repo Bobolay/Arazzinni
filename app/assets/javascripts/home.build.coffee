@@ -42,3 +42,4 @@
 #= require door-one
 
 #= require specification-scroll
+#= require articles

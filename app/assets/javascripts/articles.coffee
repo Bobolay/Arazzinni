@@ -1,3 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$document.on "ready", ()->
+  $article_container = $(".publication-wrapper")
+  if $article_container.length > 0
+    url = $article_container.attr("data-url")
+    $.ajax({url: url, type: "post"})

@@ -11,7 +11,14 @@ class Article < ActiveRecord::Base
   has_seo_tags
   has_cache
 
+  has_many :article_views
+
   def to_param
     self.url_fragment
   end
+
+  def views_count
+    article_views.count
+  end
+
 end

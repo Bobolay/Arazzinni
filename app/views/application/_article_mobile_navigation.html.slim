@@ -15,8 +15,9 @@
                   .right-border
               p.unit-name
                 = another_resource.name
-              p
-                = formatted_date(another_resource.released_on)
+              - if another_resource.released_on
+                p
+                  = formatted_date(another_resource.released_on)
               div class="arrow-to-the-#{direction}" = inline_svg "icons/arrow-to-the-#{direction}.svg"
 
         /.medium-6.small-6.columns

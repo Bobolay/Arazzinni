@@ -110,6 +110,19 @@ module RailsAdminDynamicConfig
           field :seo_tags
         end
 
+        config.model Pages::Contacts do
+          field :translations, :globalize_tabs
+          field :seo_tags
+        end
+
+        config.model Pages::Contacts::Translation do
+          field :locale, :hidden
+          field :address
+        end
+
+
+
+
         config.model Article do
           field :published
           field :image

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   host "arazzinni.com.ua" do
     root to: "pages#stub", as: "stub_root"
   end
@@ -10,7 +11,12 @@ Rails.application.routes.draw do
   scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
     devise_for :users
     mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-    resources :articles, only: [:index, :show]
+    resources :articles, only: [:index, :show] do
+      post as: "view", action: "view"
+    end
+
+
+
     scope "collections" do
       root to: "collections#index", as: :collections
       scope ":id" do

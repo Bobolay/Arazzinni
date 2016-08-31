@@ -1,10 +1,10 @@
-.publication-wrapper
+.publication-wrapper data-url=@article.url
   .row.underlined.collapse
     .xlarge-8.xlarge-centered.large-9.large-centered.medium-10.medium-centered.columns
       .section-container
         h1.section-title
           = @article.name
-        - if @article.respond_to?(:released_on)
+        - if @article.respond_to?(:released_on) && @article.released_on
           p.shadow-text
             = formatted_date(@article.released_on)
 

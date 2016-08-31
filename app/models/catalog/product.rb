@@ -14,9 +14,12 @@ class Catalog::Product < ActiveRecord::Base
 
   end
 
-  scope :processors, -> { Catalog::Products::Processor.published.joins(:translations) }
+  scope :processors, ->(includes = true) { includes_method = includes ? :includes : :joins; Catalog::Products::Processor.published.send(includes_method, :translations) }
 
-
+  def self.get_processors(limit = 1000, includes = true)
+    self.processors(includes).limit(limit).inspect
+    puts "1"
+  end
 
   def self.generate_processors(count = 100, image = true)
     model = Catalog::Products::Processor

@@ -13,7 +13,6 @@ class Text < ActiveRecord::Base
   end
 
   def self.load_translations(force = false)
-
     if force || !self.class_variable_defined?(storage_variable_name)
       texts = self.all.joins(:translations).where(text_translations: {locale: I18n.locale}).pluck("key", "text_translations.content")
       self.class_variable_set(storage_variable_name, texts)

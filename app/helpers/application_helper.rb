@@ -27,6 +27,9 @@ module ApplicationHelper
   end
 
   def formatted_date(date, locale = I18n.locale)
+    if date.blank?
+      return ""
+    end
     month_number = date.month
     month_name = Cms.t("genitive_month_names.#{month_number - 1}")
     "#{date.day} #{month_name}"

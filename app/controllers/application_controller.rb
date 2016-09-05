@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
   include Cms::Helpers::ActionView::UrlHelper
 
   if Rails.env.development?
-    before_action :reload_translations
+    before_action do
+      Text.load_translations(true)
+    end
   end
 
   before_action :initialize_request_host
@@ -37,10 +39,6 @@ class ApplicationController < ActionController::Base
   #   render inline: MyClass.test
   #   false
   # end
-
-  def reload_translations
-    Text.load_translations(true)
-  end
 
   def development?
     Rails.env.development?

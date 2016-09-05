@@ -1,0 +1,38 @@
+table
+  tr
+    td
+      b
+        |phone:
+  tr
+    td
+      = @call_request.phone
+  tr
+    td
+      b
+        |Time range:
+  tr
+    td
+      | from #{@call_request.hour_from} to #{@call_request.hour_to}
+
+  tr
+    td
+      b
+        |requested at:
+  tr
+    td
+      = @call_request.created_at
+  tr
+    td
+      b
+        |referer:
+  tr
+    td
+      = @call_request.referer
+
+  tr
+    td
+      b
+        |session id:
+  tr
+    td
+      = @call_request.session_id

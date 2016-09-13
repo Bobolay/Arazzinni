@@ -11,7 +11,10 @@ module ApplicationHelper
 
       return res if res.present?
     end
-    Cms.t(*args)
+    res = Cms.t(*args)
+    if res.is_a?(Array)
+      return res.first
+    end
   end
 
   def text(*args)

@@ -48,13 +48,31 @@ module RailsAdminDynamicConfig
             prop
             edit_model
             nestable do
-              only [HomeBanner]
+              only [HomeBanner, Collection]
             end
 
             ## With an audit adapter, you can add:
             # history_index
             # history_show
           end
+        end
+
+        config.include_models Collection
+        config.model Collection do
+          nestable_list(position_field: :sorting_position)
+          edit do
+            field :published
+            field :translations, :globalize_tabs
+            field :image
+
+          end
+        end
+
+        config.model_translation Collection do
+          field :locale, :hidden
+          field :name
+          field :url_fragment
+          field :description
         end
 
         ## Cms models
@@ -173,6 +191,8 @@ module RailsAdminDynamicConfig
           field :url_fragment
           field :description
         end
+
+
 
 
         config.model Product do

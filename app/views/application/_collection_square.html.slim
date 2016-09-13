@@ -9,7 +9,8 @@
       = t("items-count", count: 28)
     .collection style="background-image: url(#{asset_path('main/Smart-pro-1.jpg')})"
       .hover-text
-        p.subtitle-bold high endurance collection&trade;
+        p.subtitle-bold
+          = collection.name
         .block
           .svg = inline_svg "icons/audio49.svg"
           span.text Sound Resistant
@@ -22,7 +23,8 @@
         .block
           .svg = inline_svg "icons/favourite24.svg"
           span.text 5 year warranty
-        p.regular As it comes from the name, this collection features high durability of door finish, thank's to innovative composite materials. All backed up by sturdy construction of the door slab and parts. Extra layer of endurance is added.
+        p.regular
+          = collection.description
         a.button-white href="collection_one_path"
           = t("view")
           .left-border

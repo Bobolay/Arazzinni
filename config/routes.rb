@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 
   root as: "root_without_locale", to: "application#root_without_locale"
-  get "admin", to: redirect("/#{I18n.default_locale}/admin")
+  get "admin(/*admin_path)", to: redirect{|params| "/#{ I18n.default_locale}/admin/#{params[:admin_path]}"}
 
   scope ":locale", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
     devise_for :users

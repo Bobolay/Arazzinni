@@ -1,10 +1,56 @@
+= article-ul
+	margin-left: 30px
+	padding-left: 12px
+	position: relative
+	list-style: none
+
+= article-ul-li
+
+	&:before
+		left: 0
+		content: "●"
+		color: $brown
+		font-size: 1.5rem
+		position: absolute
+		display: inline-block
+		font-weight: 400
+		line-height: 14px
+
 .article-content
 	padding: 50px 0
+	line-height: 24px
+	font-size: 1.25rem
+
 	p
 		padding-top: 25px
 
 		&:first-child
 			padding-top: 0
+
+	h2, .h2
+		margin-top: 50px
+		font-size: 1.875rem
+		color: #876036
+		text-transform: uppercase
+		position: relative
+		line-height: 36px
+		font-weight: 400
+
+	h3, .h3
+		margin-top: 70px
+		color: #876036
+
+		font-size: 1.5rem
+		text-transform: uppercase
+		line-height: 29px
+		font-weight: 400
+
+	ul
+		+article-ul
+
+		li
+			+article-ul-li
+
 
 .publication-wrapper
 	.underlined
@@ -22,7 +68,7 @@
 		&:after
 			+after(200px,$brown)
 		@media #{$small-only}
-			font-size: 1.75em
+			font-size: 1.75rem
 			line-height: 30px
 			margin-top: 50px
 			top: 0
@@ -47,16 +93,15 @@
 		list-style: none
 		margin-top: 20px
 		li
-			padding-left: 2em
 			margin-top: 10px
 			@media #{$small-only}
-				padding-left: 1em
+				padding-left: 1rem
 			&:before
 				content: "\002022"
-				color: $brown
-				font-size: 1.5em
-			.regular
+
+			&.regular, &
 				line-height: 21px
+				font-size: 1.125rem
 	.photo-frame
 		width: 100%
 		height: 400px
@@ -74,7 +119,7 @@
 	.subtitle
 		margin-top: 50px
 	.blockquotes, blockquote
-		font-size: 1.25em
+		font-size: 1.25rem
 		font-family: georgia
 		font-style: italic
 		position: relative
@@ -97,7 +142,7 @@
 		text-align: center
 		margin-bottom: 20px
 		.share
-			font-size: 1.5em
+			font-size: 1.5rem
 			text-transform: uppercase
 			opacity: 0.1
 			font-weight: 600
@@ -163,7 +208,7 @@
 	.navigation-right
 		float: right
 		&.fixed
-			right: 1em
+			right: 1rem
 	.nav-mobile
 		padding: 30px 0
 		@media only screen and (min-width: 1200px)

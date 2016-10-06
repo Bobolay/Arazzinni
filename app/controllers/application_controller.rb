@@ -33,6 +33,12 @@ class ApplicationController < ActionController::Base
   #   false
   # end
 
+  before_action :initialize_collections
+
+  def initialize_collections
+    @collections = Collection.published.sort_by_sorting_position
+  end
+
   def admin_panel?
     admin = params[:controller].to_s.starts_with?("rails_admin")
 

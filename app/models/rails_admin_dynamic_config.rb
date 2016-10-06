@@ -62,6 +62,7 @@ module RailsAdminDynamicConfig
         config.include_models Attachable::Asset
 
         config.model Attachable::Asset do
+          visible false
           nested do
             field :data
             field :translations, :globalize_tabs
@@ -181,6 +182,7 @@ module RailsAdminDynamicConfig
         config.include_models Article, Cms::Text, Product
 
         config.model Cms::Text do
+          navigation_label "Локалізація"
           edit do
             field :key
             field :translations, :globalize_tabs

@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     set_page_instance(:home)
     @featured_products = Product.published.featured
     @articles = Article.published.sort_by_newest.first(5)
-    @collections = Collection.published.sort_by_sorting_position
+
     @home_slides = HomeBanner.published.sort_by_sorting_position
     @video_key = @page_instance.try(:home_video_url)
   end

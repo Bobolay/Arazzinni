@@ -59,6 +59,9 @@ class Product < ActiveRecord::Base
   end
 
   def dynamic_fields
+    if self.collection.nil?
+      return nil
+    end
     self.collection.product_schema
   end
 

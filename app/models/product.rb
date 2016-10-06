@@ -25,6 +25,9 @@ class Product < ActiveRecord::Base
 
   def url(locale = I18n.locale)
     #"/collections/collection_id/product_id"
+    if !collection
+      return nil
+    end
     collection_url = collection.url(locale)
     if !collection_url.end_with?("/")
       collection_url = "#{collection_url}/"

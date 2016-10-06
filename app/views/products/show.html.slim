@@ -1,12 +1,12 @@
 .door-one-wrapper
   = render "navigation", resource: @product
-  = render "bottom_navigation"
+  = render "bottom_navigation", products: @product.collection.products
 
   = render "mobile_page_navigation"
   .middle-wrapper
     .row.collapse
       .xxlarge-8.xxlarge-centered.xlarge-9.xlarge-centered.large-11.large-centered.medium-12.small-12.columns.clearfix
-        = render "page_navigation"
+        = render "page_navigation", product: @product
         = render "product_content", product: @product
 
   = render "wizard"

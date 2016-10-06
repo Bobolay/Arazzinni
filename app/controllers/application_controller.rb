@@ -33,14 +33,6 @@ class ApplicationController < ActionController::Base
   #   false
   # end
 
-  def reload_translations
-    Text.load_translations(true)
-  end
-
-  def development?
-    Rails.env.development?
-  end
-
   def admin_panel?
     admin = params[:controller].to_s.starts_with?("rails_admin")
 

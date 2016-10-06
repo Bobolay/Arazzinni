@@ -1,9 +1,5 @@
 .scrolled-block.door-frame
-  .draft-wrapper
-    .draft style="background-image: url(#{asset_path('draft/door-frame-1.jpg')})"
-    .draft style="background-image: url(#{asset_path('draft/door-frame-2.jpg')})"
-    .draft style="background-image: url(#{asset_path('draft/door-frame-3.jpg')})"
-  .draft-wrapper
-    .draft style="background-image: url(#{asset_path('draft/door-frame-4.jpg')})"
-    .draft style="background-image: url(#{asset_path('draft/door-frame-5.jpg')})"
-    .draft style="background-image: url(#{asset_path('draft/door-frame-6.jpg')})"
+  - images.to_a.in_groups(2).each do |group|
+    .draft-wrapper
+      - group.each do |image|
+        .draft style="background-image: url(#{image.url})"

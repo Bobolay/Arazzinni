@@ -24,13 +24,14 @@
                     = menu_item[:name]
 
         .xlarge-9.large-8.medium-7.small-12.columns
-          a.menu-collection-container href=url_for(Article.first)
-            .photo-container
-              .photo style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-43.jpg')})"
-            .text-container
-              .menu-title
-                | smart pro
-                span 1
-                .moving-arrow = inline_svg "icons/menu-arrow.svg"
-              .menu-subtitle
-                = t("items-count", count: 28)
+          - @collections.each do |collection|
+            a.menu-collection-container href=collection.url
+              .photo-container
+                .photo style="background-image: url(#{collection.image.url(:menu_thumb)})"
+              .text-container
+                .menu-title
+                  = collection.name
+                  span 1
+                  .moving-arrow = inline_svg "icons/menu-arrow.svg"
+                .menu-subtitle
+                  = t("items-count", count: collection.products.count)

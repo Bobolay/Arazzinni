@@ -1,0 +1,7 @@
+ul.filter-container
+  - collection.filters.each do |filter_key, filter_definition|
+    li
+      .filter-field
+        p.filter
+          = "#{filter_key}:"
+        = render "application/filters/#{filter_definition[:as]}", filter_key: filter_key, filter_definition: filter_definition

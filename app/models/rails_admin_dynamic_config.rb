@@ -45,8 +45,10 @@ module RailsAdminDynamicConfig
             edit
             delete
             show_in_app
-            prop
-            edit_model
+            props do
+              only [Product]
+            end
+            #edit_model
             nestable do
               only [HomeBanner, Collection]
             end
@@ -57,14 +59,43 @@ module RailsAdminDynamicConfig
           end
         end
 
+        config.include_models Attachable::Asset
+
+        config.model Attachable::Asset do
+          nested do
+            field :data
+            field :translations, :globalize_tabs
+          end
+        end
+
+        config.model_translation Attachable::Asset do
+          field :locale, :hidden
+          field :data_alt
+        end
+
+        config.include_models CollectionTag
+        config.model CollectionTag do
+          navigation_label "catalog"
+          field :icon
+          field :translations, :globalize_tabs
+        end
+
+        config.model_translation CollectionTag do
+          field :locale, :hidden
+          field :name
+        end
+
         config.include_models Collection
         config.model Collection do
+          navigation_label "catalog"
           nestable_list(position_field: :sorting_position)
           edit do
             field :published
             field :translations, :globalize_tabs
             field :image
-
+            field :collection_tags
+            field :product_schema
+            field :view_components_configuration
           end
         end
 
@@ -73,6 +104,63 @@ module RailsAdminDynamicConfig
           field :name
           field :url_fragment
           field :description
+        end
+
+        config.model Product do
+          navigation_label "catalog"
+          #field :category
+          field :collection
+          field :published
+          field :best_offer
+          field :featured
+          field :base_price
+          field :avatar
+          field :translations, :globalize_tabs
+          field :product_color_variants
+          field :gallery_images
+          field :frame_images
+          field :recommended_products do
+            associated_collection_scope do
+              id = bindings[:object].try(:id)
+              proc do |scope|
+                if id
+                  scope.where.not(id: id)
+                else
+                  scope
+                end
+              end
+            end
+          end
+        end
+
+        config.model_translation Product do
+          field :locale, :hidden
+          field :name
+          field :label
+
+          field :url_fragment
+          field :description
+        end
+
+        config.include_models ProductColor, ProductColorVariant
+
+        config.model ProductColor do
+          navigation_label "catalog"
+          field :translations, :globalize_tabs
+          field :avatar
+        end
+
+        config.model_translation ProductColor do
+          field :locale, :hidden
+          field :name
+        end
+
+        config.model ProductColorVariant do
+          visible false
+          nested do
+            field :product_color
+            field :avatar
+          end
         end
 
         ## Cms models
@@ -194,33 +282,6 @@ module RailsAdminDynamicConfig
 
 
 
-
-        config.model Product do
-          field :category
-          field :published
-          field :best_offer
-          field :featured
-          field :base_price
-          field :avatar
-          field :translations, :globalize_tabs
-
-
-          field :my_attr, :enum do
-            enum do
-              [:option_1, :option_2, :option_3, :option_4]
-            end
-          end
-        end
-
-        config.model_translation Product do
-          field :locale, :hidden
-          field :name
-          field :label
-
-          field :url_fragment
-          field :description
-        end
-
         ##static pages
         static_pages = ["DeliveryAndPayment", "Guaranty", "Certificate"]
         static_page_classes = static_pages.map{|s| "Pages::#{s}".constantize }
@@ -323,8 +384,8 @@ module RailsAdminDynamicConfig
           field :processor_quantity
         end
 
-        if !host?("localhost")
-          hidden_models = [Catalog::Product, Catalog::Products::Door, Catalog::Products::Processor, Catalog::ProductInfo, Catalog::ProductInfo::Door, Catalog::ProductInfo::Processor, Category, Parameter, Product]
+        if !host?("localhost") || true
+          hidden_models = [Catalog::Product, Catalog::Products::Door, Catalog::Products::Processor, Catalog::ProductInfo, Catalog::ProductInfo::Door, Catalog::ProductInfo::Processor, Category, Parameter]
           hidden_models.each do |model|
             config.model model do
               visible false

@@ -1,18 +1,13 @@
 .scrolled-block.gallery
   .slider-container
     ul.bxslider-door
-      li
-        .img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-183.jpg')})"
-      li
-        .img-container style="background-image: url(#{asset_path('main/Smart-pro.jpg')})"
-      li
-        .img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-48.jpg')})"
-      li
-        .img-container style="background-image: url(#{asset_path('main/ARAZZINNI_CATALOG_print-133.jpg')})"
+      - images.each do |image|
+        li
+          .img-container style="background-image: url(#{image.url(:large)})"
+
     .squares#bx-pager
-      a#button1 data-slide-index="0" href=""
-      a#button2 data-slide-index="1" href=""
-      a#button3 data-slide-index="2" href=""
-      a#button4 data-slide-index="3" href=""
+      - images.length.times do |i|
+        a#button1 data-slide-index=i href=""
+
     .door-slider-arrow-left = inline_svg "icons/bottom-nav-arrow-left-white.svg"
     .door-slider-arrow-right = inline_svg "icons/bottom-nav-arrow-right-white.svg"

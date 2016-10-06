@@ -7,7 +7,7 @@ module RailsAdmin
   module Config
     module Actions
       class Props < Base
-        RailsAdmin::Config::Actions.register("prop", self)
+        RailsAdmin::Config::Actions.register("props", self)
 
         register_instance_option :object_level do
           true
@@ -15,6 +15,14 @@ module RailsAdmin
 
         register_instance_option :pjax? do
           true
+        end
+
+        register_instance_option :root? do
+          false
+        end
+
+        register_instance_option :collection? do
+          false
         end
 
         register_instance_option :member? do
@@ -48,14 +56,17 @@ module RailsAdmin
             if request.method.downcase.in?(%w(post patch put))
               resource_params = params[:product]
 
-              resource_params.each do |prop_key, prop_value|
-
-                option_id = prop_value.to_i
-
-                resource = @object
-                resource.assign_prop(option_id)
-
-              end
+              @object.properties = resource_params.to_json
+              @object.save
+              # resource_params.each do |prop_key, prop_value|
+              #
+              #   option_id = prop_value.to_i
+              #
+              #   resource = @object
+              #   #resource.assign_prop(option_id)
+              #
+              #
+              # end
 
             else
 

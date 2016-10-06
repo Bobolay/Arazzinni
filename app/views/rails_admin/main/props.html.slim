@@ -1,34 +1,30 @@
-
-/- my_fields = RailsAdmin::Config::Fields.factory(RailsAdmin::Config.model(Product))
-/- my_field = my_fields.first
-/= rails_admin_form_for @object, url: edit_path(@abstract_model, @object.id), as: @abstract_model.param_key, html: { method: "put", multipart: true, class: "form-horizontal denser", data: { title: @page_name } } do |form|
-  /= form.generate action: :update
-  = form.field_wrapper_for(my_field, 2)
-/= field_wrapper_for(@my_field)
-
-/h1
-  = instance_variable_names.inspect
-
-/h1
-
-form method="post"
-
 = form_for(@object, url: "")
-  - @object.dynamic_props.each do |prop|
-    - resource_prop_option = @object.prop_option(prop)
-    - resource_prop_option_id = resource_prop_option.try(:id)
-    - dom_name = "#{@model_name.underscore.gsub("/", "__")}[prop_#{prop.id}]"
-    .field
-      /- prop.values_arr
-      label
-        = prop.name
-      select name=dom_name
-        - prop.values.each do |v|
-          option value=v[:value] selected=("selected" if resource_prop_option_id && v[:value] == resource_prop_option_id)
-            = v[:name]
+  fieldset
+    - @object.dynamic_fields.each do |field_key, field_config|
+      - html_name = "#{@object.class.name.underscore.gsub("/", "__")}[#{field_key}]"
+      .input class="form-group control-group #{field_config[:type]}_type as_#{field_config[:as]}"
+        label class="col-sm-2 control-label"
+          = field_key
+        - if field_config[:type] == "enum"
+          div class="col-sm-10 controls"
+            = render "rails_admin/main/fields/#{field_config[:as]}", field_key: field_key, field_config: field_config, html_name: html_name
+
+            span class="help-block" style="float: left;clear: left;"
+              = field_config[:required] ? "Обов'язкове" : "Необов'язкове"
+        .clearfix
+
   button type="submit"
-    |Submit
+    |Зберегти
 
 
-/= actions(:member, @abstract_model, @object).map{|c| c.class.name.split("::").last}
-/= RailsAdmin::Config::Actions.all(:member, abstract_model: @abstract_model, object: @object, controller: "rails_admin/main").map{|c| c.class.name.split("::").last}
+
+
+
+/div class="form-group control-group enum_type my_attr_field " id="product_my_attr_field"
+  label class="col-sm-2 control-label" for="product_my_attr"
+    |My attr
+  div class="col-sm-10 controls"
+    select data-enumeration="true" placeholder="Пошук" name="product[my_attr]" id="product_my_attr"
+
+    span class="help-block"
+      |Необов'язкове.

@@ -33,4 +33,7 @@ class PagesController < ApplicationController
      set_page_metadata(key)
      @page_key = key.to_sym
   end
+
+
 end
+

@@ -1,0 +1,9 @@
+select
+  option value=""
+    = "All"
+  - filter_definition[:values].each do |value|
+    option value=value
+      = value
+
+  .select-arrow
+    .svg = inline_svg "icons/filter-arrow.svg"

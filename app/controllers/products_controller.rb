@@ -3,6 +3,9 @@ class ProductsController < ApplicationController
   def show
     @render_footer = false
     @products = Product.published
+    @product_property_groups = @product.properties_for(nil, 2)
+
+
   end
 
   def set_product

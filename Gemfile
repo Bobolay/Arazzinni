@@ -6,7 +6,7 @@ gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -55,6 +55,7 @@ gem 'rails_admin'
 gem 'rails_admin_nestable'
 
 gem 'devise'
+gem 'devise-i18n'
 
 gem 'enumerize'
 
@@ -88,6 +89,7 @@ gem 'rack-page_caching'
 #gem 'cms', path: "/media/data/pasha/gems/cms"
 
 gem 'cms', github: "pkorenev/cms"
+gem 'attachable', github: "VoroninNick/attachable"
 
 gem 'require_reloader'
 
@@ -106,3 +108,5 @@ gem 'bulk_insert'
 gem 'yaml_db'
 
 gem 'pg'
+
+gem "jsonb_accessor"

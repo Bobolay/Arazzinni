@@ -7,6 +7,10 @@ class CollectionsController < ApplicationController
 
   def show
     @collections = Collection.published.sort_by_sorting_position
+
+    session[:filters] ||= {}
+    filters_params ||= params[:filters]
+    @filters_state = {}
   end
 
   def set_collection

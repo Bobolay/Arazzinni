@@ -1,0 +1,18 @@
+.large-6.medium-12.small-12.columns
+  .unit-container
+    .text
+      p.title
+        = product.name
+      p.under-title Dark Bronze
+      p.price
+        = formatted_price(product.base_price)
+
+      .pick-colors
+        - product.product_color_variants.each do |variant|
+          .color style="background-image: url(#{variant.product_color.avatar.url(:small)})"
+
+    .img-container
+      - product.product_color_variants.each_with_index do |variant, i|
+        .hardware-img style="background-image: url(#{variant.avatar.url})" class=("show-it" if i == 0)
+
+    .add-to-cart = inline_svg "icons/supermarket39.svg"

@@ -11,6 +11,7 @@ module ApplicationHelper
   end
 
   def formatted_price(price)
+    return nil if price.blank?
     normalized_price = price
     if price.round(0) == price.round(2)
       normalized_price = price.round(0)

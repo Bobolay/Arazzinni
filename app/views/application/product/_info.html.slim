@@ -28,15 +28,13 @@
         span.description Save
     .door-show-mobile
       .door-colors-container
-        .color-block
-          p.color cream white
-          .color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
-        .color-block
-          p.color brown patina
-          .color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
-        .color-block
-          p.color acacia
-          .color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+        - product.product_color_variants.each do |variant|
+          - color = variant.product_color
+          .color-block
+            p.color
+              = color.name
+            .color-texture style="background-image: url(#{color.avatar.url(:small)})"
+
     a.buy-button
       = t("buy")
       .animated-frame
@@ -47,16 +45,13 @@
       p.desktop-text technical specifications
   .door-show
     .door-colors-container
-      .color-block
-        p.color cream white
-        .color-texture style="background-image: url(#{asset_path('panels/panel-9.jpg')})"
-      .color-block
-        p.color brown patina
-        .color-texture style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
-      .color-block
-        p.color acacia
-        .color-texture style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
+      - product.product_color_variants.each do |variant|
+        - color = variant.product_color
+        .color-block
+          p.color
+            = color.name
+          .color-texture style="background-image: url(#{color.avatar.url(:small)})"
+
     .door-image-container
-      .door-image.visible style="background-image: url(#{asset_path('sampleDoors/sample-door4.jpg')})"
-      .door-image style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
-      .door-image style="background-image: url(#{asset_path('sampleDoors/sample-door1.jpg')})"
+      - product.product_color_variants.each_with_index do |variant, i|
+        .door-image class=("visible" if i == 0) style="background-image: url(#{variant.avatar.url})"

@@ -1,0 +1,6 @@
+uk:
+  activerecord:
+    models:
+      collection:
+        one: "Коллекція"
+        other: "Коллекції"

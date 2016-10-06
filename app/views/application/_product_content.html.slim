@@ -2,7 +2,10 @@
   .big-frame
   .block-container
     = render "application/product/info", product: product
-    = render "application/product/gallery", product: product
-    = render "application/product/specification", product: product
-    = render "application/product/scheme", product: product
+    - if product.gallery_images.any?
+      = render "application/product/gallery", product: product, images: product.gallery_images
+    - if @product_property_groups.try(:any?)
+      = render "application/product/specification", product: product, property_groups: @product_property_groups
+    - if product.frame_images.any?
+      = render "application/product/scheme", product: product, images: product.frame_images
     = render "application/product/hardware", product: product

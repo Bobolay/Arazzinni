@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  collection_id: 
+  collection_tag_id: 
+
+two:
+  collection_id: 
+  collection_tag_id: 

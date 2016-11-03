@@ -26,3 +26,16 @@ def js_field(name)
     end
   end
 end
+
+def associated_collection_scope_except_current
+  associated_collection_scope do
+    id = bindings[:object].try(:id)
+    proc do |scope|
+      if id
+        scope.where.not(id: id)
+      else
+        scope
+      end
+    end
+  end
+end

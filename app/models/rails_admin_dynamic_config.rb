@@ -114,27 +114,27 @@ module RailsAdminDynamicConfig
         config.model Product do
           navigation_label "catalog"
           #field :category
-          field :collection
-          field :published
-          field :best_offer
-          field :featured
-          field :base_price
-          field :avatar
-          field :translations, :globalize_tabs
-          field :product_color_variants
-          field :gallery_images
-          field :frame_images
-          [*Product::ASSOCIATED_PRODUCT_TABLES, :recommended_products].each do |association_name|
-            field association_name do
-              associated_collection_scope do
-                id = bindings[:object].try(:id)
-                proc do |scope|
-                  if id
-                    scope.where.not(id: id)
-                  else
-                    scope
-                  end
-                end
+          group :base do
+            field :collection
+            field :published
+            field :best_offer
+            field :featured
+            field :base_price
+            field :avatar
+            field :translations, :globalize_tabs
+            field :product_color_variants
+            field :gallery_images
+            field :frame_images
+            field :recommended_products do
+              label "Recommended products(hardware)"
+              associated_collection_scope_except_current
+            end
+          end
+
+          group :wizard do
+            [*Product::ASSOCIATED_PRODUCT_TABLES].each do |association_name|
+              field association_name do
+                associated_collection_scope_except_current
               end
             end
           end

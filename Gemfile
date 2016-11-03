@@ -114,3 +114,5 @@ gem "jsonb_accessor"
 gem 'yaml_db'
 
 gem 'filterrific'
+
+gem 'codemirror-rails'

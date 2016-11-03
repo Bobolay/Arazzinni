@@ -99,8 +99,8 @@ module RailsAdminDynamicConfig
             field :translations, :globalize_tabs
             field :image
             field :collection_tags
-            field :product_schema
-            field :view_components_configuration
+            #field :product_schema
+            js_field :view_components_configuration
           end
         end
 
@@ -399,7 +399,7 @@ module RailsAdminDynamicConfig
         config.model ProductPrototype do
           navigation_label "catalog"
           field :name
-          field :configuration
+          js_field :configuration
         end
 
         if !host?("localhost") || true

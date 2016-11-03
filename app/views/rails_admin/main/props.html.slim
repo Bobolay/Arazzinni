@@ -6,15 +6,15 @@
 
       - @object.dynamic_fields.each do |field_key, field_config|
         - html_name = "#{@object.class.name.underscore.gsub("/", "__")}[#{field_key}]"
-        .input class="form-group control-group #{field_config[:type]}_type as_#{field_config[:as]}"
+        .input class="form-group control-group #{field_config["type"]}_type as_#{field_config["as"]}"
           label class="col-sm-2 control-label"
             = field_key
-          - if field_config[:type] == "enum"
+          - if field_config["type"] == "enum"
             div class="col-sm-10 controls"
-              = render "rails_admin/main/fields/#{field_config[:as]}", field_key: field_key, field_config: field_config, html_name: html_name
+              = render "rails_admin/main/fields/#{field_config["as"]}", field_key: field_key, field_config: field_config, html_name: html_name
 
               span class="help-block" style="float: left;clear: left;"
-                = field_config[:required] ? "Обов'язкове" : "Необов'язкове"
+                = field_config["required"] ? "Обов'язкове" : "Необов'язкове"
           .clearfix
 
     button type="submit"

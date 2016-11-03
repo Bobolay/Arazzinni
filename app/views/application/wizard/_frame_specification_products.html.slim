@@ -1,0 +1,41 @@
+.door-config-popup-step-1.step
+  .door-config-wrapper
+    = render "application/wizard/step_header", title: "choose door configuration", active_step: 1
+    .frame-carousel-1.choose-container
+      /.choose.product data-product-price=100
+        .image
+          p.version v1
+          p.name l-casing v1
+          .img style="background-image: url(#{asset_path('constructor/frame.jpg')})"
+        .description
+          p Length:
+          p L1 &#61; 7' 2 5/8" (for 6'-8" doors)
+          p L2 &#61; 8' 2 7/16" (for 92 1/2" doors)
+          ol
+            li Natural Wood
+            li 10mm
+          p.price $150
+        .choose-mark = inline_svg "icons/choose-mark.svg"
+
+      - @product.frame_specifications_products.each do |product|
+        .choose.product data-product-price=100
+          .image
+            p.version v1
+            p.name
+              = product.name
+            .img style="background-image: url(#{product.avatar.url})"
+          .description
+            = raw product.description
+            p.price $150
+          .choose-mark = inline_svg "icons/choose-mark.svg"
+
+    p.total
+      | total:
+      span $800
+    a.main-button.next-step
+      | next step
+      .animated-frame
+        .left-border
+        .right-border
+
+    /= render "application/wizard/step_footer", step_number: 1

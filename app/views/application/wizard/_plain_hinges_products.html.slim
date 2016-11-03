@@ -1,0 +1,42 @@
+.door-config-popup-step-2.step
+  .door-config-wrapper
+    .cart-frame
+    .close-popup = inline_svg "icons/close-popup.svg"
+    .door-config-title choose door configuration
+    ul.step-by-step-nav
+      li.numbers
+        p 1
+      li.current-step
+        p 2 step
+      li.step-description
+        p choose plain hinges
+      li.next-step
+        p
+          | next
+          span = inline_svg "icons/popup-arrow-right.svg"
+      li.numbers
+        p 3
+      li.numbers
+        p 4
+      li.confirm
+        p confirm
+    .choose-container
+      .choose.product.left data-product-price=100
+        p.hingle-name "castilo" &mdash; armadillo hingle
+        .img style="background-image: url(#{asset_path('constructor/hingle1.jpg')})"
+        .choose-mark = inline_svg "icons/choose-mark.svg"
+      .choose.product.right data-product-price=100
+        p.hingle-name "decores" &mdash; maranello hingle
+        .img style="background-image: url(#{asset_path('constructor/hingle2.jpg')})"
+        .choose-mark = inline_svg "icons/choose-mark.svg"
+    p.total
+      | total:
+      span $800
+    a.main-button.next-step.owl-2
+      | next step
+      .animated-frame
+        .left-border
+        .right-border
+    a.prev-step previous step
+
+    /= render "application/wizard/step_footer", step_number: 2

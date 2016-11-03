@@ -15,6 +15,7 @@
       li
         | door frame
         span = inline_svg "icons/pencil.svg"
-    li
-      | hardware
-      span = inline_svg "icons/sitemap.svg"
+    - if product.recommended_products.any?
+      li
+        | hardware
+        span = inline_svg "icons/sitemap.svg"

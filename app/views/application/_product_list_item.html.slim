@@ -10,10 +10,11 @@
       p.price
         = formatted_price(product.base_price)
       .pick-colors
-        .color style="background-image: url(#{asset_path('panels/panel-1.jpg')})"
-        .color style="background-image: url(#{asset_path('panels/panel-2.jpg')})"
-        .color style="background-image: url(#{asset_path('panels/panel-3.jpg')})"
-    .door.show-it style="background-image: url(#{asset_path('sampleDoors/sample-door1.jpg')})"
-    .door style="background-image: url(#{asset_path('sampleDoors/sample-door2.jpg')})"
-    .door style="background-image: url(#{asset_path('sampleDoors/sample-door3.jpg')})"
+        - product.product_color_variants.each do |variant|
+          - color = variant.product_color
+          .color style="background-image: url(#{color.avatar.url(:small)})"
+
+    - product.product_color_variants.each_with_index do |variant, i|
+      .door class=("show-it" if i == 0) style="background-image: url(#{variant.avatar.url})"
+
     .add-to-cart = inline_svg "icons/supermarket39.svg"

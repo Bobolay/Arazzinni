@@ -1,7 +1,12 @@
 class Collection < ActiveRecord::Base
 
 
+
+
   attr_accessible *attribute_names
+
+  belongs_to :collection_prototype, foreign_key: :collection_prototype_id, class_name: ProductPrototype
+  attr_accessible :collection_prototype
 
   globalize :name, :description, :url_fragment
   image :image, styles: { large: "672x672#", thumb: "356x356#", menu_thumb: "635x210#" }
@@ -15,7 +20,9 @@ class Collection < ActiveRecord::Base
   has_many :products
   has_many :collection_taggings
   has_many :collection_tags, through: :collection_taggings
+  has_many :product_colors, through: :products
   attr_accessible :collection_tags, :collection_taggings, :collection_tag_ids
+
 
   def json_value(k)
     v = self[k.to_s]
@@ -40,11 +47,15 @@ class Collection < ActiveRecord::Base
   end
 
   def filters
-    return [] if !view_components_configuration
-    overrided = view_components_configuration[:filters]
-    keys = overrided.keys
-    configured_filters = product_schema.keep_if{|k, v| k.to_s.in?(keys.map(&:to_s)) }
-    configured_filters.deep_merge(overrided)
+    # return [] if !view_components_configuration
+    # overrided = view_components_configuration[:filters]
+    # keys = overrided.keys
+    # configured_filters = product_schema.keep_if{|k, v| k.to_s.in?(keys.map(&:to_s)) }
+    # configured_filters.deep_merge(overrided)
+    collection_prototype.computed_configuration_filters
+  end
 
+  def available_product_colors
+    product_colors.map{|c| [c.name, c.id] }
   end
 end

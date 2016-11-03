@@ -1,6 +1,6 @@
 /select data-enumeration="true" name="product[#{field_key}]" placeholder="Пошук"
-- field_config[:values].each do |value|
+- field_config["values"].each do |value|
   .option
-    input type="checkbox" value=value id="#{field_key}___#{value}" name="#{html_name}[]" checked=("checked" if @object.properties && @object.properties[field_key.to_s].include?(value))
+    input type="checkbox" value=value id="#{field_key}___#{value}" name="#{html_name}[]" checked=("checked" if @object.properties && @object.properties[field_key.to_s].try{|p| p.include?(value)})
     label for="#{field_key}___#{value}"
       = value

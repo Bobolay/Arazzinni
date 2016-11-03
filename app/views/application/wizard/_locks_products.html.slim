@@ -1,0 +1,91 @@
+.door-config-popup-step-3.step
+  .door-config-wrapper
+    .cart-frame
+    .close-popup = inline_svg "icons/close-popup.svg"
+    .door-config-title choose door configuration
+    ul.step-by-step-nav
+      li.numbers
+        p 1
+      li.numbers
+        p 2
+      li.current-step
+        p 3 step
+      li.step-description
+        p choose locks
+      li.next-step
+        p
+          | next
+          span = inline_svg "icons/popup-arrow-right.svg"
+      li.numbers
+        p 4
+      li.confirm
+        p confirm
+    .frame-carousel-2.choose-container
+      .dual-wrapper
+        .choose.product data-product-price=100
+          .image-knob style="background-image: url(#{asset_path('constructor/door-knob-1.jpg')})"
+          .quantity 2X
+          .text-container
+            .knob-name
+              p brilliant
+              p Ancient Silver
+            p.knob-price $50
+          .choose-mark = inline_svg "icons/choose-mark.svg"
+        .choose.product data-product-price=100
+          .image-knob style="background-image: url(#{asset_path('constructor/door-knob-2.jpg')})"
+          .quantity 2X
+          .text-container
+            .knob-name
+              p brilliant
+              p Ancient Silver
+            p.knob-price $35
+          .choose-mark = inline_svg "icons/choose-mark.svg"
+      .dual-wrapper
+        .choose.product data-product-price=100
+          .image-knob style="background-image: url(#{asset_path('constructor/door-knob-3.jpg')})"
+          .quantity 2X
+          .text-container
+            .knob-name
+              p imperia
+              p Matte Bronze
+            p.knob-price $75
+          .choose-mark = inline_svg "icons/choose-mark.svg"
+        .choose.product data-product-price=100
+          .image-knob style="background-image: url(#{asset_path('constructor/door-knob-4.jpg')})"
+          .quantity 2X
+          .text-container
+            .knob-name
+              p imperia
+              p Matte Bronze
+            p.knob-price $45
+          .choose-mark = inline_svg "icons/choose-mark.svg"
+      .dual-wrapper
+        .choose.product data-product-price=100
+          .image-knob style="background-image: url(#{asset_path('constructor/door-knob-5.jpg')})"
+          .quantity 2X
+          .text-container
+            .knob-name
+              p lord
+              p Dark Bronze
+            p.knob-price $25
+          .choose-mark = inline_svg "icons/choose-mark.svg"
+        .choose.product data-product-price=100
+          .image-knob style="background-image: url(#{asset_path('constructor/door-knob-6.jpg')})"
+          .quantity 2X
+          .text-container
+            .knob-name
+              p lord
+              p Dark Bronze
+            p.knob-price $75
+          .choose-mark = inline_svg "icons/choose-mark.svg"
+    p.total
+      | total:
+      span $800
+    a.main-button.next-step
+      | next step
+      .animated-frame
+        .left-border
+        .right-border
+    a.prev-step previous step
+
+    /= render "application/wizard/step_footer", step_number: 3

@@ -46,7 +46,7 @@ module RailsAdminDynamicConfig
             delete
             show_in_app
             props do
-              only [Product]
+              only ([Product] + DynamicModelGenerator.product_classes)
             end
             #edit_model
             nestable do
@@ -60,6 +60,8 @@ module RailsAdminDynamicConfig
         end
 
         config.include_models Attachable::Asset
+
+        config.include_models *DynamicModelGenerator.product_classes
 
         config.model Attachable::Asset do
           visible false
@@ -90,7 +92,9 @@ module RailsAdminDynamicConfig
         config.model Collection do
           navigation_label "catalog"
           nestable_list(position_field: :sorting_position)
+
           edit do
+            field :collection_prototype
             field :published
             field :translations, :globalize_tabs
             field :image
@@ -120,18 +124,22 @@ module RailsAdminDynamicConfig
           field :product_color_variants
           field :gallery_images
           field :frame_images
-          field :recommended_products do
-            associated_collection_scope do
-              id = bindings[:object].try(:id)
-              proc do |scope|
-                if id
-                  scope.where.not(id: id)
-                else
-                  scope
+          [*Product::ASSOCIATED_PRODUCT_TABLES, :recommended_products].each do |association_name|
+            field association_name do
+              associated_collection_scope do
+                id = bindings[:object].try(:id)
+                proc do |scope|
+                  if id
+                    scope.where.not(id: id)
+                  else
+                    scope
+                  end
                 end
               end
             end
           end
+
+
         end
 
         config.model_translation Product do
@@ -384,6 +392,14 @@ module RailsAdminDynamicConfig
           field :cores_quantity
           field :clock_speed
           field :processor_quantity
+        end
+
+        config.include_models ProductPrototype
+
+        config.model ProductPrototype do
+          navigation_label "catalog"
+          field :name
+          field :configuration
         end
 
         if !host?("localhost") || true

@@ -1,0 +1,4 @@
+.row.products-list
+  - if @products.try(:any?)
+    - @products.each do |product|
+      = render "product_list_item", product: product, collection: @collection

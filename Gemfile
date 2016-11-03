@@ -112,3 +112,5 @@ gem 'pg'
 gem "jsonb_accessor"
 
 gem 'yaml_db'
+
+gem 'filterrific'

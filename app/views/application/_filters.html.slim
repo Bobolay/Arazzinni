@@ -1,7 +1,9 @@
-ul.filter-container
-  - collection.filters.each do |filter_key, filter_definition|
-    li
-      .filter-field
-        p.filter
-          = "#{filter_key}:"
-        = render "application/filters/#{filter_definition[:as]}", filter_key: filter_key, filter_definition: filter_definition
+.filters filterrific-session=@filterrific_session.to_json
+  = form_for_filterrific @filterrific do |f|
+    ul.filter-container
+      - collection.filters.each do |filter_key, filter_definition|
+        li
+          .filter-field
+            p.filter
+              = "#{filter_key}:"
+            = render "application/filters/#{filter_definition["as"]}", filter_key: filter_key, filter_definition: filter_definition, f: f, scope_key: "with_properties_#{filter_key}"

@@ -40,6 +40,8 @@
 
 #= require delay
 #= require door-one
+#= require wizard
 
 #= require specification-scroll
 #= require articles
+#= require filterrific/filterrific-jquery

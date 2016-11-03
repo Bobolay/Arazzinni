@@ -1,0 +1,19 @@
+p.total
+  | total:
+  span $800
+- if step_number == 1
+  a.main-button.next-step
+    | next step
+    .animated-frame
+      .left-border
+      .right-border
+
+- if step_number == 5
+  a.main-button.go-to-cart
+    | add to cart
+    .animated-frame
+      .left-border
+      .right-border
+
+- if step_number > 1
+  a.prev-step previous step

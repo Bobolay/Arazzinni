@@ -1,0 +1,53 @@
+.door-config-popup-step-4.step
+  .door-config-wrapper
+    .cart-frame
+    .close-popup = inline_svg "icons/close-popup.svg"
+    .door-config-title choose door configuration
+    ul.step-by-step-nav
+      li.numbers
+        p 1
+      li.numbers
+        p 2
+      li.numbers
+        p 3
+      li.current-step
+        p 4 step
+      li.step-description
+        p choose functionality
+      li.next-step
+        p
+          | next
+          span = inline_svg "icons/popup-arrow-right.svg"
+      li.confirm
+        p confirm
+    .choose-container
+      .choose.product data-product-price=100
+        .functionality
+          p dummy
+        .img style="background-image: url(#{asset_path('constructor/func-1.jpg')})"
+        .choose-mark = inline_svg "icons/choose-mark.svg"
+      .choose.product data-product-price=100
+        .functionality
+          p passage function
+        .img style="background-image: url(#{asset_path('constructor/func-2.jpg')})"
+        .choose-mark = inline_svg "icons/choose-mark.svg"
+      .choose.product data-product-price=100
+        .functionality
+          p privacy function
+        .img style="background-image: url(#{asset_path('constructor/func-3.jpg')})"
+        .choose-mark = inline_svg "icons/choose-mark.svg"
+      .choose.product data-product-price=100
+        .functionality
+          p keyed / entry function
+        .img style="background-image: url(#{asset_path('constructor/func-4.jpg')})"
+        .choose-mark = inline_svg "icons/choose-mark.svg"
+    p.total
+      | total:
+      span $910
+    a.main-button.next-step
+      | next step
+      .animated-frame
+        .left-border
+        .right-border
+    a.prev-step previous step
+    /= render "application/wizard/step_footer", step_number: 4

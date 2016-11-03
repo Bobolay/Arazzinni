@@ -1,0 +1,47 @@
+.door-config-popup-step-5.step
+  .door-config-wrapper
+    .cart-frame
+    .close-popup = inline_svg "icons/close-popup.svg"
+    .door-config-title choose door configuration
+    ul.step-by-step-nav
+      li.numbers
+        p 1
+      li.numbers
+        p 2
+      li.numbers
+        p 3
+      li.numbers
+        p 4
+      li.current-step
+        p confirm
+      li.step-description
+        p confirm door configuration
+    .item-in-cart-container
+      .img style="background-image: url(#{asset_path('constructor/frame.jpg')})"
+      .item-name
+        p l-casing v1
+      .item-price $150
+    .item-in-cart-container
+      .img style="background-image: url(#{asset_path('constructor/hingle1.jpg')})"
+      .item-name
+        p hingle
+      .item-price $20
+    .item-in-cart-container
+      .img style="background-image: url(#{asset_path('constructor/door-knob-1.jpg')})"
+      .item-name
+        p imperia
+      .item-price $35
+    .item-in-cart-container
+      .img style="background-image: url(#{asset_path('constructor/func-2.jpg')})"
+      .item-name
+        p passage function
+      .item-price $75
+    p.total
+      | total:
+      span $910
+    a.main-button.go-to-cart
+      | add to cart
+      .animated-frame
+        .left-border
+        .right-border
+    a.prev-step previous step

@@ -1,4 +1,4 @@
 select data-enumeration="true" name=html_name placeholder="Пошук"
-  - field_config[:values].each do |value|
-    option value=value selected=("selected" if @object.properties && @object.properties[field_key.to_s])
+  - field_config["values"].each do |value|
+    option value=value selected=("selected" if @object.properties && @object.properties[field_key.to_s].try{|p| p.include?(value)})
       = value

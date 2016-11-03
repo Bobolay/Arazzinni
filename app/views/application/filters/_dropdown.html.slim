@@ -1,4 +1,7 @@
-select
+/h3
+  = @filterrific.select_options[scope_key].inspect
+= f.select(scope_key, @filterrific.select_options[scope_key], { include_blank: '- Any -' })
+/select
   option value=""
     = "All"
   - filter_definition[:values].each do |value|

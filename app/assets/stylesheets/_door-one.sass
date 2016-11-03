@@ -269,6 +269,8 @@
 				top: 50%
 				+translate(0,-50%)
 		.block-container
+			position: relative
+			z-index: 3
 			overflow: hidden
 			width: 100%
 			height: 100%
@@ -904,6 +906,7 @@
 				@media #{$small-only}
 					display: none
 			.next-step
+				cursor: pointer
 				color: #fff
 				background-color: $brown
 				text-transform: uppercase

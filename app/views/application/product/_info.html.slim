@@ -40,9 +40,10 @@
       .animated-frame
         .left-border
         .right-border
-    a.technical href=""
-      p.mobile-text info
-      p.desktop-text technical specifications
+    - if @product_property_groups.try(:any?)
+      a.technical href=""
+        p.mobile-text info
+        p.desktop-text technical specifications
   .door-show
     .door-colors-container
       - product.product_color_variants.each do |variant|

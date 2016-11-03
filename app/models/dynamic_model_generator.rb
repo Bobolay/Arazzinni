@@ -4,6 +4,7 @@ class DynamicModelGenerator
   end
 
   def self.load
+    return if !ProductPrototype.table_exists?
     klasses = []
     ProductPrototype.all.each do |prototype|
       class_name = prototype.name
